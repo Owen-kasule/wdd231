@@ -1,34 +1,98 @@
-
-/* Small.css */
+/* small.css */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
+/* Header */
 header {
+    background-color: #2c5d84;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
 
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
+header img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
-nav a.active {
+header span {
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-h1 {
-    color: #333;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
 }
 
-section {
-    margin-bottom: 20px;
+nav a.active {
+    background-color: #d4af37;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Main Content */
+h1 {
+    color: #2c5d84;
+    padding: 10px;
+}
+
+/* Section Container */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.section-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Certificate Section */
+.certificate {
+    background-color: #2c5d84;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.buttons {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #d4af37;
+    color: black;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0a020;
+}
+
+/* Footer */
+footer {
+    background-color: #2c5d84;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
