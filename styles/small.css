@@ -46,6 +46,13 @@ header {
     margin: 0;
 }
 
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
 /* Menu button - absolute positioning for right placement */
 #menu-btn {
     position: absolute;
@@ -96,6 +103,11 @@ header {
 
 /* Center main h1 */
 main h1 {
+    text-align: center;
+}
+
+/* Center the "Home" h2 heading */
+main h2:first-of-type {
     text-align: center;
 }
 
@@ -228,5 +240,9 @@ footer {
     background-color: #2c5d84;
     color: white;
     padding: 12px;
+    text-align: center;
+}
+
+.page-subtitle {
     text-align: center;
 }
