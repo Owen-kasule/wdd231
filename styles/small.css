@@ -29,14 +29,14 @@ header {
 }
 
 .profile-wrapper img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .profile-wrapper h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
     margin: 0;
@@ -52,35 +52,110 @@ header {
     display: block;
 }
 
+/* Navigation Bar */
+#nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#nav-bar a:hover,
+#nav-bar a:focus {
+    background-color: #444;
+}
+
+#nav-bar a.active {
+    background-color: #d4af37;
+    color: #000;
+    border-radius: 5px;
+}
+
+#nav-bar.open {
+    display: flex;
+}
+
 /* Grid for Course Work + Location */
 .grid-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     padding: 10px;
 }
 
 .card {
     background-color: white;
-    padding: 15px;
+    padding: 12px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%; /* Smaller card size */
 }
 
 .card h2 {
     background-color: #2c5d84;
     color: white;
     padding: 10px;
-    margin: -15px -15px 10px -15px;
+    margin: -12px -12px 10px -12px;
     border-radius: 8px 8px 0 0;
+    font-size: 1rem;
 }
 
-/* Certificate Buttons */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Certificate Section */
+.certificate h2 {
+    text-align: center;
+    color: #2c5d84;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Course Filter Buttons */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 15px;
+}
+
+.buttons button {
+    background-color: #2c5d84;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #1a4c68;
+}
+
+/* Course List */
+#course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
 }
 
 .course-btn {
@@ -90,6 +165,13 @@ header {
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    font-size: 0.9rem;
+    width: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.course-btn:hover {
+    background-color: #5a3220;
 }
 
 .course-btn.completed {
@@ -103,3 +185,4 @@ footer {
     padding: 12px;
     text-align: center;
 }
+

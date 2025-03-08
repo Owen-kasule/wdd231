@@ -7,6 +7,12 @@
         padding: 20px;
     }
 
+    .card {
+        width: 90%; /* Smaller card size */
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
     .card img {
         width: 100%;
         height: auto;
@@ -14,12 +20,12 @@
     }
 
     .profile-wrapper img {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .profile-wrapper h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     #menu-btn {
@@ -33,10 +39,30 @@
         gap: 20px;
         background-color: #1a1a1a;
         padding: 10px;
+        margin-top: 5px;
     }
 
     #nav-bar a {
         width: auto;
         padding: 10px 20px;
+    }
+
+    /* Certificate Section */
+    .certificate h2 {
+        font-size: 1.6rem;
+    }
+
+    .buttons button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #course-list {
+        gap: 10px;
+    }
+
+    .course-btn {
+        padding: 14px;
+        width: 120px;
     }
 }
