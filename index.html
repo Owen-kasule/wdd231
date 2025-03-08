@@ -27,7 +27,14 @@
     <header>
         <div class="header-content">
             <div class="profile-wrapper">
-                <img src="images/profile.jpg" alt="Profile Picture" />
+                <picture>
+                    <!-- Mobile version (smaller file) -->
+                    <source srcset="images/profile01.jpg" media="(max-width: 767px)">
+                    <!-- Desktop version (original higher quality) -->
+                    <source srcset="images/profile.jpg" media="(min-width: 768px)">
+                    <!-- Fallback for older browsers -->
+                    <img src="images/profile.jpg" alt="Profile Picture" class="profile-image" />
+                </picture>
                 <span class="profile-name">Owen Kasule Muhereza</span>
             </div>
             <button id="menu-btn">&#9776;</button>
@@ -62,7 +69,14 @@
             <!-- Location Section -->
             <section class="card">
                 <h2>Kampala, Uganda</h2>
-                <img src="images/kampala.jpg" alt="Kampala, Uganda" />
+                <picture>
+                    <!-- Mobile version (smaller file) -->
+                    <source srcset="images/kampala01.jpg" media="(max-width: 767px)">
+                    <!-- Desktop version (original higher quality) -->
+                    <source srcset="images/kampala.jpg" media="(min-width: 768px)">
+                    <!-- Fallback for older browsers -->
+                    <img src="images/kampala.jpg" alt="Kampala, Uganda" />
+                </picture>
                 <p>City of Seven Hills</p>
             </section>
         </div>
