@@ -9,8 +9,8 @@
     }
 
     .card {
-        width: 100%; 
-        max-width: 320px;
+        width: 100%;
+        max-width: 320px; /* Ensure cards are of the same size */
         margin: 0 auto;
     }
 

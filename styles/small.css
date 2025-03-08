@@ -63,7 +63,7 @@ header {
 
 #nav-bar a {
     color: white;
-    background-color: #1a1a1a; /* Background color for nav items */
+    background-color: #1a1a1a;
     text-decoration: none;
     font-size: 1rem;
     padding: 12px;
@@ -93,7 +93,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center cards */
-    gap: 10px;
+    gap: 15px;
     padding: 10px;
 }
 
@@ -103,8 +103,9 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    width: 100%; /* Smaller card size */
+    width: 100%; /* Make cards same size */
     max-width: 320px;
+    text-align: center; /* Center text */
 }
 
 .card h2 {
@@ -158,7 +159,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center; /* Center the courses */
+    justify-content: center;
 }
 
 .course-btn {
