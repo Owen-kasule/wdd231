@@ -60,10 +60,22 @@
 
     #course-list {
         gap: 10px;
+        justify-content: center;
     }
 
     .course-btn {
         padding: 14px;
         width: 120px;
+    }
+
+    /* Center Home heading */
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    /* Center Total Credits text */
+    #total-credits {
+        text-align: center;
     }
 }
