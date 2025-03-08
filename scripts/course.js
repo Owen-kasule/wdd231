@@ -12,8 +12,7 @@ function displayCourses(filter) {
     list.innerHTML = '';
 
     let totalCredits = 0;
-    courses
-        .filter(course => filter === 'all' || course.code.startsWith(filter))
+    courses.filter(course => filter === 'all' || course.code.startsWith(filter))
         .forEach(course => {
             const button = document.createElement('button');
             button.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
