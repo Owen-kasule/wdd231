@@ -16,21 +16,31 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="profile">
+        <div class="header-content">
             <img src="images/profile.jpg" alt="Profile Picture" />
             <h1>Owen Kasule Muhereza</h1>
         </div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="chamber.html">Chamber</a>
-            <a href="https://github.com/Owen-kasule" target="_blank">GitHub Profile</a>
-            <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank">LinkedIn</a>
-        </nav>
     </header>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber.html">Chamber</a>
+        <a href="https://github.com/Owen-kasule" target="_blank">GitHub Profile</a>
+        <a href="https://www.linkedin.com/in/owen-muhereza-kasule-teachrooot/" target="_blank">LinkedIn</a>
+    </nav>
 
     <!-- Main Content -->
     <main>
-        <h2>Home</h2>
+        <section class="home-section">
+            <h2>Welcome to My Course Home Page</h2>
+            <p>
+                I am Owen Kasule Muhereza, a passionate software developer based in Kampala, Uganda. 
+                I specialize in web development and programming, and this is my course home page for 
+                WDD 231 - Web Frontend Development.
+            </p>
+        </section>
+
         <div class="section-container">
             <!-- Course Work Section -->
             <section class="section-card">
@@ -58,7 +68,7 @@
                 <button onclick="filterCourses('CSE')">CSE</button>
                 <button onclick="filterCourses('WDD')">WDD</button>
             </div>
-            <ul id="course-list"></ul>
+            <div id="course-list"></div>
             <p>Total Credits: <span id="total-credits">0</span></p>
         </section>
     </main>
