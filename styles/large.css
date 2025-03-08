@@ -1,9 +1,16 @@
 /* Large screen navigation */
 @media (min-width: 768px) {
-    .header-content {
-        justify-content: center;
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
-        margin-bottom: 15px; /* Add space below profile section */
+        padding: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
 
     .profile-wrapper img {
@@ -26,7 +33,6 @@
         gap: 20px;
         background-color: #1a1a1a;
         padding: 10px;
-        margin-top: 5px; /* Small vertical space between profile and navbar */
     }
 
     #nav-bar a {

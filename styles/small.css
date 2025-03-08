@@ -21,12 +21,11 @@ header {
     gap: 20px;
 }
 
-/* Profile Wrapper */
 .profile-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 15px; /* Add vertical space below the profile section */
+    margin-bottom: 15px;
 }
 
 .profile-wrapper img {
@@ -53,37 +52,48 @@ header {
     display: block;
 }
 
-/* Navigation Bar */
-#nav-bar {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px; /* Add space between profile and navbar */
-}
-
-#nav-bar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-#nav-bar a:hover {
-    background-color: #444;
-}
-
-#nav-bar a.active {
-    background-color: #d4af37;
-    color: #000;
-    border-radius: 5px;
-}
-
-#nav-bar.open {
+/* Grid for Course Work + Location */
+.grid-container {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    background-color: #2c5d84;
+    color: white;
+    padding: 10px;
+    margin: -15px -15px 10px -15px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Certificate Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.course-btn {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.course-btn.completed {
+    background-color: #5a3220;
 }
 
 /* Footer */
