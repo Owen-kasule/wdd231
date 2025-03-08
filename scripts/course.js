@@ -61,6 +61,11 @@ const courses = [
     }
 ];
 
+// Function to filter courses based on subject
+function filterCourses(filter) {
+    displayCourses(filter);
+}
+
 // Function to display courses based on filter
 function displayCourses(filter) {
     const list = document.getElementById('course-list');
