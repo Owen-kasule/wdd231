@@ -13,21 +13,22 @@ header {
     color: white;
 }
 
-/* Header Content */
-/* Header Content - Ensure vertical centering */
+/* Header Content - Enhanced vertical centering */
 .header-content {
     display: flex;
     align-items: center; /* This keeps items vertically centered */
     justify-content: space-between;
     gap: 20px;
-    min-height: 80px; /* Add minimum height to ensure vertical centering is visible */
+    min-height: 100px; /* Increased height to make vertical centering more visible */
 }
 
 .profile-wrapper {
     display: flex;
     align-items: center; /* This ensures vertical centering of the profile image and name */
     gap: 12px;
-    margin-bottom: 0; /* Remove bottom margin to prevent vertical offset */
+    margin: 0; /* Remove all margins */
+    padding: 0; /* Remove any potential padding */
+    height: 100%; /* Take full height of parent */
 }
 
 .profile-wrapper img {
@@ -35,6 +36,7 @@ header {
     height: 70px;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    vertical-align: middle; /* Additional vertical alignment */
 }
 
 .profile-wrapper h1 {
@@ -42,6 +44,7 @@ header {
     font-weight: bold;
     color: white;
     margin: 0;
+    vertical-align: middle; /* Additional vertical alignment */
 }
 
 /* Hamburger Menu */

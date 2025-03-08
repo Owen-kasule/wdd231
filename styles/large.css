@@ -24,14 +24,23 @@
         height: auto;
         border-radius: 8px;
     }
+    
+    /* Profile wrapper improvements for vertical centering */
+    .profile-wrapper {
+        height: 100%; /* Take full height of parent */
+        margin: 0; /* Ensure no margins interfere with centering */
+    }
 
     .profile-wrapper img {
         width: 90px;
         height: 90px;
+        vertical-align: middle; /* Additional vertical alignment */
     }
 
     .profile-wrapper h1 {
         font-size: 1.8rem;
+        margin: 0; /* Ensure no margins interfere with centering */
+        vertical-align: middle; /* Additional vertical alignment */
     }
 
     #menu-btn {
