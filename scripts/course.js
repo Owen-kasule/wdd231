@@ -25,9 +25,9 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized, efficient...',
+        description: 'Students become more organized and powerful programmers...',
         technology: ['Python'],
-        completed: true
+        completed: false
     },
     {
         subject: 'CSE',
@@ -35,9 +35,9 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes...',
+        description: 'Introduction to object-oriented programming with C#...',
         technology: ['C#'],
-        completed: true
+        completed: false
     },
     {
         subject: 'WDD',
@@ -45,9 +45,9 @@ const courses = [
         title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals...',
+        description: 'Creating dynamic websites using JavaScript...',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: true
+        completed: false
     },
     {
         subject: 'WDD',
@@ -55,7 +55,7 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals...',
+        description: 'Focus on user experience, compliance, and performance...',
         technology: ['HTML', 'CSS', 'JavaScript'],
         completed: false
     }
@@ -68,18 +68,23 @@ function displayCourses(filter) {
 
     let totalCredits = 0;
 
+    // Filter courses based on the selected filter
     courses
         .filter(course => filter === 'all' || course.subject === filter)
         .forEach(course => {
+            // Create a button for each course
             const button = document.createElement('button');
             button.textContent = `${course.subject} ${course.number}`;
             button.className = `course-btn ${course.completed ? 'completed' : ''}`;
             button.setAttribute('title', `${course.title} — ${course.credits} credits`);
+
             list.appendChild(button);
             totalCredits += course.credits;
         });
 
+    // Update total credits dynamically
     document.getElementById('total-credits').textContent = totalCredits;
 }
 
+// Event listener for page load
 document.addEventListener('DOMContentLoaded', () => displayCourses('all'));
