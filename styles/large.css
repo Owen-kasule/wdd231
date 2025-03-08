@@ -1,25 +1,20 @@
-/* large.css */
-
+/* Large screen navigation */
 @media (min-width: 768px) {
-    .section-container {
+    #menu-btn {
+        display: none;
+    }
+
+    #nav-bar {
+        display: flex;
         flex-direction: row;
-    }
-
-    .section-card {
-        flex: 1;
-    }
-
-    nav a {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    button {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .buttons {
         justify-content: center;
+        gap: 20px;
+        background-color: #1a1a1a;
+        padding: 10px;
+    }
+
+    #nav-bar a {
+        width: auto;
+        padding: 10px 20px;
     }
 }
