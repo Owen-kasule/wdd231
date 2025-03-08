@@ -16,14 +16,14 @@ header {
 /* Header Content */
 .header-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* This keeps items vertically centered */
     justify-content: space-between;
     gap: 20px;
 }
 
 .profile-wrapper {
     display: flex;
-    align-items: center;
+    align-items: center; /* This ensures vertical centering of the profile image and name */
     gap: 12px;
     margin-bottom: 15px;
 }
@@ -93,17 +93,17 @@ main h1 {
     text-align: center;
 }
 
-/* Adjust grid for equal-sized cards */
+/* Adjust grid for equal-sized cards in vertical layout on mobile */
 .grid-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Reduced gap */
+    gap: 15px; /* Spacing between cards */
     padding: 10px;
     margin: 0 auto;
 }
 
-/* Ensure cards are the same size */
+/* Ensure cards are the same size and full width on mobile */
 .card {
     background-color: white;
     padding: 15px;
@@ -114,7 +114,7 @@ main h1 {
     max-width: 320px;
     text-align: center;
     box-sizing: border-box; /* Include padding in width calculation */
-    height: 100%; /* Equal height */
+    margin-bottom: 10px; /* Space between stacked cards */
     display: flex;
     flex-direction: column;
 }
@@ -171,12 +171,12 @@ main h1 {
     background-color: #1a4c68;
 }
 
-/* Course List */
+/* Course List - Vertical layout for mobile */
 #course-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack course buttons vertically on mobile */
     gap: 8px;
-    justify-content: center;
+    align-items: center; /* Center the buttons */
 }
 
 .course-btn {
@@ -187,7 +187,8 @@ main h1 {
     border: none;
     cursor: pointer;
     font-size: 0.9rem;
-    width: 100px;
+    width: 100%; /* Full width on mobile */
+    max-width: 200px; /* Limit maximum width */
     transition: background-color 0.3s ease;
     text-align: center;
 }

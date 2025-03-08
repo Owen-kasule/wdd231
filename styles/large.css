@@ -63,7 +63,11 @@
         padding: 10px 20px;
     }
 
+    /* Reset to horizontal layout for course list on larger screens */
     #course-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
         justify-content: center;
     }
@@ -71,6 +75,7 @@
     .course-btn {
         padding: 14px;
         width: 120px;
+        max-width: none; /* Reset max-width from small screen */
     }
 
     /* Center Home heading */
