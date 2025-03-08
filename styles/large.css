@@ -1,16 +1,16 @@
 /* Large screen navigation */
 @media (min-width: 768px) {
     .header-content {
-        justify-content: space-between;
+        justify-content: center;
         gap: 20px;
     }
 
-    .profile-info img {
+    .profile-wrapper img {
         width: 100px;
         height: 100px;
     }
 
-    .profile-info h1 {
+    .profile-wrapper h1 {
         font-size: 2rem;
     }
 
