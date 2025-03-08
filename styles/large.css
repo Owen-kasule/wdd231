@@ -10,12 +10,16 @@
     }
 
     nav a {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    button {
         padding: 10px 20px;
         font-size: 1rem;
     }
 
-    button {
-        font-size: 1rem;
-        padding: 10px 20px;
+    .buttons {
+        justify-content: center;
     }
 }

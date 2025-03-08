@@ -12,10 +12,12 @@ function displayCourses(filter) {
     list.innerHTML = '';
 
     let totalCredits = 0;
-    courses.filter(course => filter === 'all' || course.code.startsWith(filter))
+    courses
+        .filter(course => filter === 'all' || course.code.startsWith(filter))
         .forEach(course => {
             const li = document.createElement('li');
             li.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
+
             if (course.completed) li.style.textDecoration = 'line-through';
             list.appendChild(li);
             totalCredits += course.credits;
