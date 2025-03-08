@@ -13,30 +13,30 @@ header {
     color: white;
 }
 
-/* Header Content - Enhanced vertical centering */
+/* Header Content - centered both vertically and horizontally */
 .header-content {
     display: flex;
-    align-items: center; /* This keeps items vertically centered */
-    justify-content: space-between;
-    gap: 20px;
-    min-height: 100px; /* Increased height to make vertical centering more visible */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    position: relative; /* For absolute positioning of menu button */
+    height: 100px; /* Maintain explicit height */
 }
 
 .profile-wrapper {
     display: flex;
-    align-items: center; /* This ensures vertical centering of the profile image and name */
+    align-items: center;
     gap: 12px;
-    margin: 0; /* Remove all margins */
-    padding: 0; /* Remove any potential padding */
-    height: 100%; /* Take full height of parent */
+    /* Center the profile wrapper horizontally */
+    margin: 0 auto;
 }
 
+/* Profile image - increased size without deformation */
 .profile-wrapper img {
-    width: 70px;
-    height: 70px;
+    width: 85px; /* Increased from 70px */
+    height: 85px; /* Increased from 70px */
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    vertical-align: middle; /* Additional vertical alignment */
+    object-fit: cover; /* Ensures image maintains aspect ratio */
 }
 
 .profile-wrapper h1 {
@@ -44,17 +44,19 @@ header {
     font-weight: bold;
     color: white;
     margin: 0;
-    vertical-align: middle; /* Additional vertical alignment */
 }
 
-/* Hamburger Menu */
+/* Menu button - absolute positioning for right placement */
 #menu-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 2rem;
     background: none;
     color: white;
     border: none;
     cursor: pointer;
-    display: block;
 }
 
 /* Navigation Bar */
@@ -62,7 +64,6 @@ header {
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
     margin-top: 10px;
 }
 

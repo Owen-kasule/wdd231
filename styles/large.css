@@ -31,16 +31,15 @@
         margin: 0; /* Ensure no margins interfere with centering */
     }
 
+    /* Profile wrapper improvements for large screens */
     .profile-wrapper img {
-        width: 90px;
-        height: 90px;
-        vertical-align: middle; /* Additional vertical alignment */
+        width: 110px; /* Increased from 90px */
+        height: 110px; /* Increased from 90px */
+        object-fit: cover; /* Ensures image maintains aspect ratio */
     }
 
     .profile-wrapper h1 {
         font-size: 1.8rem;
-        margin: 0; /* Ensure no margins interfere with centering */
-        vertical-align: middle; /* Additional vertical alignment */
     }
 
     #menu-btn {
