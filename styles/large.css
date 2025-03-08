@@ -1,17 +1,35 @@
+/* large.css */
 
-/* Large.css */
 @media (min-width: 768px) {
     body {
         background-color: #f9f9f9;
-        color: #222;
     }
 
     header {
-        padding: 10px;
-        background-color: #ddd;
+        padding: 20px;
+    }
+
+    .section-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .section-card {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .certificate {
+        padding: 20px;
     }
 
     nav a {
-        color: #111;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }
