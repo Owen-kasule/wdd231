@@ -14,18 +14,20 @@ header {
 }
 
 /* Header Content */
+/* Header Content - Ensure vertical centering */
 .header-content {
     display: flex;
     align-items: center; /* This keeps items vertically centered */
     justify-content: space-between;
     gap: 20px;
+    min-height: 80px; /* Add minimum height to ensure vertical centering is visible */
 }
 
 .profile-wrapper {
     display: flex;
     align-items: center; /* This ensures vertical centering of the profile image and name */
     gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 0; /* Remove bottom margin to prevent vertical offset */
 }
 
 .profile-wrapper img {
@@ -117,6 +119,17 @@ main h1 {
     margin-bottom: 10px; /* Space between stacked cards */
     display: flex;
     flex-direction: column;
+}
+
+/* Course Work - Make list bulleted and left-aligned */
+.card ul {
+    list-style-type: disc; /* Add bullets */
+    text-align: left; /* Left align text */
+    padding-left: 20px; /* Add padding for bullets */
+}
+
+.card li {
+    margin-bottom: 5px; /* Add spacing between list items */
 }
 
 .card h2 {
