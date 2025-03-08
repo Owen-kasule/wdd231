@@ -68,24 +68,18 @@ function displayCourses(filter) {
 
     let totalCredits = 0;
 
-    // Filter courses based on the selected filter
     courses
         .filter(course => filter === 'all' || course.subject === filter)
         .forEach(course => {
             const button = document.createElement('button');
             button.textContent = `${course.subject} ${course.number}`;
             button.className = `course-btn ${course.completed ? 'completed' : ''}`;
-            
-            // Hover effect to show full course info
             button.setAttribute('title', `${course.title} — ${course.credits} credits`);
-
             list.appendChild(button);
             totalCredits += course.credits;
         });
 
-    // Update total credits
     document.getElementById('total-credits').textContent = totalCredits;
 }
 
-// Load all courses by default
 document.addEventListener('DOMContentLoaded', () => displayCourses('all'));
