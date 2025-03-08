@@ -3,15 +3,20 @@
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Side by side */
-        gap: 20px; /* Reduced gap between cards */
+        gap: 10px; /* Reduced gap between cards */
         justify-content: center;
         padding: 20px;
+        max-width: 800px; /* Limit width for better centering */
+        margin: 0 auto; /* Center the container */
     }
 
     .card {
         width: 100%;
         max-width: 320px; /* Same size for all cards */
         margin: 0 auto;
+        height: 100%; /* Make cards the same height */
+        display: flex;
+        flex-direction: column;
     }
 
     .card img {
@@ -69,13 +74,13 @@
     }
 
     /* Center Home heading */
-    h1 {
+    main h1 {
         text-align: center;
         font-size: 2rem;
     }
 
     /* Center Total Credits text */
-    #total-credits {
+    .certificate p {
         text-align: center;
     }
 }
