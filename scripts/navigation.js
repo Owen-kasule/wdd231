@@ -12,3 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prevent horizontal scrolling issues
     document.body.style.overflowX = 'hidden';
 });
+
+const menuBtn = document.getElementById('menu-btn');
+const navBar = document.getElementById('nav-bar');
+
+menuBtn.addEventListener('click', () => {
+    navBar.classList.toggle('open');
+});

@@ -10,62 +10,80 @@ body {
 /* Header */
 header {
     background-color: #2c5d84;
-    padding: 20px;
+    padding: 10px;
     color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .header-content {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .header-content img {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    margin-right: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .name-container h1 {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin: 0;
 }
 
 .name-container p {
-    font-size: 1.1rem;
-    color: #ddd;
+    font-size: 0.9rem;
     margin: 0;
+    color: #ddd;
 }
 
-/* Navigation Bar */
-nav {
-    background-color: #1a1a1a;
-    padding: 12px;
+/* Hamburger Menu */
+#menu-btn {
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+#nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
     text-align: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-nav a.active {
+#nav-bar a.active {
     background-color: #d4af37;
     color: #000;
     border-radius: 5px;
 }
 
-nav a:hover {
+#nav-bar a:hover {
     background-color: #444;
+}
+
+/* Show nav-bar on active */
+#nav-bar.open {
+    display: flex;
 }
 
 /* Home Section */
@@ -75,43 +93,35 @@ h1 {
     margin-top: 20px;
 }
 
+/* Section Container */
 .section-container {
     display: flex;
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
 }
 
+/* Cards */
 .section-card {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    flex: 1;
-    max-width: 400px;
 }
 
 .section-card h2 {
     background-color: #2c5d84;
     color: white;
-    padding: 10px;
-    margin: -20px -20px 15px -20px;
-    border-radius: 8px 8px 0 0;
+    padding: 8px;
     text-align: center;
-}
-
-.section-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
 }
 
 /* Course Section */
 #course-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 12px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -122,9 +132,8 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
     transition: all 0.3s ease;
-    cursor: pointer;
+    text-align: center;
 }
 
 .course-btn.completed {
