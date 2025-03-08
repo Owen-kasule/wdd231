@@ -17,26 +17,32 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
 }
 
-.header-content img {
-    width: 50px;
-    height: 50px;
+/* Profile Info */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-info img {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.header-content h1 {
-    font-size: 1.4rem;
+.profile-info h1 {
+    font-size: 1.6rem;
     font-weight: bold;
+    color: white;
     margin: 0;
-    color: #ffffff;
 }
 
-/* Hamburger Button */
+/* Hamburger Menu */
 #menu-btn {
-    font-size: 1.8rem;
+    font-size: 2rem;
     background: none;
     color: white;
     border: none;
@@ -72,7 +78,6 @@ header {
     border-radius: 5px;
 }
 
-/* Show nav bar when open */
 #nav-bar.open {
     display: flex;
 }
@@ -98,27 +103,6 @@ header {
     padding: 10px;
     margin: -15px -15px 10px -15px;
     border-radius: 8px 8px 0 0;
-}
-
-/* Course List */
-#course-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.course-btn {
-    background-color: #f4f4f9;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.course-btn.completed {
-    background-color: #8b4513;
-    color: white;
 }
 
 /* Footer */
