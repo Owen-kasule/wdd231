@@ -11,22 +11,13 @@ function displayCourses(filter) {
     const list = document.getElementById('course-list');
     list.innerHTML = '';
 
-    let totalCredits = 0;
     courses.filter(course => filter === 'all' || course.code.startsWith(filter))
         .forEach(course => {
             const button = document.createElement('button');
-            button.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
-
-            if (course.completed) {
-                button.style.backgroundColor = '#8b4513'; // Mark completed courses in brown
-                button.style.color = '#fff';
-            }
-
+            button.textContent = course.code;
+            button.className = course.completed ? 'completed' : '';
             list.appendChild(button);
-            totalCredits += course.credits;
         });
-
-    document.getElementById('total-credits').textContent = totalCredits;
 }
 
 document.addEventListener('DOMContentLoaded', () => displayCourses('all'));
