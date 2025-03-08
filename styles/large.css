@@ -1,0 +1,17 @@
+
+/* Large.css */
+@media (min-width: 768px) {
+    body {
+        background-color: #f9f9f9;
+        color: #222;
+    }
+
+    header {
+        padding: 10px;
+        background-color: #ddd;
+    }
+
+    nav a {
+        color: #111;
+    }
+}
