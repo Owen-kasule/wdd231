@@ -3,14 +3,14 @@
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Side by side */
-        gap: 20px;
+        gap: 20px; /* Reduced gap between cards */
         justify-content: center;
         padding: 20px;
     }
 
     .card {
         width: 100%;
-        max-width: 320px; /* Ensure cards are of the same size */
+        max-width: 320px; /* Same size for all cards */
         margin: 0 auto;
     }
 
