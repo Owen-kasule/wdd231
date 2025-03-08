@@ -15,11 +15,15 @@ function displayCourses(filter) {
     courses
         .filter(course => filter === 'all' || course.code.startsWith(filter))
         .forEach(course => {
-            const li = document.createElement('li');
-            li.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
+            const button = document.createElement('button');
+            button.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
 
-            if (course.completed) li.style.textDecoration = 'line-through';
-            list.appendChild(li);
+            if (course.completed) {
+                button.style.backgroundColor = '#8b4513'; // Mark completed courses in brown
+                button.style.color = '#fff';
+            }
+
+            list.appendChild(button);
             totalCredits += course.credits;
         });
 
