@@ -2,14 +2,15 @@
 @media (min-width: 768px) {
     .grid-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Side by side */
         gap: 20px;
+        justify-content: center;
         padding: 20px;
     }
 
     .card {
-        width: 90%; /* Smaller card size */
-        max-width: 400px;
+        width: 100%; 
+        max-width: 320px;
         margin: 0 auto;
     }
 
@@ -44,7 +45,7 @@
 
     #nav-bar a {
         width: auto;
-        padding: 10px 20px;
+        padding: 12px 20px;
     }
 
     /* Certificate Section */
