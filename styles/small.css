@@ -233,8 +233,8 @@ main h2:first-of-type {
 }
 
 .buttons button {
-    background-color: #2c5d84;
-    color: white;
+    background-color: #265077; /* Slightly darker than your current #2c5d84 */
+    color: #ffffff; /* Ensure pure white text */
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
@@ -292,4 +292,25 @@ footer {
 
 .page-subtitle {
     text-align: center;
+}
+
+/* Improving contrast ratio for AAA compliance */
+
+/* h2 elements - darkening the text color slightly */
+h2 {
+    /* If your text is dark on light background */
+    color: #000000; /* Instead of a slightly lighter shade */
+    
+    /* If your text is light on dark background (like the header) */
+    color: #ffffff; /* Instead of slightly transparent white or light gray */
+}
+
+/* Footer elements with contrast issues */
+#year, #lastModified {
+    /* If these are light text on dark background */
+    color: #ffffff; /* Pure white instead of off-white */
+    
+    /* If these are dark text on light background */
+    color: #000000; /* Pure black instead of dark gray */
+    background-color: #f8f8f8; /* Slightly lighter background if applicable */
 }
