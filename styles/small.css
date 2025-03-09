@@ -5,7 +5,6 @@
   font-weight: 400;
   font-display: swap;
   src: local('Poppins Regular'), local('Poppins-Regular');
-  size-adjust: 100%;
 }
 
 @font-face {
@@ -14,7 +13,6 @@
   font-weight: 700;
   font-display: swap;
   src: local('Poppins Bold'), local('Poppins-Bold');
-  size-adjust: 100%;
 }
 
 /* small.css */
@@ -50,27 +48,10 @@ header {
     /* No margins or positioning that could offset centering */
 }
 
-/* Fix profile image size */
+/* Profile wrapper image - remove duplicates */
 .profile-image {
     width: 85px;
     height: 85px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Profile image - increased size without deformation */
-.profile-wrapper img {
-    width: 85px; /* Increased from 70px */
-    height: 85px; /* Increased from 70px */
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    object-fit: cover; /* Ensures image maintains aspect ratio */
-}
-
-/* Profile image explicit dimensions */
-.profile-wrapper img {
-    width: 85px; /* Already set */
-    height: 85px; /* Already set */
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     object-fit: cover;
@@ -83,28 +64,16 @@ header {
     margin: 0;
 }
 
+/* Profile name - remove duplicates */
 .profile-name {
+    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     margin: 0;
-    font-family: Arial, sans-serif; /* System font first */
-    font-family: 'Poppins', Arial, sans-serif; /* Web font when loaded */
     min-height: 1.5em;
-    letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
-}
-
-/* Prevent text layout shift */
-.profile-name {
-  font-family: Arial, sans-serif; /* System font first */
-  font-family: 'Poppins', Arial, sans-serif; /* Web font when loaded */
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  margin: 0;
-  /* Prevent layout shift */
-  min-height: 1.5em;
-  letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
+    letter-spacing: -0.01em;
 }
 
 /* Make sure the menu button doesn't affect centering */
@@ -171,7 +140,6 @@ main h1 {
     padding: 0 10px;
     will-change: transform; /* Hint to browser to create a separate layer */
     backface-visibility: hidden; /* Boost performance by using GPU */
-    -webkit-font-smoothing: antialiased; /* Improve text rendering */
 }
 
 /* Center the "Home" h2 heading */
