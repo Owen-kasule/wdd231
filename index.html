@@ -19,17 +19,18 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
     
-    <!-- Add these preload directives for critical CSS -->
+    <!-- Update these preload directives to be more effective -->
+    <link rel="preload" href="styles/large.css?v=1.0" as="style">
     <link rel="preload" href="styles/small.css?v=1.0" as="style">
     <link rel="preload" href="styles/normalize.css?v=1.0" as="style">
 
-    <!-- Preload the Kampala image -->
-    <link rel="preload" href="images/kampala01.jpg?v=1.0" as="image" media="(max-width: 767px)">
+    <!-- Preload the Kampala LCP image with higher priority -->
+    <link rel="preload" href="images/kampala01.jpg?v=1.0" as="image" fetchpriority="high" media="(max-width: 767px)">
 
-    <!-- Your existing stylesheet links -->
-    <link rel="stylesheet" href="styles/normalize.css?v=1.0">
+    <!-- Try this alternative non-blocking CSS loading approach -->
+    <link rel="stylesheet" href="styles/normalize.css?v=1.0" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="styles/small.css?v=1.0">
-    <link rel="stylesheet" href="styles/large.css?v=1.0">
+    <link rel="stylesheet" href="styles/large.css?v=1.0" media="print" onload="this.media='all'">
     
     <!-- Scripts with defer attribute -->
     <script src="scripts/navigation.js" defer></script>
