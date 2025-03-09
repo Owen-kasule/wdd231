@@ -41,6 +41,15 @@ header {
     height: 100px; /* Maintain explicit height */
 }
 
+/* Ensure header has fixed dimensions */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px; /* Fixed height to prevent shifting */
+  position: relative;
+}
+
 .profile-wrapper {
     display: flex;
     align-items: center;
@@ -48,6 +57,14 @@ header {
     /* Center the profile wrapper horizontally */
     margin: 0 auto;
     min-height: 85px; /* Match height of profile image */
+}
+
+/* Prevent profile wrapper layout shift */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 85px; /* Match height of profile image */
 }
 
 /* Profile image - increased size without deformation */
@@ -84,6 +101,19 @@ header {
     font-family: 'Poppins', Arial, sans-serif; /* Web font when loaded */
     min-height: 1.5em;
     letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
+}
+
+/* Prevent text layout shift */
+.profile-name {
+  font-family: Arial, sans-serif; /* System font first */
+  font-family: 'Poppins', Arial, sans-serif; /* Web font when loaded */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  /* Prevent layout shift */
+  min-height: 1.5em;
+  letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
 }
 
 /* Menu button - absolute positioning for right placement */
