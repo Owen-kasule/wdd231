@@ -202,8 +202,8 @@ main h2:first-of-type {
 }
 
 .card h2 {
-    background-color: #2c5d84;
-    color: white;
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
     padding: 10px;
     margin: -15px -15px 10px -15px;
     border-radius: 8px 8px 0 0;
@@ -219,7 +219,7 @@ main h2:first-of-type {
 
 .certificate h2 {
     text-align: center;
-    color: #2c5d84;
+    color: #214c70; /* Darkened from #2c5d84 */
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
@@ -233,8 +233,8 @@ main h2:first-of-type {
 }
 
 .buttons button {
-    background-color: #2c5d84;
-    color: white;
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
@@ -256,8 +256,8 @@ main h2:first-of-type {
 }
 
 .course-btn {
-    background-color: #8b4513;
-    color: white;
+    background-color: #793c10; /* Darkened from #8b4513 */
+    color: #ffffff; /* Pure white */
     padding: 12px;
     border-radius: 8px;
     border: none;
@@ -274,7 +274,7 @@ main h2:first-of-type {
 }
 
 .course-btn.completed {
-    background-color: #5a3220;
+    background-color: #4e2a1a; /* Darkened from #5a3220 */
 }
 
 /* Center total credits text */
@@ -284,8 +284,8 @@ main h2:first-of-type {
 
 /* Footer */
 footer {
-    background-color: #2c5d84;
-    color: white;
+    background-color: #244e6f; /* Darkened from #2c5d84 */
+    color: #ffffff; /* Pure white */
     padding: 12px;
     text-align: center;
 }
