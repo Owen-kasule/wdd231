@@ -1,3 +1,20 @@
+/* Add to top of small.css file for better font loading */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Poppins Bold'), local('Poppins-Bold');
+}
+
 /* small.css */
 body {
     background-color: #f4f4f9;
@@ -104,6 +121,16 @@ header {
 /* Center main h1 */
 main h1 {
     text-align: center;
+    font-size: 1.5rem; /* Smaller size on mobile for faster rendering */
+    font-family: Arial, sans-serif; /* System font fallback first */
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins will apply when loaded */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    padding: 0 10px;
+    will-change: transform; /* Hint to browser to create a separate layer */
+    backface-visibility: hidden; /* Boost performance by using GPU */
+    -webkit-font-smoothing: antialiased; /* Improve text rendering */
 }
 
 /* Center the "Home" h2 heading */
