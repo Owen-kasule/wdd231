@@ -137,6 +137,15 @@ main h2:first-of-type {
     flex-direction: column;
 }
 
+/* Prevent layout shift for the Kampala image */
+.card picture {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Use the actual aspect ratio of your image */
+    background-color: #f0f0f0; /* Placeholder color while image loads */
+    overflow: hidden;
+}
+
 /* Course Work - Make list bulleted and left-aligned */
 .card ul {
     list-style-type: disc; /* Add bullets */
@@ -160,6 +169,7 @@ main h2:first-of-type {
 .card img {
     width: 100%;
     height: auto;
+    display: block;
     border-radius: 8px;
 }
 
