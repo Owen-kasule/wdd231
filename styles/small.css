@@ -35,36 +35,21 @@ header {
 /* Header Content - centered both vertically and horizontally */
 .header-content {
     display: flex;
-    justify-content: space-between; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    position: relative; /* For absolute positioning of menu button */
-    height: 100px; /* Maintain explicit height */
-}
-
-/* Ensure header has fixed dimensions */
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px; /* Fixed height to prevent shifting */
-  position: relative;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    height: 100px; /* Fixed height to prevent shifting */
+    box-sizing: border-box;
 }
 
 .profile-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Center the profile wrapper horizontally */
+    min-height: 85px;
+    /* This is the key fix - no margin-right */
     margin: 0 auto;
-    min-height: 85px; /* Match height of profile image */
-}
-
-/* Prevent profile wrapper layout shift */
-.profile-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 85px; /* Match height of profile image */
 }
 
 /* Profile image - increased size without deformation */
@@ -127,6 +112,14 @@ header {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+/* Keep menu button in its position at right */
+#menu-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Navigation Bar */
