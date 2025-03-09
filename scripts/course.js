@@ -66,25 +66,31 @@ function filterCourses(filter) {
     displayCourses(filter);
 }
 
-// Function to display courses based on filter
+// Function to display courses based on filter - optimized version
 function displayCourses(filter) {
     const list = document.getElementById('course-list');
-    list.innerHTML = '';
-
+    // Use document fragment for better performance
+    const fragment = document.createDocumentFragment();
+    
     // Filter courses based on the selected filter
     const filteredCourses = courses.filter(course => filter === 'all' || course.subject === filter);
     
-    // Add the course buttons to the list
+    // Clear previous content
+    list.innerHTML = '';
+    
+    // Add the course buttons to the fragment
     filteredCourses.forEach(course => {
-        // Create a button for each course
         const button = document.createElement('button');
         button.textContent = `${course.subject} ${course.number}`;
         button.className = `course-btn ${course.completed ? 'completed' : ''}`;
         button.setAttribute('title', `${course.title} — ${course.credits} credits`);
         
-        list.appendChild(button);
+        fragment.appendChild(button);
     });
-
+    
+    // Append all buttons at once for better performance
+    list.appendChild(fragment);
+    
     // Calculate total credits using reduce method as required
     const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
     

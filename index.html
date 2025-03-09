@@ -7,21 +7,29 @@
     <meta name="author" content="Owen Kasule Muhereza">
     <title>WDD 231 Course Home Page - Owen Kasule Muhereza</title>
     
-    <!-- Google Fonts -->
+    <!-- Improved font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Load fonts asynchronously -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" 
-          rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Preload critical font files -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin>
+    <!-- Use print media and onload to make non-blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Fallback for browsers with JavaScript disabled -->
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <!-- Add these preload directives for critical CSS -->
+    <link rel="preload" href="styles/small.css?v=1.0" as="style">
+    <link rel="preload" href="styles/normalize.css?v=1.0" as="style">
+
+    <!-- Preload the Kampala image -->
+    <link rel="preload" href="images/kampala01.jpg?v=1.0" as="image" media="(max-width: 767px)">
+
+    <!-- Your existing stylesheet links -->
+    <link rel="stylesheet" href="styles/normalize.css?v=1.0">
+    <link rel="stylesheet" href="styles/small.css?v=1.0">
+    <link rel="stylesheet" href="styles/large.css?v=1.0">
     
     <!-- Scripts with defer attribute -->
     <script src="scripts/navigation.js" defer></script>
@@ -81,7 +89,8 @@
                     <!-- Desktop version (original higher quality) -->
                     <source srcset="images/kampala.jpg?v=1.0" media="(min-width: 768px)">
                     <!-- Fallback for older browsers - Added width and height attributes -->
-                    <img src="images/kampala.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180" />
+                    <img src="images/kampala.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180" 
+                         fetchpriority="high" loading="eager" />
                 </picture>
                 <p>City of Seven Hills</p>
             </section>
