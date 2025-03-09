@@ -25,31 +25,37 @@ body {
     margin: 0;
 }
 
-/* Header */
+/* Reset and fix header styling */
 header {
     background-color: #2c5d84;
     padding: 15px;
     color: white;
 }
 
-/* Header Content - centered both vertically and horizontally */
+/* Center the header content properly */
 .header-content {
+    position: relative;
     display: flex;
     justify-content: center; /* Center horizontally */
-    align-items: center;
-    position: relative;
-    padding: 15px;
-    height: 100px; /* Fixed height to prevent shifting */
-    box-sizing: border-box;
+    align-items: center; /* Center vertically */
+    min-height: 100px;
+    width: 100%;
 }
 
+/* Fix profile wrapper */
 .profile-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
-    min-height: 85px;
-    /* This is the key fix - no margin-right */
-    margin: 0 auto;
+    /* No margins or positioning that could offset centering */
+}
+
+/* Fix profile image size */
+.profile-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Profile image - increased size without deformation */
@@ -101,10 +107,10 @@ header {
   letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
 }
 
-/* Menu button - absolute positioning for right placement */
+/* Make sure the menu button doesn't affect centering */
 #menu-btn {
     position: absolute;
-    right: 15px;
+    right: 15px; 
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
@@ -112,14 +118,10 @@ header {
     color: white;
     border: none;
     cursor: pointer;
-}
-
-/* Keep menu button in its position at right */
-#menu-btn {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    /* Make sure it doesn't push other elements */
+    padding: 0;
+    margin: 0;
+    min-width: 0;
 }
 
 /* Navigation Bar */
