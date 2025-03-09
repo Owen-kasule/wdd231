@@ -5,6 +5,7 @@
   font-weight: 400;
   font-display: swap;
   src: local('Poppins Regular'), local('Poppins-Regular');
+  size-adjust: 100%;
 }
 
 @font-face {
@@ -13,6 +14,7 @@
   font-weight: 700;
   font-display: swap;
   src: local('Poppins Bold'), local('Poppins-Bold');
+  size-adjust: 100%;
 }
 
 /* small.css */
@@ -33,7 +35,7 @@ header {
 /* Header Content - centered both vertically and horizontally */
 .header-content {
     display: flex;
-    justify-content: center; /* Horizontal centering */
+    justify-content: space-between; /* Horizontal centering */
     align-items: center; /* Vertical centering */
     position: relative; /* For absolute positioning of menu button */
     height: 100px; /* Maintain explicit height */
@@ -45,6 +47,7 @@ header {
     gap: 12px;
     /* Center the profile wrapper horizontally */
     margin: 0 auto;
+    min-height: 85px; /* Match height of profile image */
 }
 
 /* Profile image - increased size without deformation */
@@ -77,6 +80,10 @@ header {
     font-weight: bold;
     color: white;
     margin: 0;
+    font-family: Arial, sans-serif; /* System font first */
+    font-family: 'Poppins', Arial, sans-serif; /* Web font when loaded */
+    min-height: 1.5em;
+    letter-spacing: -0.01em; /* Slight adjustment to match fallback fonts */
 }
 
 /* Menu button - absolute positioning for right placement */
