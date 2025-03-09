@@ -173,15 +173,6 @@ main h2:first-of-type {
     flex-direction: column;
 }
 
-/* Prevent layout shift for the Kampala image */
-.card picture {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Use the actual aspect ratio of your image */
-    background-color: #f0f0f0; /* Placeholder color while image loads */
-    overflow: hidden;
-}
-
 /* Fix for explicit image dimensions to prevent layout shift */
 .card picture {
     display: block;
@@ -217,13 +208,6 @@ main h2:first-of-type {
     margin: -15px -15px 10px -15px;
     border-radius: 8px 8px 0 0;
     font-size: 1rem;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
 }
 
 /* Certificate Section */
