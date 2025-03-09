@@ -85,12 +85,19 @@
             <section class="card">
                 <h2>Kampala, Uganda</h2>
                 <picture>
-                    <!-- Only add WebP if you've confirmed the files exist -->
+                    <!-- Mobile WebP version (you just added this) -->
                     <source srcset="images/kampala01.webp" type="image/webp" media="(max-width: 767px)">
+                    
+                    <!-- Mobile JPG version -->
                     <source srcset="images/kampala01.jpg?v=1.0" media="(max-width: 767px)">
-                    <source srcset="images/kampala.webp" type="image/webp" media="(min-width: 768px)">
-                    <source srcset="images/kampala.jpg?v=1.0" media="(min-width: 768px)">
-                    <img src="images/kampala.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180">
+                    
+                    <!-- Desktop versions - REMOVE THESE if files don't exist -->
+                    <!-- <source srcset="images/kampala.webp" type="image/webp" media="(min-width: 768px)"> -->
+                    <!-- <source srcset="images/kampala.jpg?v=1.0" media="(min-width: 768px)"> -->
+                    
+                    <!-- IMPORTANT: Change fallback to kampala01.jpg since that's what you have -->
+                    <img src="images/kampala01.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180" 
+                         fetchpriority="high" loading="eager">
                 </picture>
                 <p>City of Seven Hills</p>
             </section>
