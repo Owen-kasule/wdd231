@@ -1,3 +1,11 @@
+/* Put this at the top of your CSS file to load critical properties first */
+:root {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --header-bg: #2c5d84;
+    --text-color: #333333;
+}
+
 /* Add to top of small.css file for better font loading */
 @font-face {
   font-family: 'Poppins';
@@ -173,21 +181,27 @@ main h2:first-of-type {
     flex-direction: column;
 }
 
-/* Fix for explicit image dimensions to prevent layout shift */
+/* Optimize LCP by improving image rendering performance */
 .card picture {
     display: block;
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     background-color: #f0f0f0;
     overflow: hidden;
+    contain: content; /* Helps browser optimize rendering */
+    content-visibility: auto; /* Optimize rendering of off-screen content */
 }
 
+/* CSS for image to improve rendering performance */
 .card img {
-    width: 100%; /* Keep width responsive */
-    height: 100%; /* Fill the parent container's height */
-    object-fit: cover; /* Maintain aspect ratio while covering area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     border-radius: 8px;
+    will-change: transform; /* Hint to browser to optimize */
+    transform: translateZ(0); /* Force GPU acceleration */
 }
 
 /* Course Work - Make list bulleted and left-aligned */

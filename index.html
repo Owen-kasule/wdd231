@@ -85,13 +85,12 @@
             <section class="card">
                 <h2>Kampala, Uganda</h2>
                 <picture>
-                    <!-- Mobile version (smaller file) -->
+                    <!-- Only add WebP if you've confirmed the files exist -->
+                    <source srcset="images/kampala01.webp" type="image/webp" media="(max-width: 767px)">
                     <source srcset="images/kampala01.jpg?v=1.0" media="(max-width: 767px)">
-                    <!-- Desktop version (original higher quality) -->
+                    <source srcset="images/kampala.webp" type="image/webp" media="(min-width: 768px)">
                     <source srcset="images/kampala.jpg?v=1.0" media="(min-width: 768px)">
-                    <!-- Fallback for older browsers - Added width and height attributes -->
-                    <img src="images/kampala.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180" 
-                         fetchpriority="high" loading="eager" />
+                    <img src="images/kampala.jpg?v=1.0" alt="Kampala, Uganda" width="320" height="180">
                 </picture>
                 <p>City of Seven Hills</p>
             </section>
