@@ -10,7 +10,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Load fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" 
+          rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/normalize.css">
