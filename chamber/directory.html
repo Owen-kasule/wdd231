@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Chamber Directory for businesses">
+    <meta name="author" content="Owen Kasule Muhereza">
+    <meta property="og:title" content="Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/chamber-logo.png">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+    <title>Chamber Directory</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/chamber-logo.png" alt="Chamber Logo">
+            <h1>Chamber of Commerce - Your City</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="directory.html">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="member-list">
+            <!-- Dynamic member cards will be inserted here -->
+        </section>
+        
+        <div class="view-toggle">
+            <button id="grid-view" onclick="toggleView('grid')">Grid View</button>
+            <button id="list-view" onclick="toggleView('list')">List View</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Owen Kasule Muhereza | Kampala, Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
