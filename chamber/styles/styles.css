@@ -18,7 +18,7 @@ body {
 /* Header Styling */
 header {
     background-color: #0066cc;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     color: white;
     border-radius: 8px;
@@ -71,6 +71,27 @@ nav a:hover {
 /* Main Content */
 main {
     padding: 20px 0;
+}
+
+/* Logo in main section */
+main .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto 40px;
+    max-width: 600px;
+}
+
+main .logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+main .logo h1 {
+    color: #0066cc;
+    font-size: 2rem;
 }
 
 /* Member Cards */
