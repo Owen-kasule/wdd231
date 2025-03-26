@@ -1,0 +1,237 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #0066cc;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #004d99;
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+}
+
+#member-list {
+    margin-top: 2rem;
+}
+
+/* Grid View */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* List View */
+.list .member-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.list .member-card img {
+    margin-bottom: 0.5rem;
+}
+
+/* Member Cards */
+.member-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.member-card img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.member-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #0066cc;
+}
+
+.member-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.member-card a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.member-card a:hover {
+    text-decoration: underline;
+}
+
+/* View Toggle Buttons */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d99;
+}
+
+button.active {
+    background-color: #004d99;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+    
+    .logo {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+    
+    .logo img {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .list .member-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .list .member-card img {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+/* Gold membership highlight */
+.member-gold {
+    border: 2px solid #ffd700;
+    background-color: #fffdf0;
+}
+
+/* Silver membership highlight */
+.member-silver {
+    border: 2px solid #c0c0c0;
+    background-color: #f9f9f9;
+}
