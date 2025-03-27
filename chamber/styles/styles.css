@@ -133,6 +133,12 @@ main .logo h1 {
     contain: layout; /* Isolate layout changes */
 }
 
+#member-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004d99;
+}
+
 .member-card {
     background-color: white;
     padding: 20px;
