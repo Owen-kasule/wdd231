@@ -86,6 +86,8 @@ nav a:hover {
 /* Main Content */
 main {
     padding: 20px 0;
+    contain-intrinsic-size: auto 400px; /* Reserve initial space */
+    contain: layout paint; /* Isolate main content layout */
 }
 
 /* Logo in main section */
@@ -115,6 +117,7 @@ main .logo h1 {
 /* Member Cards */
 #member-list {
     margin-bottom: 30px;
+    contain: layout; /* Isolate layout changes */
 }
 
 .member-card {
@@ -125,6 +128,7 @@ main .logo h1 {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    contain: content; /* Isolate content changes */
 }
 
 .member-card:hover {
@@ -254,11 +258,15 @@ footer p {
     .logo {
         flex-direction: row;
         justify-content: center;
+        min-height: 80px; /* Keep consistent height */
+        contain: layout size; /* Stabilize during transitions */
     }
     
     .logo img {
         margin-right: 20px;
         margin-bottom: 0;
+        width: 80px !important;
+        height: 80px !important;
     }
 }
 
