@@ -29,6 +29,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 80px; /* At least as tall as the logo */
 }
 
 .logo img {
@@ -86,9 +87,10 @@ main .logo {
 }
 
 main .logo img {
-    width: 120px;
-    height: auto;
+    width: 80px;       /* Match the HTML attribute */
+    height: 80px;      /* Match the HTML attribute */
     margin-bottom: 15px;
+    object-fit: contain; /* Keep aspect ratio without distortion */
 }
 
 main .logo h1 {
@@ -268,5 +270,18 @@ footer p {
     
     header h1 {
         margin-bottom: 0;
+    }
+}
+
+/* Prevent layout shifts */
+img {
+    max-width: 100%;
+    display: block; /* Eliminates bottom margin space */
+}
+
+/* Preconnect to image domain if images load from different origin */
+@media (prefers-reduced-motion: no-preference) {
+    .logo img {
+        will-change: transform; /* Hint to browser about upcoming changes */
     }
 }
