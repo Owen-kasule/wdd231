@@ -33,7 +33,8 @@ header {
 
 .logo img {
     width: 80px;
-    height: auto;
+    height: 80px;
+    object-fit: contain;
     margin-bottom: 10px;
 }
 
@@ -118,7 +119,7 @@ main .logo h1 {
 .member-card img {
     width: 100px;
     height: 100px;
-    object-fit: cover;
+    object-fit: contain; /* Maintains aspect ratio without distortion */
     border-radius: 50%;
     margin-bottom: 15px;
 }
