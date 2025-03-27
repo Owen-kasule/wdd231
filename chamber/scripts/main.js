@@ -77,7 +77,7 @@ function displayMembers(members) {
         card.innerHTML = `
             <picture>
                 <source srcset="images/${imageName}.webp" type="image/webp">
-                <img src="images/${member.image}" alt="${member.name} logo">
+                <img src="images/${member.image}" alt="${member.name} logo" width="100" height="100">
             </picture>
             <h3>${member.name}</h3>
             <p>${member.address}</p>
