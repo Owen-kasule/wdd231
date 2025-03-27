@@ -30,16 +30,36 @@ function toggleView(viewType) {
     }
 }
 
+// Add resize handler to prevent layout shifts
+window.addEventListener('resize', () => {
+    // Debounce resize events
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(() => {
+        // Refresh layout to prevent shifts
+        const memberList = document.querySelector('.members-container');
+        if (memberList) {
+            memberList.style.minHeight = memberList.offsetHeight + 'px';
+        }
+    }, 250);
+});
+
 // Load and display member data
 async function loadMemberData() {
-    const memberList = document.getElementById("member-list");
+    // Get the container for members
+    const memberList = document.querySelector('.members-container') || 
+                      document.getElementById('member-list');
     
-    // Set a placeholder with appropriate height before loading data
-    memberList.innerHTML = `
-        <div style="grid-column: 1/-1; height: 200px; display: flex; justify-content: center; align-items: center;">
-            <p>Loading directory members...</p>
-        </div>
-    `;
+    // Pre-allocate space with exact dimensions
+    if (memberList) {
+        memberList.innerHTML = `
+            <div style="grid-column: 1/-1; height: 400px; display: flex; justify-content: center; align-items: center;">
+                <p>Loading members...</p>
+            </div>
+        `;
+        
+        // Lock dimensions during loading
+        memberList.style.minHeight = '500px';
+    }
     
     try {
         const response = await fetch("data/members.json");

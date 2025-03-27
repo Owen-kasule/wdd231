@@ -173,6 +173,8 @@ main .logo h1 {
     object-fit: contain; /* Maintains aspect ratio without distortion */
     border-radius: 50%;
     margin-bottom: 15px;
+    content-visibility: auto;
+    contain-intrinsic-size: 100px 100px;
 }
 
 .member-card h3 {
@@ -277,6 +279,10 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 footer p {
@@ -340,6 +346,7 @@ footer p {
 img {
     max-width: 100%;
     display: block; /* Eliminates bottom margin space */
+    transform: translateZ(0); /* Force GPU rendering */
 }
 
 /* Preconnect to image domain if images load from different origin */
@@ -354,4 +361,25 @@ picture {
     display: block;
     width: 80px;
     height: 80px;
+}
+
+/* Key additions to prevent layout shifts */
+.members-container {
+    min-height: 500px; /* Reserve generous space */
+    content-visibility: auto; /* Optimize rendering */
+    contain-intrinsic-size: 1fr; /* Maintain size during rendering */
+}
+
+/* Ensure grid header doesn't cause shifts */
+.grid-header {
+    grid-column: 1/-1;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Prevent body shifts on resize */
+@media (prefers-reduced-motion: no-preference) {
+    body {
+        transition: none !important;
+    }
 }
