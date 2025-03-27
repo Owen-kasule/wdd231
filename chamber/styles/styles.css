@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Font loading strategy */
+@font-face {
+    font-family: Arial;
+    font-display: swap; /* Show fallback font until custom font loads */
+    size-adjust: 100%; /* Prevent size differences between fonts */
+}
+
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
