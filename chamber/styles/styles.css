@@ -8,6 +8,16 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
+    font-display: swap; /* Show text while fonts load */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Stabilize layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height */
 }
 
 /* Font loading strategy */
@@ -129,7 +139,7 @@ main .logo h1 {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin-bottom: 30px;
-    min-height: 400px; /* Reserve space for content */
+    min-height: 300px; /* Adjust based on expected content height */
     contain: layout; /* Isolate layout changes */
 }
 
@@ -263,12 +273,21 @@ footer {
     color: white;
     margin-top: auto;
     height: auto;
-    min-height: 100px;
+    min-height: 80px; /* Minimum stable height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 footer p {
     font-size: 0.9rem;
     margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0; /* Consistent margins */
+    height: auto; /* Let content dictate height */
+    min-height: 1.2em; /* Minimum line height */
 }
 
 /* Responsive Design */

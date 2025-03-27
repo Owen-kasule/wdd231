@@ -34,10 +34,10 @@ function toggleView(viewType) {
 async function loadMemberData() {
     const memberList = document.getElementById("member-list");
     
-    // Add a placeholder to reserve space
+    // Set a placeholder with appropriate height before loading data
     memberList.innerHTML = `
-        <div style="grid-column: 1/-1; height: 400px; display: flex; justify-content: center; align-items: center;">
-            <p>Loading members...</p>
+        <div style="grid-column: 1/-1; height: 200px; display: flex; justify-content: center; align-items: center;">
+            <p>Loading directory members...</p>
         </div>
     `;
     
