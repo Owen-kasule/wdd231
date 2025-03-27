@@ -32,6 +32,15 @@ function toggleView(viewType) {
 
 // Load and display member data
 async function loadMemberData() {
+    const memberList = document.getElementById("member-list");
+    
+    // Add a placeholder to reserve space
+    memberList.innerHTML = `
+        <div style="grid-column: 1/-1; height: 400px; display: flex; justify-content: center; align-items: center;">
+            <p>Loading members...</p>
+        </div>
+    `;
+    
     try {
         const response = await fetch("data/members.json");
         if (!response.ok) {

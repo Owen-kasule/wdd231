@@ -5,9 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
 /* Font loading strategy */
 @font-face {
-    font-family: Arial;
+    font-family: 'Arial';
     font-display: swap; /* Show fallback font until custom font loads */
     size-adjust: 100%; /* Prevent size differences between fonts */
 }
@@ -15,11 +20,14 @@
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styling */
@@ -85,6 +93,7 @@ nav a:hover {
 
 /* Main Content */
 main {
+    flex: 1;
     padding: 20px 0;
     contain-intrinsic-size: auto 400px; /* Reserve initial space */
     contain: layout paint; /* Isolate main content layout */
@@ -116,7 +125,11 @@ main .logo h1 {
 
 /* Member Cards */
 #member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
     margin-bottom: 30px;
+    min-height: 400px; /* Reserve space for content */
     contain: layout; /* Isolate layout changes */
 }
 
@@ -129,6 +142,8 @@ main .logo h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     contain: content; /* Isolate content changes */
+    height: 100%; /* Fill available height */
+    min-height: 350px; /* Set minimum height */
 }
 
 .member-card:hover {
@@ -236,12 +251,13 @@ button.active {
 
 /* Footer Styling */
 footer {
-    background-color: #004d99; /* Darker blue */
+    background-color: #004d99;
     padding: 20px;
     text-align: center;
     color: white;
-    margin-top: 40px;
-    border-radius: 8px;
+    margin-top: auto;
+    height: auto;
+    min-height: 100px;
 }
 
 footer p {
