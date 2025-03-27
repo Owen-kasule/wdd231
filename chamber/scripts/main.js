@@ -70,9 +70,15 @@ function displayMembers(members) {
         if (member.membership_level === 2) membershipText = "Silver Member";
         if (member.membership_level === 3) membershipText = "Gold Member";
         
-        // Populate card with member data
+        // Get image name without extension
+        const imageName = member.image.split('.')[0];
+        
+        // Populate card with member data using picture element for WebP with fallback
         card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} logo">
+            <picture>
+                <source srcset="images/${imageName}.webp" type="image/webp">
+                <img src="images/${member.image}" alt="${member.name} logo">
+            </picture>
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
