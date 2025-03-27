@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Kampala Web Solutions",
+    "address": "Plot 12, Nakasero Road, Kampala",
+    "phone": "+256-414-555-123",
+    "website": "https://kampalaweb.com",
+    "image": "kampala-web-logo.png",
+    "membership_level": 3,
+    "description": "Premier web development and digital marketing services in Kampala"
+  },
+  {
+    "name": "Uganda Tech Hub",
+    "address": "15 Colville Street, Kampala",
+    "phone": "+256-414-220-987",
+    "website": "https://ugandatechhub.org",
+    "image": "tech-hub-logo.png",
+    "membership_level": 2,
+    "description": "Innovation center supporting technology startups and entrepreneurs"
+  },
+  {
+    "name": "Kampala Coffee Traders",
+    "address": "Plot 45, Buganda Road, Kampala",
+    "phone": "+256-700-302-456",
+    "website": "https://kampalacoffee.co.ug",
+    "image": "coffee-logo.png",
+    "membership_level": 3,
+    "description": "Exporting Uganda's finest coffee beans to markets worldwide"
+  },
+  {
+    "name": "NileBank Uganda",
+    "address": "25 Kampala Road, Kampala",
+    "phone": "+256-414-234-500",
+    "website": "https://nilebank.ug",
+    "image": "nilebank-logo.png",
+    "membership_level": 3,
+    "description": "Leading financial services provider in Uganda"
+  },
+  {
+    "name": "Kampala Fashion House",
+    "address": "Plot 30, Luwum Street, Kampala",
+    "phone": "+256-782-124-789",
+    "website": "https://kampalafashion.com",
+    "image": "fashion-logo.png",
+    "membership_level": 1,
+    "description": "Contemporary African fashion designs and accessories"
+  },
+  {
+    "name": "Pearl Auto Services",
+    "address": "Plot 78, Jinja Road, Kampala",
+    "phone": "+256-754-890-231",
+    "website": "https://pearlautokampala.com",
+    "image": "auto-logo.png",
+    "membership_level": 2,
+    "description": "Comprehensive automobile repair and maintenance services"
+  },
+  {
+    "name": "Rwenzori Tours",
+    "address": "22 William Street, Kampala",
+    "phone": "+256-702-456-789",
+    "website": "https://rwenzoritours.com",
+    "image": "tour-logo.png",
+    "membership_level": 1,
+    "description": "Expert guided tours to Uganda's most beautiful destinations"
+  }
+]
