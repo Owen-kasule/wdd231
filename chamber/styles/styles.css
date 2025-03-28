@@ -225,3 +225,12 @@ footer p {
         grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
     }
 }
+
+/* Force 3-column grid layout */
+@media (min-width: 900px) {
+    .members-container.grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
+}

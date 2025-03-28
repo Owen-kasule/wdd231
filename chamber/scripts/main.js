@@ -22,11 +22,13 @@ function toggleView(viewType) {
         memberList.classList.add("grid");
         document.getElementById("grid-view").classList.add("active");
         document.getElementById("list-view").classList.remove("active");
+        console.log("Grid view activated"); // Add debugging
     } else {
         memberList.classList.remove("grid");
         memberList.classList.add("list");
         document.getElementById("list-view").classList.add("active");
         document.getElementById("grid-view").classList.remove("active");
+        console.log("List view activated"); // Add debugging
     }
 }
 
