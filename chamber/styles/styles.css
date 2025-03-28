@@ -147,19 +147,23 @@ main {
     background-color: #f9f9f9;
 }
 
-/* Grid View Styles */
+/* Grid View Base Styles */
 .members-container.grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 20px;
+    grid-template-columns: 1fr;
 }
 
-/* List View Styles - UPDATED FOR VERTICAL STACK */
+/* List View - Always Single Column */
 .members-container.list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    grid-template-columns: unset;
+}
+
+/* Remove any grid properties from list view */
+.members-container.list {
+    grid-template-columns: unset !important;
 }
 
 .members-container.list .member-card {
@@ -209,25 +213,15 @@ footer p {
     margin: 5px 0;
 }
 
-/* Responsive Grid */
+/* Responsive Grid Layout */
 @media (min-width: 600px) {
     .members-container.grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Ensure list view stays as a single column */
-    .members-container.list {
-        grid-template-columns: 1fr;
     }
 }
 
 @media (min-width: 900px) {
     .members-container.grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    /* Ensure list view stays as a single column */
-    .members-container.list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
     }
 }
