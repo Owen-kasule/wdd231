@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Toggle between grid and list view
 function toggleView(viewType) {
-    const memberList = document.getElementById("member-list");
+    const memberList = document.querySelector('.members-container');
     
     if (viewType === "grid") {
         memberList.classList.remove("list");
