@@ -36,7 +36,7 @@ function toggleView(viewType) {
     const memberList = document.querySelector('.members-container');
     
     if (!memberList) {
-        console.error("Could not find members container");
+        console.error("Members container not found");
         return;
     }
     
@@ -45,13 +45,13 @@ function toggleView(viewType) {
         memberList.classList.add("grid");
         document.getElementById("grid-view").classList.add("active");
         document.getElementById("list-view").classList.remove("active");
-        console.log("Grid view activated"); // Debugging
+        console.log("Grid view activated");
     } else {
         memberList.classList.remove("grid");
         memberList.classList.add("list");
         document.getElementById("list-view").classList.add("active");
         document.getElementById("grid-view").classList.remove("active");
-        console.log("List view activated"); // Debugging
+        console.log("List view activated");
     }
 }
 
@@ -70,20 +70,15 @@ window.addEventListener('resize', () => {
 
 // Load and display member data
 async function loadMemberData() {
-    // Get the container for members
-    const memberList = document.querySelector('.members-container') || 
-                      document.getElementById('member-list');
+    const memberList = document.querySelector('.members-container');
     
-    // Pre-allocate space with exact dimensions
+    // Add loading indicator
     if (memberList) {
         memberList.innerHTML = `
-            <div style="grid-column: 1/-1; height: 400px; display: flex; justify-content: center; align-items: center;">
-                <p>Loading members...</p>
+            <div style="grid-column: 1/-1; height: 200px; display: flex; justify-content: center; align-items: center;">
+                <p>Loading directory members...</p>
             </div>
         `;
-        
-        // Lock dimensions during loading
-        memberList.style.minHeight = '500px';
     }
     
     try {
@@ -96,8 +91,13 @@ async function loadMemberData() {
         displayMembers(members);
     } catch (error) {
         console.error("Error loading member data:", error);
-        document.getElementById("member-list").innerHTML = 
-            "<p class='error'>Unable to load member data. Please try again later.</p>";
+        if (memberList) {
+            memberList.innerHTML = `
+                <div style="grid-column: 1/-1; padding: 20px; text-align: center;">
+                    <p>Error loading directory data. Please try again later.</p>
+                </div>
+            `;
+        }
     }
 }
 

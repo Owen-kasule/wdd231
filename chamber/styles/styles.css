@@ -147,25 +147,28 @@ main {
     background-color: #f9f9f9;
 }
 
-/* Grid View Base Styles */
+/* Grid and List View Styles */
+/* Base container styles */
+.members-container {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Grid View Styles */
 .members-container.grid {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr;
 }
 
-/* List View - Always Single Column */
+/* List View Styles */
 .members-container.list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Remove any grid properties from list view */
-.members-container.list {
-    grid-template-columns: unset !important;
-}
-
+/* List view specific card styles */
 .members-container.list .member-card {
     width: 100%;
     margin-bottom: 10px;
@@ -233,17 +236,4 @@ footer p {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
-}
-
-/* Simple grid implementation */
-.grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-}
-
-.list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
 }
