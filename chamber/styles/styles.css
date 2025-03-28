@@ -27,7 +27,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     contain: content; /* Optimize layout calculations */
     content-visibility: auto; /* Improve rendering performance */
-    contain-intrinsic-size: 1px 5000px; /* Reserve approximate space */
+    /* contain-intrinsic-size: 1px 5000px; */ /* Remove unsupported property */
 }
 
 /* Header Styles */
@@ -80,7 +80,7 @@ nav a:hover {
     object-fit: contain;
     margin-bottom: 10px;
     content-visibility: auto;
-    contain-intrinsic-size: 100px 100px;
+    /* contain-intrinsic-size: 100px 100px; */ /* Remove unsupported property */
     transform: translateZ(0); /* Force GPU rendering */
 }
 
@@ -121,7 +121,7 @@ main {
     margin: 0 auto 15px;
     display: block;
     content-visibility: auto;
-    contain-intrinsic-size: 100px 100px;
+    /* contain-intrinsic-size: 100px 100px; */ /* Remove unsupported property */
     transform: translateZ(0); /* Force GPU rendering */
 }
 
@@ -260,7 +260,7 @@ footer p {
 
 /* Stabilize font loading */
 @font-face {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Fixed spacing */
   font-display: swap;
-  size-adjust: 100%;
+  /* size-adjust: 100%; */ /* Remove unsupported property */
 }
