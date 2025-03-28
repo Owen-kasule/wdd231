@@ -152,6 +152,7 @@ main {
 .members-container {
     width: 100%;
     transition: all 0.3s ease;
+    min-height: 300px; /* Provide minimum height for stability */
 }
 
 /* Grid View Styles */

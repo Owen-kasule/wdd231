@@ -103,9 +103,20 @@ async function loadMemberData() {
 
 // Create and display member cards
 function displayMembers(members) {
-    const memberList = document.getElementById("member-list");
+    // IMPORTANT FIX: Get the container div, not the section
+    const memberList = document.querySelector('.members-container');
+    
+    if (!memberList) {
+        console.error("Members container not found");
+        return;
+    }
+    
     memberList.innerHTML = ""; // Clear any existing content
-    memberList.classList.add("grid"); // Default to grid view
+    
+    // Ensure grid class is present (default view)
+    if (!memberList.classList.contains("grid") && !memberList.classList.contains("list")) {
+        memberList.classList.add("grid");
+    }
     
     members.forEach(member => {
         // Create member card
