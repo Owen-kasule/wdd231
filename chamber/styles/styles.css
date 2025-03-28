@@ -154,17 +154,20 @@ main {
     gap: 20px;
 }
 
-/* List View Styles - THIS IS THE KEY FIX */
+/* List View Styles - UPDATED FOR VERTICAL STACK */
 .members-container.list {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     grid-template-columns: unset;
 }
 
 .members-container.list .member-card {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* View Toggle Buttons */
@@ -211,10 +214,20 @@ footer p {
     .members-container.grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* Ensure list view stays as a single column */
+    .members-container.list {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (min-width: 900px) {
     .members-container.grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Ensure list view stays as a single column */
+    .members-container.list {
+        grid-template-columns: 1fr;
     }
 }
