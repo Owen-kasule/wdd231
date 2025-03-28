@@ -1,3 +1,8 @@
+/* Prevent Layout Shifts */
+html {
+  scroll-padding-top: 1px; /* Prevents scroll anchoring issues */
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -19,6 +24,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    contain: content; /* Optimize layout calculations */
+    content-visibility: auto; /* Improve rendering performance */
+    contain-intrinsic-size: 1px 5000px; /* Reserve approximate space */
 }
 
 /* Header Styles */
@@ -70,6 +79,9 @@ nav a:hover {
     height: 80px;
     object-fit: contain;
     margin-bottom: 10px;
+    content-visibility: auto;
+    contain-intrinsic-size: 100px 100px;
+    transform: translateZ(0); /* Force GPU rendering */
 }
 
 /* Main Content */
@@ -108,6 +120,9 @@ main {
     border-radius: 50%;
     margin: 0 auto 15px;
     display: block;
+    content-visibility: auto;
+    contain-intrinsic-size: 100px 100px;
+    transform: translateZ(0); /* Force GPU rendering */
 }
 
 .member-card h3 {
@@ -151,8 +166,10 @@ main {
 /* Base container styles */
 .members-container {
     width: 100%;
-    transition: all 0.3s ease;
-    min-height: 300px; /* Provide minimum height for stability */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smoother transitions */
+    min-height: 600px; /* Increase minimum height */
+    transform: translateZ(0); /* Force GPU rendering */
+    will-change: contents; /* Hint to browser about changes */
 }
 
 /* Grid View Styles */
@@ -210,7 +227,9 @@ footer {
     padding: 20px;
     text-align: center;
     color: white;
-    margin-top: 40px;
+    margin-top: auto;
+    height: auto;
+    min-height: 100px;
 }
 
 footer p {
@@ -237,4 +256,11 @@ footer p {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
+}
+
+/* Stabilize font loading */
+@font-face {
+  font-family: Arial, sans-serif;
+  font-display: swap;
+  size-adjust: 100%;
 }
