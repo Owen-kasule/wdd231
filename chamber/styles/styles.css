@@ -234,3 +234,16 @@ footer p {
         gap: 20px !important;
     }
 }
+
+/* Simple grid implementation */
+.grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+}
+
+.list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}

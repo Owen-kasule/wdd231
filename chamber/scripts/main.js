@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set last modified date
     lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
     
+    // Set default view to grid when page loads
+    const memberList = document.querySelector('.members-container');
+    if (memberList) {
+        memberList.classList.add("grid");
+        memberList.classList.remove("list");
+        
+        // Set active state on grid view button
+        const gridButton = document.getElementById("grid-view");
+        if (gridButton) {
+            gridButton.classList.add("active");
+        }
+        
+        const listButton = document.getElementById("list-view");
+        if (listButton) {
+            listButton.classList.remove("active");
+        }
+    }
+    
     // Call the function to load member data
     loadMemberData();
 });
@@ -17,18 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleView(viewType) {
     const memberList = document.querySelector('.members-container');
     
+    if (!memberList) {
+        console.error("Could not find members container");
+        return;
+    }
+    
     if (viewType === "grid") {
         memberList.classList.remove("list");
         memberList.classList.add("grid");
         document.getElementById("grid-view").classList.add("active");
         document.getElementById("list-view").classList.remove("active");
-        console.log("Grid view activated"); // Add debugging
+        console.log("Grid view activated"); // Debugging
     } else {
         memberList.classList.remove("grid");
         memberList.classList.add("list");
         document.getElementById("list-view").classList.add("active");
         document.getElementById("grid-view").classList.remove("active");
-        console.log("List view activated"); // Add debugging
+        console.log("List view activated"); // Debugging
     }
 }
 
