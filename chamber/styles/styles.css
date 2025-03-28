@@ -227,16 +227,14 @@ footer {
     padding: 20px;
     text-align: center;
     color: white;
-    margin-top: auto;
-    height: auto;
-    min-height: 100px;
+    margin-top: 40px;
 }
 
 footer p {
     margin: 5px 0;
 }
 
-/* Responsive Grid Layout */
+/* Responsive Grid */
 @media (min-width: 600px) {
     .members-container.grid {
         grid-template-columns: repeat(2, 1fr);
@@ -245,7 +243,7 @@ footer p {
 
 @media (min-width: 900px) {
     .members-container.grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -256,11 +254,4 @@ footer p {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
-}
-
-/* Stabilize font loading */
-@font-face {
-  font-family: Arial, sans-serif; /* Fixed spacing */
-  font-display: swap;
-  /* size-adjust: 100%; */ /* Remove unsupported property */
 }
