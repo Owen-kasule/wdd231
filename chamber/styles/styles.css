@@ -508,62 +508,19 @@ footer p {
 @media (max-width: 700px) {
     header {
         position: relative;
+        padding: 15px 50px 15px 15px; /* Add right padding for hamburger menu */
     }
     
+    /* Ensure the toggle button is visible and properly positioned */
     .nav-toggle {
         display: block;
+        top: 15px;
+        right: 15px;
     }
     
+    /* Make menu appear below header when opened */
     nav ul {
-        flex-direction: column;
-        position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #004d99;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        padding: 15px;
-        margin-top: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        z-index: 100;
+        z-index: 1000; /* Ensure menu appears above other content */
     }
-    
-    nav ul.open {
-        transform: scaleY(1);
-        opacity: 1;
-    }
-    
-    nav ul li {
-        width: 100%;
-        margin: 5px 0;
-    }
-    
-    nav a {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Enhanced wayfinding - make active state more obvious */
-nav a.active {
-    background-color: #003366;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-    position: relative;
-}
-
-nav a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 3px;
-    background-color: #ffd700;
-    border-radius: 3px;
 }
