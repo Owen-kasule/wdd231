@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// Detect if device is mobile
+function isMobileDevice() {
+    return (window.innerWidth <= 600) || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Fetch weather data from OpenWeatherMap
 async function fetchWeather() {
     const weatherContainer = document.querySelector('.weather-content');
@@ -44,12 +50,47 @@ async function fetchWeather() {
         const apiKey = '89540797c21bfa3ad421fc16961d7690';
         const city = 'Kampala';
         
-        // Current weather
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-        if (!weatherResponse.ok) {
-            throw new Error(`HTTP error! Status: ${weatherResponse.status}`);
+        // Mobile optimization - store in session to avoid repeated API calls
+        const isMobile = isMobileDevice();
+        
+        // Use cached weather data on mobile if available and fresh (less than 30 minutes old)
+        const cachedWeatherData = sessionStorage.getItem('weatherData');
+        const cachedForecastData = sessionStorage.getItem('forecastData');
+        const cachedTime = sessionStorage.getItem('weatherCacheTime');
+        
+        let weatherData, forecastData;
+        
+        // If on mobile and we have fresh cache (less than 30 minutes old), use it
+        if (isMobile && cachedWeatherData && cachedForecastData && cachedTime && 
+            (Date.now() - parseInt(cachedTime)) < 1800000) {
+            
+            weatherData = JSON.parse(cachedWeatherData);
+            forecastData = JSON.parse(cachedForecastData);
+            console.log("Using cached weather data for mobile");
+        } 
+        else {
+            // Fetch current weather
+            const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+            if (!weatherResponse.ok) {
+                throw new Error(`HTTP error! Status: ${weatherResponse.status}`);
+            }
+            weatherData = await weatherResponse.json();
+            
+            // Get forecast data
+            const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
+            if (!forecastResponse.ok) {
+                throw new Error(`HTTP error! Status: ${forecastResponse.status}`);
+            }
+            forecastData = await forecastResponse.json();
+            
+            // Cache the data for mobile users
+            if (isMobile) {
+                sessionStorage.setItem('weatherData', JSON.stringify(weatherData));
+                sessionStorage.setItem('forecastData', JSON.stringify(forecastData));
+                sessionStorage.setItem('weatherCacheTime', Date.now().toString());
+                console.log("Cached weather data for mobile");
+            }
         }
-        const weatherData = await weatherResponse.json();
         
         // Format current weather
         const temp = Math.round(weatherData.main.temp);
@@ -67,13 +108,6 @@ async function fetchWeather() {
             <p>Humidity: ${weatherData.main.humidity}%</p>
             <p>Wind: ${weatherData.wind.speed} m/s</p>
         `;
-        
-        // Get forecast data (3 day forecast)
-        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
-        if (!forecastResponse.ok) {
-            throw new Error(`HTTP error! Status: ${forecastResponse.status}`);
-        }
-        const forecastData = await forecastResponse.json();
         
         // Process forecast data (take readings at noon for each day)
         const forecasts = forecastData.list
