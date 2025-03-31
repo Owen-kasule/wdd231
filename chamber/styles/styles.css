@@ -524,3 +524,16 @@ footer p {
         z-index: 1000; /* Ensure menu appears above other content */
     }
 }
+
+/* Make CTA responsive on smaller screens */
+@media (max-width: 600px) {
+    .cta {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .cta .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
