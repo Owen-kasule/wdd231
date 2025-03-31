@@ -520,7 +520,7 @@ footer p {
         right: 15px; /* Move slightly more inside */
         z-index: 10;
         margin: 0; /* Remove any margins */
-        padding: 8px; /* Add some padding for a larger touch target */
+        padding: 3px; /* Add some padding for a larger touch target */
     }
     
     /* Adjust hamburger icon size slightly */
