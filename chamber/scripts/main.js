@@ -286,3 +286,24 @@ function displayMembers(members) {
         memberList.appendChild(card);
     });
 }
+
+// Mobile Navigation Toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+            }
+        });
+    }
+});
