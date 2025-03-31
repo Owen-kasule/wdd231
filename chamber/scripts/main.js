@@ -1,5 +1,6 @@
-// Set copyright year and last modified date
+// Execute when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+    // Set copyright year and last modified date
     const yearSpan = document.getElementById("year");
     const lastModifiedSpan = document.getElementById("lastModified");
     
@@ -27,59 +28,100 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    // Call the function to load member data
-    loadMemberData();
+    // Add code for home page functionality
+    if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/chamber/')) {
+        // Load home page specific data
+        fetchWeather();
+        displaySpotlights();
+    } else if (window.location.pathname.includes('directory.html')) {
+        // Directory page specific code
+        loadMemberData();
+    }
 });
 
-// Toggle between grid and list view
-function toggleView(viewType) {
-    const memberList = document.querySelector('.members-container');
+// Fetch weather data from OpenWeatherMap
+async function fetchWeather() {
+    const weatherContainer = document.querySelector('.weather-content');
+    const forecastContainer = document.querySelector('.forecast-container');
     
-    if (!memberList) {
-        console.error("Members container not found");
-        return;
-    }
+    if (!weatherContainer || !forecastContainer) return;
     
-    if (viewType === "grid") {
-        memberList.classList.remove("list");
-        memberList.classList.add("grid");
-        document.getElementById("grid-view").classList.add("active");
-        document.getElementById("list-view").classList.remove("active");
-        console.log("Grid view activated");
-    } else {
-        memberList.classList.remove("grid");
-        memberList.classList.add("list");
-        document.getElementById("list-view").classList.add("active");
-        document.getElementById("grid-view").classList.remove("active");
-        console.log("List view activated");
+    try {
+        // OpenWeatherMap API Key (you'll need to get your own from openweathermap.org)
+        const apiKey = 'YOUR_API_KEY';
+        const city = 'Kampala';
+        
+        // Current weather
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        if (!weatherResponse.ok) {
+            throw new Error(`HTTP error! Status: ${weatherResponse.status}`);
+        }
+        const weatherData = await weatherResponse.json();
+        
+        // Format current weather
+        const temp = Math.round(weatherData.main.temp);
+        const description = weatherData.weather[0].description
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+        const icon = weatherData.weather[0].icon;
+        
+        // Update current weather
+        weatherContainer.innerHTML = `
+            <img class="weather-icon" src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}">
+            <h3>${description}</h3>
+            <p class="temperature">${temp}°C</p>
+            <p>Humidity: ${weatherData.main.humidity}%</p>
+            <p>Wind: ${weatherData.wind.speed} m/s</p>
+        `;
+        
+        // Get forecast data (3 day forecast)
+        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
+        if (!forecastResponse.ok) {
+            throw new Error(`HTTP error! Status: ${forecastResponse.status}`);
+        }
+        const forecastData = await forecastResponse.json();
+        
+        // Process forecast data (take readings at noon for each day)
+        const forecasts = forecastData.list
+            // Filter for readings around noon (12:00)
+            .filter(item => item.dt_txt.includes('12:00:00'))
+            // Take the first 3 days
+            .slice(0, 3);
+        
+        // Display forecast
+        forecastContainer.innerHTML = '';
+        forecasts.forEach(day => {
+            const date = new Date(day.dt * 1000);
+            const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(date);
+            const temp = Math.round(day.main.temp);
+            const icon = day.weather[0].icon;
+            const description = day.weather[0].description
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+                
+            forecastContainer.innerHTML += `
+                <div class="forecast-day">
+                    <p>${dayName}</p>
+                    <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${description}">
+                    <p>${temp}°C</p>
+                </div>
+            `;
+        });
+        
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+        weatherContainer.innerHTML = `<p>Weather data currently unavailable. Please try again later.</p>`;
+        forecastContainer.innerHTML = '';
     }
 }
 
-// Add resize handler to prevent layout shifts
-window.addEventListener('resize', () => {
-    // Debounce resize events
-    clearTimeout(window.resizeTimer);
-    window.resizeTimer = setTimeout(() => {
-        // Refresh layout to prevent shifts
-        const memberList = document.querySelector('.members-container');
-        if (memberList) {
-            memberList.style.minHeight = memberList.offsetHeight + 'px';
-        }
-    }, 250);
-});
-
-// Load and display member data
-async function loadMemberData() {
-    const memberList = document.querySelector('.members-container');
+// Display spotlight members
+async function displaySpotlights() {
+    const spotlightsContainer = document.querySelector('.spotlights-container');
     
-    // Add loading indicator
-    if (memberList) {
-        memberList.innerHTML = `
-            <div style="grid-column: 1/-1; height: 200px; display: flex; justify-content: center; align-items: center;">
-                <p>Loading directory members...</p>
-            </div>
-        `;
-    }
+    if (!spotlightsContainer) return;
     
     try {
         const response = await fetch("data/members.json");
@@ -88,82 +130,52 @@ async function loadMemberData() {
         }
         
         const members = await response.json();
-        displayMembers(members);
-    } catch (error) {
-        console.error("Error loading member data:", error);
-        if (memberList) {
-            memberList.innerHTML = `
-                <div style="grid-column: 1/-1; padding: 20px; text-align: center;">
-                    <p>Error loading directory data. Please try again later.</p>
+        
+        // Filter members with gold or silver membership levels
+        const spotlightEligible = members.filter(member => 
+            member.membership_level === 2 || member.membership_level === 3
+        );
+        
+        // Randomly select 3 members
+        const randomSpotlights = spotlightEligible
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 3);
+            
+        // Clear container
+        spotlightsContainer.innerHTML = '';
+        
+        // Display spotlights
+        randomSpotlights.forEach(member => {
+            // Get image name without extension for webp support
+            const imageName = member.image.split('.')[0];
+            
+            // Determine member level text
+            let memberLevelText = "Silver Member";
+            if (member.membership_level === 3) {
+                memberLevelText = "Gold Member";
+            }
+            
+            spotlightsContainer.innerHTML += `
+                <div class="spotlight ${member.membership_level === 3 ? 'membership-gold' : 'membership-silver'}">
+                    <picture>
+                        <source srcset="images/${imageName}.webp" type="image/webp">
+                        <img src="images/${member.image}" alt="${member.name} Logo" width="100" height="100">
+                    </picture>
+                    <h3>${member.name}</h3>
+                    <p class="membership-level">${memberLevelText}</p>
+                    <p>${member.phone}</p>
+                    <p>${member.address}</p>
+                    <a href="${member.website}" target="_blank">Visit Website</a>
                 </div>
             `;
-        }
-    }
-}
-
-// Create and display member cards
-function displayMembers(members) {
-    // IMPORTANT FIX: Get the container div, not the section
-    const memberList = document.querySelector('.members-container');
-    
-    if (!memberList) {
-        console.error("Members container not found");
-        return;
-    }
-    
-    memberList.innerHTML = ""; // Clear any existing content
-    
-    // Ensure grid class is present (default view)
-    if (!memberList.classList.contains("grid") && !memberList.classList.contains("list")) {
-        memberList.classList.add("grid");
-    }
-    
-    members.forEach(member => {
-        // Create member card
-        const card = document.createElement("div");
-        card.className = "member-card";
+        });
         
-        // Add membership level class
-        if (member.membership_level === 3) {
-            card.classList.add("membership-gold");
-        } else if (member.membership_level === 2) {
-            card.classList.add("membership-silver");
-        }
-        
-        // Generate membership level text
-        let membershipText = "Member";
-        if (member.membership_level === 2) membershipText = "Silver Member";
-        if (member.membership_level === 3) membershipText = "Gold Member";
-        
-        // Get image name without extension
-        const imageName = member.image.split('.')[0];
-        
-        // Populate card with member data using picture element for WebP with fallback
-        card.innerHTML = `
-            <picture>
-                <source srcset="images/${imageName}.webp" type="image/webp">
-                <img src="images/${member.image}" alt="${member.name} logo" width="100" height="100">
-            </picture>
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p class="membership-level">${membershipText}</p>
-            <p>${member.description}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
+    } catch (error) {
+        console.error("Error loading spotlight members:", error);
+        spotlightsContainer.innerHTML = `
+            <div class="error-message" style="grid-column: 1/-1; text-align: center; padding: 20px;">
+                <p>Unable to load spotlight members. Please try again later.</p>
+            </div>
         `;
-        
-        memberList.appendChild(card);
-    });
-    
-    // Add view toggle buttons if not already present
-    if (!document.querySelector(".view-toggle")) {
-        const main = document.querySelector("main");
-        const toggleDiv = document.createElement("div");
-        toggleDiv.className = "view-toggle";
-        toggleDiv.innerHTML = `
-            <button id="grid-view" class="active" onclick="toggleView('grid')">Grid View</button>
-            <button id="list-view" onclick="toggleView('list')">List View</button>
-        `;
-        memberList.after(toggleDiv);
     }
 }
