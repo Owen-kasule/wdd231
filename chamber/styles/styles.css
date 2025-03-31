@@ -504,36 +504,76 @@ footer p {
     transform: translateY(-3px) rotate(-45deg);
 }
 
-/* Responsive Navigation */
+/* Responsive Navigation - fix mobile menu display */
 @media (max-width: 700px) {
+    /* Fixed header position for mobile */
     header {
         position: relative;
-        padding: 15px 50px 15px 15px; /* Add right padding for hamburger menu */
+        padding: 15px 45px 15px 15px; /* Increased right padding to accommodate hamburger */
     }
     
-    /* Ensure the toggle button is visible and properly positioned */
+    /* Position hamburger menu to be fully within the blue background */
     .nav-toggle {
-        display: block;
-        top: 15px;
-        right: 15px;
+        display: block !important;
+        position: absolute;
+        top: 12px; /* Move slightly higher */
+        right: 15px; /* Move slightly more inside */
+        z-index: 10;
+        margin: 0; /* Remove any margins */
+        padding: 8px; /* Add some padding for a larger touch target */
     }
     
-    /* Make menu appear below header when opened */
+    /* Adjust hamburger icon size slightly */
+    .hamburger, .hamburger::before, .hamburger::after {
+        width: 22px; /* Slightly smaller width */
+    }
+    
+    /* Hide navigation menu by default on mobile */
     nav ul {
+        flex-direction: column;
+        position: absolute;
         top: 100%;
-        z-index: 1000; /* Ensure menu appears above other content */
-    }
-}
-
-/* Make CTA responsive on smaller screens */
-@media (max-width: 600px) {
-    .cta {
-        bottom: 15px;
-        right: 15px;
+        left: 0;
+        right: 0;
+        background-color: #004d99;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        padding: 0;
+        margin-top: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 100;
+        pointer-events: none; /* Prevents interaction when hidden */
     }
     
-    .cta .btn {
-        padding: 10px 20px;
-        font-size: 1rem;
+    /* Show menu only when open class is added */
+    nav ul.open {
+        transform: scaleY(1);
+        opacity: 1;
+        padding: 10px;
+        pointer-events: all; /* Restore interaction ability */
+    }
+    
+    /* Style menu items for mobile */
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    /* Optional: Show menu on hover */
+    .nav-toggle:hover + nav ul {
+        transform: scaleY(1);
+        opacity: 1;
+        padding: 10px;
+        pointer-events: all;
     }
 }

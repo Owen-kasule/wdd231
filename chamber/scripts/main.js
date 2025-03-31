@@ -286,3 +286,27 @@ function displayMembers(members) {
         memberList.appendChild(card);
     });
 }
+
+// Mobile Navigation Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.querySelector('nav ul');
+
+if (navToggle && navMenu) {
+    console.log("Nav toggle elements found");
+    
+    navToggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent click from bubbling up
+        navToggle.classList.toggle('open');
+        navMenu.classList.toggle('open');
+        console.log("Menu toggled");
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('open');
+            console.log("Menu closed by outside click");
+        }
+    });
+}
