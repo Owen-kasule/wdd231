@@ -41,6 +41,11 @@
         
         <section class="hero">
             <picture>
+                <!-- Mobile-optimized image (only loads on small screens) -->
+                <source srcset="images/Kampala-1min.webp" type="image/webp" media="(max-width: 600px)">
+                <source srcset="images/Kampala-1min.jpg" type="image/jpeg" media="(max-width: 600px)">
+                
+                <!-- Original larger images for desktop -->
                 <source srcset="images/Kampala-1.webp" type="image/webp">
                 <img src="images/Kampala-1.jpg" alt="Kampala City Skyline" loading="eager" width="1200" height="600">
             </picture>
