@@ -48,7 +48,7 @@ async function fetchWeather() {
     
     try {
         // OpenWeatherMap API Key (you'll need to get your own from openweathermap.org)
-        const apiKey = 'YOUR_API_KEY';
+        const apiKey = '89540797c21bfa3ad421fc16961d7690';
         const city = 'Kampala';
         
         // Current weather
@@ -178,4 +178,84 @@ async function displaySpotlights() {
             </div>
         `;
     }
+}
+
+// Toggle between grid and list view
+function toggleView(viewType) {
+    const memberList = document.querySelector('.members-container');
+    
+    if (!memberList) {
+        console.error("Members container not found");
+        return;
+    }
+    
+    if (viewType === "grid") {
+        memberList.classList.remove("list");
+        memberList.classList.add("grid");
+        document.getElementById("grid-view").classList.add("active");
+        document.getElementById("list-view").classList.remove("active");
+    } else {
+        memberList.classList.remove("grid");
+        memberList.classList.add("list");
+        document.getElementById("list-view").classList.add("active");
+        document.getElementById("grid-view").classList.remove("active");
+    }
+}
+
+// Load and display member data for directory page
+async function loadMemberData() {
+    const memberList = document.querySelector('.members-container');
+    
+    if (!memberList) return;
+    
+    memberList.innerHTML = `<div class="loading">Loading directory data...</div>`;
+    
+    try {
+        const response = await fetch("data/members.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const members = await response.json();
+        displayMembers(members);
+    } catch (error) {
+        console.error("Error loading member data:", error);
+        memberList.innerHTML = `<div class="error">Error loading directory data. Please try again later.</div>`;
+    }
+}
+
+// Display members in directory page
+function displayMembers(members) {
+    const memberList = document.querySelector('.members-container');
+    
+    if (!memberList) return;
+    
+    memberList.innerHTML = "";
+    
+    members.forEach(member => {
+        const imageName = member.image.split('.')[0];
+        let memberLevelText = "Member";
+        if (member.membership_level === 2) memberLevelText = "Silver Member";
+        if (member.membership_level === 3) memberLevelText = "Gold Member";
+        
+        const memberClass = member.membership_level === 3 ? 'membership-gold' : 
+                           member.membership_level === 2 ? 'membership-silver' : '';
+        
+        const card = document.createElement('div');
+        card.className = `member-card ${memberClass}`;
+        card.innerHTML = `
+            <picture>
+                <source srcset="images/${imageName}.webp" type="image/webp">
+                <img src="images/${member.image}" alt="${member.name} Logo" width="100" height="100">
+            </picture>
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p class="membership-level">${memberLevelText}</p>
+            <p>${member.description || ''}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+        `;
+        
+        memberList.appendChild(card);
+    });
 }
