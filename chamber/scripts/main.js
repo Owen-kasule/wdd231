@@ -4,38 +4,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const yearSpan = document.getElementById("year");
     const lastModifiedSpan = document.getElementById("lastModified");
     
-    // Set current year for copyright
-    yearSpan.textContent = new Date().getFullYear();
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (lastModifiedSpan) lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
     
-    // Set last modified date
-    lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
-    
-    // Set default view to grid when page loads
-    const memberList = document.querySelector('.members-container');
-    if (memberList) {
-        memberList.classList.add("grid");
-        memberList.classList.remove("list");
-        
-        // Set active state on grid view button
-        const gridButton = document.getElementById("grid-view");
-        if (gridButton) {
-            gridButton.classList.add("active");
-        }
-        
-        const listButton = document.getElementById("list-view");
-        if (listButton) {
-            listButton.classList.remove("active");
-        }
-    }
-    
-    // Add code for home page functionality
-    if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/chamber/')) {
-        // Load home page specific data
+    // Check which page we're on
+    if (window.location.pathname.includes('index.html') || 
+        window.location.pathname.endsWith('/chamber/')) {
+        // Home page: Load weather and spotlights
         fetchWeather();
         displaySpotlights();
     } else if (window.location.pathname.includes('directory.html')) {
-        // Directory page specific code
+        // Directory page: Load member data and set grid view
         loadMemberData();
+        
+        // Set default view to grid
+        const memberList = document.querySelector('.members-container');
+        if (memberList) {
+            memberList.classList.add("grid");
+            memberList.classList.remove("list");
+            
+            const gridButton = document.getElementById("grid-view");
+            if (gridButton) gridButton.classList.add("active");
+            
+            const listButton = document.getElementById("list-view");
+            if (listButton) listButton.classList.remove("active");
+        }
     }
 });
 
