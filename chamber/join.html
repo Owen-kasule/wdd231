@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Kampala Chamber of Commerce - Membership Application">
+    <meta name="author" content="Owen Kasule Muhereza">
+    <meta property="og:title" content="Join Chamber of Commerce - Kampala">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://Owen-kasule.github.io/wdd231/chamber/images/chamber-logo.png">
+    <meta property="og:url" content="https://Owen-kasule.github.io/wdd231/chamber/join.html">
+    <title>Join the Chamber - Kampala Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preload" as="image" href="images/chamber-logo.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/chamber-logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
+        </nav>
+        <div class="nav-toggle" id="navToggle">
+            <span class="hamburger"></span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="logo">
+            <picture>
+                <source srcset="images/chamber-logo.webp" type="image/webp">
+                <img src="images/chamber-logo.png" alt="Chamber Logo" width="80" height="80" loading="eager">
+            </picture>
+            <h1>Join the Chamber of Commerce</h1>
+        </div>
+        
+        <div class="join-container">
+            <section class="membership-form">
+                <h2>Membership Application</h2>
+                <form method="get" action="thankyou.html" id="join-form">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Please enter your first name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Please enter your last name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position/Title</label>
+                        <input type="text" id="position" name="position" pattern="[A-Za-z\s\-]{7,}" title="Position should contain only letters, spaces, or hyphens with at least 7 characters" autocomplete="organization-title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@domain.com" title="Please enter a valid email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Mobile Phone</label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Please enter your mobile phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business-name">Business/Organization Name</label>
+                        <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Please enter your business or organization name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="membership-level">Membership Level</label>
+                        <select id="membership-level" name="membership-level" required>
+                            <option value="" disabled selected>Select a membership level</option>
+                            <option value="np">Non-Profit (Free)</option>
+                            <option value="bronze">Bronze</option>
+                            <option value="silver">Silver</option>
+                            <option value="gold">Gold</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business-description">Business Description</label>
+                        <textarea id="business-description" name="business-description" title="Please describe your business or organization"></textarea>
+                    </div>
+                    
+                    <input type="hidden" id="timestamp" name="timestamp">
+                    
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </section>
+            
+            <section class="membership-cards">
+                <h2>Membership Levels</h2>
+                <div class="cards-container">
+                    <div class="membership-card np-card">
+                        <h3>Non-Profit</h3>
+                        <p>Free membership for registered non-profit organizations</p>
+                        <button class="info-btn" data-modal="np-modal">Learn More</button>
+                    </div>
+                    
+                    <div class="membership-card bronze-card">
+                        <h3>Bronze</h3>
+                        <p>Basic membership with essential business benefits</p>
+                        <button class="info-btn" data-modal="bronze-modal">Learn More</button>
+                    </div>
+                    
+                    <div class="membership-card silver-card">
+                        <h3>Silver</h3>
+                        <p>Enhanced visibility and marketing opportunities</p>
+                        <button class="info-btn" data-modal="silver-modal">Learn More</button>
+                    </div>
+                    
+                    <div class="membership-card gold-card">
+                        <h3>Gold</h3>
+                        <p>Premier membership with maximum exposure</p>
+                        <button class="info-btn" data-modal="gold-modal">Learn More</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Owen Kasule Muhereza | Kampala, Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+    
+    <!-- Membership Level Modals -->
+    <dialog id="np-modal" class="membership-modal">
+        <div class="modal-content">
+            <h2>Non-Profit Membership</h2>
+            <div class="benefits-list">
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Free membership (verified non-profits only)</li>
+                    <li>Basic business directory listing</li>
+                    <li>Access to chamber events</li>
+                    <li>Networking opportunities</li>
+                </ul>
+            </div>
+            <button class="close-modal">Close</button>
+        </div>
+    </dialog>
+    
+    <dialog id="bronze-modal" class="membership-modal">
+        <div class="modal-content">
+            <h2>Bronze Membership</h2>
+            <div class="benefits-list">
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>All Non-Profit benefits</li>
+                    <li>Enhanced business directory listing</li>
+                    <li>Social media promotion (quarterly)</li>
+                    <li>Member-to-member discounts</li>
+                    <li>Business referrals</li>
+                </ul>
+            </div>
+            <button class="close-modal">Close</button>
+        </div>
+    </dialog>
+    
+    <dialog id="silver-modal" class="membership-modal">
+        <div class="modal-content">
+            <h2>Silver Membership</h2>
+            <div class="benefits-list">
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>All Bronze benefits</li>
+                    <li>Featured directory listing</li>
+                    <li>Social media promotion (monthly)</li>
+                    <li>Spotlight feature on homepage (random)</li>
+                    <li>Event discounts</li>
+                    <li>Workshop priority registration</li>
+                </ul>
+            </div>
+            <button class="close-modal">Close</button>
+        </div>
+    </dialog>
+    
+    <dialog id="gold-modal" class="membership-modal">
+        <div class="modal-content">
+            <h2>Gold Membership</h2>
+            <div class="benefits-list">
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>All Silver benefits</li>
+                    <li>Premium directory listing</li>
+                    <li>Dedicated social media promotion</li>
+                    <li>Guaranteed spotlight on homepage</li>
+                    <li>Logo on chamber events</li>
+                    <li>Free booth at annual trade show</li>
+                    <li>Business consultation services</li>
+                </ul>
+            </div>
+            <button class="close-modal">Close</button>
+        </div>
+    </dialog>
+</body>
+</html>
