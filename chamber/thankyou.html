@@ -1,0 +1,87 @@
+chamber/thankyou.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Kampala Chamber of Commerce">
+    <meta name="author" content="Owen Kasule Muhereza">
+    <meta property="og:title" content="Thank You - Kampala Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://Owen-kasule.github.io/wdd231/chamber/images/chamber-logo.png">
+    <meta property="og:url" content="https://Owen-kasule.github.io/wdd231/chamber/thankyou.html">
+    <title>Thank You - Kampala Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
+        </nav>
+        <div class="nav-toggle" id="navToggle">
+            <span class="hamburger"></span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="logo">
+            <picture>
+                <source srcset="images/chamber-logo.webp" type="image/webp">
+                <img src="images/chamber-logo.png" alt="Chamber Logo" width="80" height="80" loading="eager">
+            </picture>
+            <h1>Thank You!</h1>
+        </div>
+        
+        <section class="thank-you-container">
+            <div class="thank-you-message">
+                <h2>Application Received</h2>
+                <p>Thank you for applying to join the Kampala Chamber of Commerce. Your membership application has been received and is being processed.</p>
+                <p>We will contact you shortly to complete your registration.</p>
+            </div>
+            
+            <div class="application-summary">
+                <h3>Application Summary</h3>
+                <div class="summary-data">
+                    <p><strong>First Name:</strong> <span id="display-first-name"></span></p>
+                    <p><strong>Last Name:</strong> <span id="display-last-name"></span></p>
+                    <p><strong>Email:</strong> <span id="display-email"></span></p>
+                    <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+                    <p><strong>Business Name:</strong> <span id="display-business-name"></span></p>
+                    <p><strong>Date Submitted:</strong> <span id="display-timestamp"></span></p>
+                </div>
+                <a href="index.html" class="btn">Return to Homepage</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Owen Kasule Muhereza | Kampala, Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Display form data from localStorage
+            document.getElementById("display-first-name").textContent = localStorage.getItem("first-name") || "";
+            document.getElementById("display-last-name").textContent = localStorage.getItem("last-name") || "";
+            document.getElementById("display-email").textContent = localStorage.getItem("email") || "";
+            document.getElementById("display-phone").textContent = localStorage.getItem("phone") || "";
+            document.getElementById("display-business-name").textContent = localStorage.getItem("business-name") || "";
+            
+            // Format timestamp for display
+            const timestamp = localStorage.getItem("timestamp") || "";
+            if (timestamp) {
+                const date = new Date(timestamp);
+                document.getElementById("display-timestamp").textContent = date.toLocaleString();
+            }
+        });
+    </script>
+</body>
+</html>
