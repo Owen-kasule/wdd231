@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Kampala Chamber of Commerce - Membership Application">
+    <meta name="description" content="Join the Kampala Chamber of Commerce">
     <meta name="author" content="Owen Kasule Muhereza">
-    <meta property="og:title" content="Join Chamber of Commerce - Kampala">
+    <meta property="og:title" content="Join - Kampala Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://Owen-kasule.github.io/wdd231/chamber/images/chamber-logo.png">
     <meta property="og:url" content="https://Owen-kasule.github.io/wdd231/chamber/join.html">
-    <title>Join the Chamber - Kampala Chamber of Commerce</title>
+    <title>Join - Kampala Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/main.js" defer></script>
-    <link rel="preload" as="image" href="images/chamber-logo.webp" type="image/webp">
-    <link rel="preload" as="image" href="images/chamber-logo.png" type="image/png">
 </head>
 <body>
     <header>
@@ -37,48 +35,48 @@
                 <source srcset="images/chamber-logo.webp" type="image/webp">
                 <img src="images/chamber-logo.png" alt="Chamber Logo" width="80" height="80" loading="eager">
             </picture>
-            <h1>Join the Chamber of Commerce</h1>
+            <h1>Join the Chamber</h1>
         </div>
         
         <div class="join-container">
-            <section class="membership-form">
+            <section class="join-form">
                 <h2>Membership Application</h2>
                 <form method="get" action="thankyou.html" id="join-form">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Please enter your first name">
+                        <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="First Name">
                     </div>
                     
                     <div class="form-group">
                         <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Please enter your last name">
+                        <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Last Name">
                     </div>
                     
                     <div class="form-group">
-                        <label for="position">Position/Title</label>
-                        <input type="text" id="position" name="position" pattern="[A-Za-z\s\-]{7,}" title="Position should contain only letters, spaces, or hyphens with at least 7 characters" autocomplete="organization-title">
+                        <label for="org-title">Position Title</label>
+                        <input type="text" id="org-title" name="org-title" required pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title" title="Only letters, hyphens and spaces, minimum 7 characters">
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@domain.com" title="Please enter a valid email address">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" title="Email Address" placeholder="example@domain.com">
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Mobile Phone</label>
-                        <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Please enter your mobile phone number">
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Mobile Phone Number">
                     </div>
                     
                     <div class="form-group">
                         <label for="business-name">Business/Organization Name</label>
-                        <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Please enter your business or organization name">
+                        <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Business/Organization Name">
                     </div>
                     
                     <div class="form-group">
                         <label for="membership-level">Membership Level</label>
-                        <select id="membership-level" name="membership-level" required>
+                        <select id="membership-level" name="membership-level" required title="Membership Level">
                             <option value="" disabled selected>Select a membership level</option>
-                            <option value="np">Non-Profit (Free)</option>
+                            <option value="np">Non-Profit</option>
                             <option value="bronze">Bronze</option>
                             <option value="silver">Silver</option>
                             <option value="gold">Gold</option>
@@ -87,39 +85,39 @@
                     
                     <div class="form-group">
                         <label for="business-description">Business Description</label>
-                        <textarea id="business-description" name="business-description" title="Please describe your business or organization"></textarea>
+                        <textarea id="business-description" name="business-description" title="Business Description"></textarea>
                     </div>
                     
-                    <input type="hidden" id="timestamp" name="timestamp">
+                    <input type="hidden" name="timestamp" id="timestamp">
                     
                     <button type="submit" class="submit-btn">Submit Application</button>
                 </form>
             </section>
             
-            <section class="membership-cards">
+            <section class="membership-levels">
                 <h2>Membership Levels</h2>
-                <div class="cards-container">
-                    <div class="membership-card np-card">
-                        <h3>Non-Profit</h3>
-                        <p>Free membership for registered non-profit organizations</p>
+                <div class="level-cards">
+                    <div class="level-card level-np">
+                        <h3>Non-Profit Membership</h3>
+                        <p>Free for non-profit organizations</p>
                         <button class="info-btn" data-modal="np-modal">Learn More</button>
                     </div>
                     
-                    <div class="membership-card bronze-card">
-                        <h3>Bronze</h3>
-                        <p>Basic membership with essential business benefits</p>
+                    <div class="level-card level-bronze">
+                        <h3>Bronze Membership</h3>
+                        <p>UGX 300,000/year</p>
                         <button class="info-btn" data-modal="bronze-modal">Learn More</button>
                     </div>
                     
-                    <div class="membership-card silver-card">
-                        <h3>Silver</h3>
-                        <p>Enhanced visibility and marketing opportunities</p>
+                    <div class="level-card level-silver">
+                        <h3>Silver Membership</h3>
+                        <p>UGX 700,000/year</p>
                         <button class="info-btn" data-modal="silver-modal">Learn More</button>
                     </div>
                     
-                    <div class="membership-card gold-card">
-                        <h3>Gold</h3>
-                        <p>Premier membership with maximum exposure</p>
+                    <div class="level-card level-gold">
+                        <h3>Gold Membership</h3>
+                        <p>UGX 1,200,000/year</p>
                         <button class="info-btn" data-modal="gold-modal">Learn More</button>
                     </div>
                 </div>
@@ -132,17 +130,16 @@
         <p id="lastModified"></p>
     </footer>
     
-    <!-- Membership Level Modals -->
     <dialog id="np-modal" class="membership-modal">
         <div class="modal-content">
             <h2>Non-Profit Membership</h2>
             <div class="benefits-list">
                 <h3>Benefits:</h3>
                 <ul>
-                    <li>Free membership (verified non-profits only)</li>
-                    <li>Basic business directory listing</li>
+                    <li>Basic directory listing</li>
                     <li>Access to chamber events</li>
                     <li>Networking opportunities</li>
+                    <li>Monthly newsletter</li>
                 </ul>
             </div>
             <button class="close-modal">Close</button>
@@ -155,11 +152,12 @@
             <div class="benefits-list">
                 <h3>Benefits:</h3>
                 <ul>
-                    <li>All Non-Profit benefits</li>
-                    <li>Enhanced business directory listing</li>
-                    <li>Social media promotion (quarterly)</li>
-                    <li>Member-to-member discounts</li>
-                    <li>Business referrals</li>
+                    <li>Standard directory listing</li>
+                    <li>Access to chamber events</li>
+                    <li>Networking opportunities</li>
+                    <li>Monthly newsletter</li>
+                    <li>Business resource access</li>
+                    <li>Social media mention (quarterly)</li>
                 </ul>
             </div>
             <button class="close-modal">Close</button>
@@ -202,6 +200,7 @@
             <button class="close-modal">Close</button>
         </div>
     </dialog>
+    
     <script src="scripts/join.js" defer></script>
 </body>
 </html>
