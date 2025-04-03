@@ -1,0 +1,98 @@
+/* Thank you page specific styles */
+
+/* Inherit base styles from main CSS */
+@import url("styles.css");
+
+/* Thank you page container */
+.thank-you-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thank you message */
+.thank-you-message {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.thank-you-message:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #004d99;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.thank-you-message h2 {
+    color: #004d99;
+    margin-bottom: 10px;
+}
+
+/* Application summary section */
+.application-summary {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.application-summary h3 {
+    color: #004d99;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Data display */
+.summary-data {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #004d99;
+}
+
+.summary-data p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.summary-data strong {
+    display: inline-block;
+    min-width: 120px;
+    color: #004d99;
+}
+
+/* Home button */
+.thank-you-container .btn {
+    display: inline-block;
+    background-color: #004d99;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.thank-you-container .btn:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
+}
