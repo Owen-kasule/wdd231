@@ -53,4 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Add dynamic footer information
+    const authorNameElement = document.getElementById('author-name');
+    const lastModifiedElement = document.getElementById('last-modified');
+    
+    if (authorNameElement) {
+        authorNameElement.textContent = 'Kasule';  // Replace with your name
+    }
+    
+    if (lastModifiedElement) {
+        // Format the last modified date
+        const lastModDate = new Date(document.lastModified);
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
+    }
 });
