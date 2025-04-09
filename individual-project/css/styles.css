@@ -317,6 +317,89 @@ li {
     font-weight: bold;
 }
 
+/* Wireframe image styling */
+.wireframe-container {
+    position: relative;
+}
+
+.wireframe-preview {
+    background-color: #000000;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.wireframe-image-preview {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.expand-button {
+    background-color: rgba(0, 123, 255, 0.2);
+    color: #FFFFFF;
+    border: 1px solid #007BFF;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.expand-button:hover {
+    background-color: rgba(0, 123, 255, 0.4);
+}
+
+.wireframe-fullsize {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.fullsize-controls {
+    position: sticky;
+    top: 10px;
+    text-align: right;
+    z-index: 1001;
+}
+
+.close-button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wireframe-image-full {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Show full wireframe when in active state */
+.wireframe-fullsize.active {
+    display: block;
+}
+
 /* Links */
 a {
     color: #007BFF;
