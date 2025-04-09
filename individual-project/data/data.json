@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Electric Bike Model A",
+      "description": "A high-performance electric bike designed for mountain trails.",
+      "price": 1200,
+      "image": "images/electric-bike-a.jpg",
+      "features": [
+        "500W motor",
+        "Up to 50 miles range",
+        "Lightweight aluminum frame"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Electric Bike Model B",
+      "description": "A versatile electric bike suitable for city commuting.",
+      "price": 900,
+      "image": "images/electric-bike-b.jpg",
+      "features": [
+        "250W motor",
+        "Up to 30 miles range",
+        "Integrated lights and lock"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Electric Bike Model C",
+      "description": "A budget-friendly electric bike for casual riders.",
+      "price": 600,
+      "image": "images/electric-bike-c.jpg",
+      "features": [
+        "250W motor",
+        "Up to 25 miles range",
+        "Comfortable seat and handlebars"
+      ]
+    }
+  ]
+}
