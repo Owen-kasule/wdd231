@@ -1,8 +1,8 @@
 /* Base styles */
 body {
-    background-color: #000000; /* Black background */
+    background-color: #121212; /* Dark background */
     color: #FFFFFF; /* White text */
-    font-family: 'Roboto', sans-serif; /* Clean, modern font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     line-height: 1.6;
     padding: 0;
@@ -19,9 +19,9 @@ header {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px 0;
-    border-bottom: 2px solid #007BFF;
-    background-color: #4CAF50;
-    color: white;
+    border-bottom: 1px solid #007BFF;
+    background-color: #000000; /* Pure black header */
+    box-shadow: 0 2px 20px rgba(0, 123, 255, 0.15);
 }
 
 header img {
@@ -34,50 +34,50 @@ header img {
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: #FFFFFF; /* White headings */
-    text-transform: uppercase; /* Tech-inspired look */
+    color: #FFFFFF;
+    text-transform: uppercase;
     margin-top: 0;
 }
 
 h1 {
     font-size: 2.5em;
-    text-align: center;
-    letter-spacing: 2px; /* Adds a sharp feel */
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 1.8em;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 1px solid #007BFF;
     padding-bottom: 10px;
-    margin-top: 30px;
     margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.3em;
-    margin-top: 25px;
     color: #007BFF;
 }
 
 /* Section styling */
 section {
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    margin: 10px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #1E1E1E; /* Dark gray background */
+    border-radius: 8px;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 section:last-of-type {
-    border-bottom: none;
+    margin-bottom: 50px;
 }
 
 p {
     margin-bottom: 15px;
+    color: #E0E0E0;
+}
+
+strong {
+    color: #FFFFFF;
 }
 
 ul {
@@ -86,6 +86,7 @@ ul {
 
 li {
     margin-bottom: 10px;
+    color: #E0E0E0;
 }
 
 /* Color schema */
@@ -101,15 +102,16 @@ li {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 15px;
     border-radius: 5px;
+    border: 1px solid #333333;
 }
 
 .color-sample {
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
     margin-right: 20px;
     flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .color-info {
@@ -120,12 +122,7 @@ li {
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 5px;
-}
-
-.color-display {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    color: #FFFFFF;
 }
 
 /* Typography samples */
@@ -139,10 +136,7 @@ li {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 5px;
-}
-
-.font-sample {
-    margin-bottom: 25px;
+    border: 1px solid #333333;
 }
 
 .sample-text {
@@ -156,12 +150,11 @@ li {
 
 /* Wireframe styling */
 .wireframe {
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
     margin-bottom: 30px;
-    max-width: 350px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    background-color: #000000;
 }
 
 .wireframe.desktop {
@@ -172,11 +165,12 @@ li {
 .wireframe-filters, .wireframe-button, .wireframe-sidebar, 
 .wireframe-content, .wireframe-grid, .wireframe-viz, 
 .wireframe-controls, .wireframe-card, .wireframe-main {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 15px 10px;
     margin-bottom: 10px;
     text-align: center;
     border-radius: 3px;
+    color: #E0E0E0;
 }
 
 .wireframe-header, .wireframe-footer {
@@ -188,6 +182,7 @@ li {
     display: inline-block;
     padding: 8px 15px;
     margin: 10px auto;
+    color: #FFFFFF;
 }
 
 .wireframe-main {
@@ -197,7 +192,6 @@ li {
 
 .wireframe-sidebar {
     width: 25%;
-    margin-right: 10px;
     background-color: rgba(255, 255, 255, 0.03);
 }
 
@@ -217,36 +211,44 @@ li {
     background-color: rgba(255, 255, 255, 0.03);
 }
 
+/* Links */
 a {
-    color: #007BFF; /* Blue accents */
+    color: #007BFF;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: #4DA3FF;
+    text-decoration: none;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
-    border-top: 2px solid #007BFF;
-    background-color: #4CAF50;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid #007BFF;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
     h1 {
         font-size: 2em;
     }
 
     h2 {
         font-size: 1.5em;
+    }
+    
+    section {
+        padding: 15px;
     }
     
     .color-item {
@@ -268,56 +270,7 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
-    body {
-        margin: 10px;
-    }
-    
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    section {
-        margin-bottom: 20px;
-        margin: 5px;
-    }
-    
-    .wireframe {
-        padding: 10px;
-    }
-    
-    .wireframe-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .wireframe.desktop {
-        max-width: 350px;
-    }
-    
-    .wireframe-main {
-        flex-direction: column;
-    }
-    
-    .wireframe-sidebar {
-        width: auto;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
 @media (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.8em;
-    }
-    
     .wireframe-main {
         flex-direction: column;
     }
