@@ -28,4 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         });
     }
+    
+    // Wireframe image expansion functionality
+    const expandButton = document.getElementById('expandWireframe');
+    const closeButton = document.getElementById('closeWireframe');
+    const fullWireframe = document.getElementById('fullWireframe');
+    
+    if (expandButton && closeButton && fullWireframe) {
+        expandButton.addEventListener('click', () => {
+            fullWireframe.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+        });
+        
+        closeButton.addEventListener('click', () => {
+            fullWireframe.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && fullWireframe.classList.contains('active')) {
+                fullWireframe.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });

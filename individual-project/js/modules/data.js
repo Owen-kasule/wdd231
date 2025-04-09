@@ -1,15 +1,10 @@
-export const fetchData = async () => {
-    try {
-        const response = await fetch('../data/data.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-    }
-};
+export function fetchData() {
+    // For now, return a simple promise with data
+    return Promise.resolve({
+        name: "Techrooot",
+        services: ["Healthcare", "Education", "Agriculture", "Business"]
+    });
+}
 
 export const filterData = (data, criteria) => {
     return data.filter(item => item.category === criteria);
