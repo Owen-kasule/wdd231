@@ -1,16 +1,25 @@
+/* Base styles */
 body {
     background-color: #000000; /* Black background */
     color: #FFFFFF; /* White text */
     font-family: 'Roboto', sans-serif; /* Clean, modern font */
-    margin: 20px;
+    margin: 0;
     line-height: 1.6;
+    padding: 0;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
 header {
     text-align: center;
     margin-bottom: 40px;
-    border-bottom: 1px solid #FFFFFF;
-    padding-bottom: 20px;
+    padding: 30px 0;
+    border-bottom: 2px solid #007BFF;
     background-color: #4CAF50;
     color: white;
 }
@@ -21,41 +30,50 @@ header img {
     display: block;
 }
 
+/* Typography */
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #FFFFFF; /* White headings */
     text-transform: uppercase; /* Tech-inspired look */
+    margin-top: 0;
 }
 
 h1 {
     font-size: 2.5em;
     text-align: center;
     letter-spacing: 2px; /* Adds a sharp feel */
-    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 1.8em;
-    border-bottom: 1px solid #007BFF;
+    border-bottom: 2px solid #007BFF;
     padding-bottom: 10px;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.3em;
     margin-top: 25px;
+    color: #007BFF;
 }
 
+/* Section styling */
 section {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #FFFFFF; /* White line for contrast */
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
     margin: 10px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section:last-of-type {
+    border-bottom: none;
 }
 
 p {
@@ -70,11 +88,80 @@ li {
     margin-bottom: 10px;
 }
 
+/* Color schema */
+.color-palette {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.color-sample {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.color-info {
+    flex: 1;
+}
+
+.color-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.color-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Typography samples */
+.font-samples {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.font-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.font-sample {
+    margin-bottom: 25px;
+}
+
+.sample-text {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Wireframe styling */
 .wireframe {
-    border: 2px solid #FFFFFF; /* White border */
+    border: 2px solid rgba(255, 255, 255, 0.7);
     padding: 20px;
     margin-bottom: 30px;
     max-width: 350px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .wireframe.desktop {
@@ -85,19 +172,33 @@ li {
 .wireframe-filters, .wireframe-button, .wireframe-sidebar, 
 .wireframe-content, .wireframe-grid, .wireframe-viz, 
 .wireframe-controls, .wireframe-card, .wireframe-main {
-    border: 1px solid #FFFFFF;
-    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 15px 10px;
     margin-bottom: 10px;
     text-align: center;
+    border-radius: 3px;
+}
+
+.wireframe-header, .wireframe-footer {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.wireframe-button {
+    background-color: rgba(0, 123, 255, 0.2);
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 10px auto;
 }
 
 .wireframe-main {
     display: flex;
+    gap: 15px;
 }
 
 .wireframe-sidebar {
     width: 25%;
     margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .wireframe-content {
@@ -108,58 +209,63 @@ li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    padding: 15px;
 }
 
 .wireframe-card {
     height: 80px;
-}
-
-.color-sample {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #FFFFFF;
-    margin-right: 20px;
-}
-
-.color-info {
-    flex: 1;
-}
-
-.color-display {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.font-sample {
-    margin-bottom: 25px;
-}
-
-.sample-text {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 a {
     color: #007BFF; /* Blue accents */
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 a:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    border-top: 1px solid #FFFFFF;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 2px solid #007BFF;
     background-color: #4CAF50;
     color: white;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .color-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .color-sample {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+    
+    .wireframe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .wireframe.desktop {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -200,5 +306,29 @@ footer {
         width: auto;
         margin-right: 0;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .wireframe-main {
+        flex-direction: column;
+    }
+    
+    .wireframe-sidebar {
+        width: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .wireframe-grid {
+        grid-template-columns: 1fr;
     }
 }
