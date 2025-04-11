@@ -29,15 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Wireframe image expansion functionality
-    const expandButton = document.getElementById('expandWireframe');
+    // Wireframe viewing functionality
+    const viewButton = document.getElementById('viewWireframes');
     const closeButton = document.getElementById('closeWireframe');
     const fullWireframe = document.getElementById('fullWireframe');
     
-    if (expandButton && closeButton && fullWireframe) {
-        expandButton.addEventListener('click', () => {
+    if (viewButton && closeButton && fullWireframe) {
+        viewButton.addEventListener('click', () => {
             fullWireframe.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
         
         closeButton.addEventListener('click', () => {
