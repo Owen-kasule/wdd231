@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techrooot Site Plan</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Optimized font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- CSS with optimized loading -->
+    <link rel="stylesheet" href="css/normalize.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Fallback for browsers that don't support JS -->
+    <noscript>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Techrooot Site Plan</h1>
-            <img src="images/logo.png" alt="Techrooot Logo">
+            <img src="images/logo.png" alt="Techrooot Logo" width="150" class="logo-image">
         </header>
         
         <section id="site-name">
@@ -106,6 +119,6 @@
         </footer>
     </div>
     
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>

@@ -59,7 +59,6 @@ header {
 }
 
 header img {
-    max-width: 150px;
     margin: var(--spacing-lg) auto;
     display: block;
 }
@@ -501,6 +500,36 @@ footer {
     .wireframe-columns {
         grid-template-columns: 1fr;
     }
+    
+    /* Additional mobile optimizations */
+    .wireframe-image-preview {
+        max-height: 300px;
+        width: auto;
+    }
+    
+    .expand-button {
+        width: 100%;
+        padding: 12px 15px;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+    
+    .close-button {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+    
+    .wireframe-fullsize {
+        padding: 10px;
+    }
+    
+    /* Enhance tap targets on mobile */
+    .color-item,
+    .font-item,
+    .wireframe-button {
+        padding: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -518,4 +547,58 @@ footer {
     .wireframe-services-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Additional small screen improvements */
+    section {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    .wireframe-image-preview {
+        max-height: 200px;
+    }
+    
+    /* Better spacing for small screens */
+    .color-sample {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Optimize image loading */
+.wireframe-image-preview,
+.wireframe-image-full {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+}
+
+/* Enhanced transitions for better perceived performance */
+.expand-button,
+.close-button {
+    will-change: background-color;
+}
+
+.wireframe-fullsize.active {
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add this to your styles.css file */
+.logo-image {
+    height: auto; /* This maintains the aspect ratio */
+    max-height: 75px; /* Sets a maximum height if needed */
+    object-fit: contain; /* Ensures the image isn't stretched */
+    width: auto; /* Allow width to adjust based on height */
+    max-width: 150px; /* Maximum width */
 }
