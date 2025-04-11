@@ -173,7 +173,10 @@ li {
     border: 1px solid var(--color-medium-gray);
 }
 
+/* Fix sample text height to prevent layout shifts */
 .sample-text {
+    min-height: 100px;
+    box-sizing: border-box;
     padding: var(--spacing-md);
     background-color: var(--trans-dark);
     border-radius: var(--radius-md);
@@ -691,4 +694,34 @@ footer {
     padding-top: var(--spacing-md);
     border-top: 1px dashed var(--color-medium-gray);
     text-align: center;
+}
+
+/* Font display and sample classes */
+.montserrat-heading {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.montserrat-sample {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: bold;
+}
+
+.roboto-heading, 
+.roboto-sample {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, Arial, sans-serif;
+}
+
+/* Font loading states */
+.fonts-loading .sample-text {
+    visibility: hidden;
+}
+
+.fonts-loaded .sample-text {
+    visibility: visible;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

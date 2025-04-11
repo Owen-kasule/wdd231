@@ -75,3 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
         lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
     }
 });
+
+// Font loading detection
+document.addEventListener('DOMContentLoaded', () => {
+    // Add body class while fonts are loading
+    document.body.classList.add('fonts-loading');
+    
+    if ('fonts' in document) {
+        Promise.all([
+            document.fonts.load('1em Montserrat'),
+            document.fonts.load('bold 1em Montserrat'),
+            document.fonts.load('1em Roboto'),
+            document.fonts.load('bold 1em Roboto')
+        ]).then(() => {
+            console.log('Fonts loaded');
+            document.body.classList.remove('fonts-loading');
+            document.body.classList.add('fonts-loaded');
+        });
+    } else {
+        // For browsers that don't support Font Loading API
+        // Add a timeout to assume fonts have loaded
+        setTimeout(() => {
+            document.body.classList.remove('fonts-loading');
+            document.body.classList.add('fonts-loaded');
+        }, 2000);
+    }
+});
