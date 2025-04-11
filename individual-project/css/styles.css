@@ -58,11 +58,6 @@ header {
     box-shadow: var(--shadow-blue);
 }
 
-header img {
-    margin: var(--spacing-lg) auto;
-    display: block;
-}
-
 /* Typography */
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
@@ -594,11 +589,11 @@ footer {
     to { opacity: 1; }
 }
 
-/* Add this to your styles.css file */
+/* Replace your current .logo-image CSS with this */
 .logo-image {
-    height: auto; /* This maintains the aspect ratio */
-    max-height: 75px; /* Sets a maximum height if needed */
-    object-fit: contain; /* Ensures the image isn't stretched */
-    width: auto; /* Allow width to adjust based on height */
-    max-width: 150px; /* Maximum width */
+    display: block;
+    width: 150px; /* Fixed width */
+    height: 75px; /* Fixed height */
+    object-fit: contain; /* This prevents distortion */
+    margin: var(--spacing-lg) auto;
 }
