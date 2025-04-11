@@ -22,6 +22,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
     <link rel="preload" href="images/logo.png" as="image" fetchpriority="high">
+    <link rel="preload" href="images/techrooot-wireframes.svg" as="image" fetchpriority="low">
 </head>
 <body>
     <div class="container">
@@ -101,7 +102,10 @@
             
             <div class="wireframe-container">
                 <div class="wireframe-preview">
-                    <img src="images/techrooot-wireframes.svg" alt="Techrooot wireframes for all pages in mobile and desktop views" class="wireframe-image-preview">
+                    <div class="wireframe-image-container">
+                        <img src="images/techrooot-wireframes.svg" alt="Techrooot wireframes for all pages in mobile and desktop views" 
+                             class="wireframe-image-preview" width="800" height="500">
+                    </div>
                     <button id="expandWireframe" class="expand-button">Expand Wireframes</button>
                 </div>
                 
@@ -109,7 +113,11 @@
                     <div class="fullsize-controls">
                         <button id="closeWireframe" class="close-button">✕</button>
                     </div>
-                    <img src="images/techrooot-wireframes.svg" alt="Techrooot wireframes for all pages in mobile and desktop views" class="wireframe-image-full">
+                    <div class="wireframe-fullsize-container">
+                        <img src="images/techrooot-wireframes.svg" 
+                             alt="Techrooot wireframes for all pages in mobile and desktop views" 
+                             class="wireframe-image-full" width="1200" height="750">
+                    </div>
                 </div>
             </div>
         </section>
