@@ -69,14 +69,58 @@ h1, h2, h3, h4 {
     color: var(--color-white);
 }
 
-/* Section and layout styles */
+/* Update section styles */
 section {
-    margin-bottom: var(--spacing-xl);
+    margin: var(--spacing-xl) auto; /* Center horizontally */
     padding: var(--spacing-xl);
+    max-width: 800px; /* Optimal reading width */
     background-color: var(--color-dark-gray);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-medium-gray);
-    box-shadow: var(--shadow-subtle);
+    box-shadow: 
+        var(--shadow-subtle),
+        0 0 0 1px var(--trans-medium) inset; /* Inner glow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add hover effect for better interactivity */
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px var(--color-blue) inset;
+}
+
+/* Center headings and content */
+section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Add decorative element to headings */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-blue);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: 3px;
+}
+
+/* Center lists and other content */
+section ul {
+    padding-left: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Improve card spacing */
+.color-item, .font-item {
+    margin: 0 auto var(--spacing-md);
+    max-width: 700px;
 }
 
 p {
