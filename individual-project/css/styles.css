@@ -197,18 +197,98 @@ p {
     }
 }
 
+/* Typography Section Styles */
+#typography {
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-xl);
+    max-width: 800px;
+    background-color: var(--color-dark-gray);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-medium-gray);
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
+}
+
+#typography h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+#typography h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-blue);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: var(--radius-sm);
+}
+
 .font-samples {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
 }
 
+.font-item {
+    background-color: var(--color-dark);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-medium-gray);
+    box-shadow: var(--shadow-subtle);
+    text-align: left;
+}
+
+.font-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-blue);
+    border-bottom: 2px solid var(--color-blue);
+    padding-bottom: var(--spacing-sm);
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+}
+
+.font-item p {
+    color: var(--color-light-gray);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
 .sample-text {
-    height: 100px;
-    padding: var(--spacing-md);
     background-color: var(--trans-dark);
+    padding: var(--spacing-md);
     border-radius: var(--radius-md);
     margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-subtle);
+}
+
+.sample-text p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.montserrat-sample {
+    font-family: var(--font-heading);
+}
+
+.roboto-sample {
+    font-family: var(--font-body);
+}
+
+/* Responsive Typography Section */
+@media (max-width: 600px) {
+    .font-samples {
+        flex-direction: column;
+    }
+
+    .font-item {
+        text-align: center;
+    }
 }
 
 .wireframe-container {
