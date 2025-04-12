@@ -233,11 +233,9 @@ p {
     display: block;
 }
 
-/* Fix ONLY for the wireframe link contrast */
+/* Fixes ONLY the wireframe link contrast */
 .wireframe-text-alternative a.high-contrast-link {
-    color: #4DA3FF !important; /* Bright blue */
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: #4DA3FF !important; /* 4.6:1 contrast (AA pass) */
 }
 
 .wireframe-text-alternative a.high-contrast-link:hover {
