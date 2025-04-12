@@ -1,78 +1,36 @@
 /* Variables for consistent theming */
 :root {
-    /* Color palette - improved contrast */
     --color-black: #000000;
     --color-dark: #121212;
     --color-dark-gray: #1E1E1E;
     --color-medium-gray: #333333;
     --color-light-gray: #E0E0E0;
     --color-white: #FFFFFF;
-    --color-blue: #0090FF; /* Improved contrast from #007BFF to #0090FF */
+    --color-blue: #0090FF; 
     --color-blue-hover: #4DA3FF;
     
-    /* Transparencies */
     --trans-light: rgba(255, 255, 255, 0.05);
     --trans-medium: rgba(255, 255, 255, 0.2);
     --trans-dark: rgba(0, 0, 0, 0.3);
     
-    /* Shadows */
     --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-blue: 0 2px 20px rgba(0, 123, 255, 0.15);
     
-    /* Spacing */
     --spacing-xs: 5px;
     --spacing-sm: 10px;
     --spacing-md: 15px;
     --spacing-lg: 20px;
     --spacing-xl: 30px;
     
-    /* Border radius */
     --radius-sm: 3px;
     --radius-md: 5px;
     --radius-lg: 8px;
     
-    /* Font stacks with proper fallbacks */
-    --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, Arial, sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
-/* Base styles - using font display swap to prevent layout shifts */
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), 
-         url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: local('Montserrat Bold'), local('Montserrat-Bold'), 
-         url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Roboto'), local('Roboto-Regular'), 
-         url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: local('Roboto Bold'), local('Roboto-Bold'), 
-         url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
-}
-
+/* General styles */
 body {
     background-color: var(--color-dark);
     color: var(--color-white);
@@ -80,12 +38,6 @@ body {
     margin: 0;
     line-height: 1.6;
     padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-lg);
 }
 
 /* Header styles */
@@ -98,40 +50,12 @@ header {
     box-shadow: var(--shadow-blue);
 }
 
-/* Typography - using CSS variables for consistent font stacks */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    font-weight: bold;
     color: var(--color-white);
-    text-transform: uppercase;
-    margin-top: 0;
 }
 
-h1 {
-    font-size: 2.5em;
-    letter-spacing: 2px;
-    margin-bottom: var(--spacing-lg);
-}
-
-h2 {
-    font-size: 1.8em;
-    border-bottom: 1px solid var(--color-blue);
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
-
-h3 {
-    font-size: 1.3em;
-    color: var(--color-white); /* Changed from blue to white for better contrast */
-}
-
-h4 {
-    font-size: 1.1em;
-    margin-top: var(--spacing-lg);
-    color: var(--color-white); /* Changed from blue to white for better contrast */
-}
-
-/* Section styling */
+/* Section and layout styles */
 section {
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-xl);
@@ -141,35 +65,12 @@ section {
     box-shadow: var(--shadow-subtle);
 }
 
-section:last-of-type {
-    margin-bottom: 50px;
-}
-
 p {
     margin-bottom: var(--spacing-md);
     color: var(--color-light-gray);
 }
 
-strong {
-    color: var(--color-white);
-}
-
-ul {
-    padding-left: var(--spacing-lg);
-}
-
-li {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-light-gray);
-}
-
 /* Color schema */
-.color-palette {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-}
-
 .color-item {
     display: flex;
     align-items: center;
@@ -184,134 +85,54 @@ li {
     height: 80px;
     border-radius: var(--radius-md);
     margin-right: var(--spacing-lg);
-    flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.color-info {
-    flex: 1;
-}
-
-.color-name {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-white);
-}
-
-/* Typography samples */
 .font-samples {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
 }
 
-.font-item {
-    background-color: var(--trans-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-medium-gray);
-}
-
-/* Fix sample text height to prevent layout shifts */
 .sample-text {
-    min-height: 100px;
-    height: 100px; /* Fixed height to prevent layout shifts */
-    box-sizing: border-box;
+    height: 100px;
     padding: var(--spacing-md);
     background-color: var(--trans-dark);
     border-radius: var(--radius-md);
     margin-top: var(--spacing-sm);
-    font-size: 16px;
-    line-height: 1.5;
 }
 
-/* Font display and sample classes */
-.montserrat-heading {
-    font-family: var(--font-heading);
-}
-
-.montserrat-sample {
-    font-family: var(--font-heading);
-    font-weight: bold;
-}
-
-.roboto-heading, 
-.roboto-sample {
-    font-family: var(--font-body);
-}
-
-/* Font loading states */
-.fonts-loading .sample-text {
-    visibility: hidden;
-}
-
-.fonts-loaded .sample-text {
-    visibility: visible;
-    animation: fadeIn 0.3s ease-in;
-}
-
-/* Logo container with fixed dimensions to prevent layout shifts */
-.logo-container {
-    width: 150px;
-    height: 75px;
-    margin: 0 auto;
-}
-
-.logo-image {
-    display: block;
-    width: 150px;
-    height: 75px;
-    object-fit: contain;
-}
-
-/* Wireframe thumbnail approach to prevent layout shifts */
-.wireframe-thumbnail-container {
+.wireframe-container {
     text-align: center;
+}
+
+.wireframe-thumbnail-container {
     background-color: var(--color-dark-gray);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     border: 1px solid var(--color-medium-gray);
-    margin-bottom: var(--spacing-lg);
     width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto var(--spacing-lg);
 }
 
 .wireframe-thumbnail {
-    width: 300px;
+    width: 100%;
     height: 200px;
-    object-fit: cover;
-    border: 2px solid var(--color-medium-gray);
-    display: block;
-    margin: 0 auto var(--spacing-md);
 }
 
 .view-button {
     background-color: var(--color-blue);
     color: var(--color-white);
-    border: none;
     padding: 10px 20px;
     font-family: var(--font-heading);
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: background-color 0.2s ease;
-    font-weight: bold;
-    font-size: 16px;
 }
 
 .view-button:hover {
     background-color: var(--color-blue-hover);
 }
 
-.wireframe-text-alternative {
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-md);
-    border-top: 1px dashed var(--color-medium-gray);
-    text-align: center;
-}
-
-/* Fixed positioning for the fullscreen wireframe view */
 .wireframe-fullsize {
     display: none;
     position: fixed;
@@ -326,202 +147,9 @@ li {
     overflow: auto;
 }
 
-.fullsize-controls {
-    position: sticky;
-    top: var(--spacing-sm);
-    text-align: right;
-    z-index: 1001;
-}
-
-.close-button {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border: 1px solid var(--color-white);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.2s ease;
-}
-
-.close-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 .wireframe-image-full {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
     display: block;
-}
-
-/* Show full wireframe when in active state */
-.wireframe-fullsize.active {
-    display: block;
-}
-
-/* Links - improved contrast */
-a {
-    color: var(--color-blue);
-    text-decoration: underline; /* Added underline for better accessibility */
-    transition: all 0.2s ease;
-    font-weight: bold; /* Added bold for better contrast */
-}
-
-a:hover {
-    color: var(--color-blue-hover);
-}
-
-.high-contrast-link {
-    color: #FFFFFF; /* Change to white text for maximum contrast */
-    background-color: rgba(0, 144, 255, 0.8); /* Brighter, more opaque blue background */
-    padding: 3px 8px; /* Slightly larger padding */
-    border-radius: 4px;
-    text-decoration: underline; /* Keep underline for additional clarity */
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-}
-
-.high-contrast-link:hover {
-    background-color: rgba(0, 144, 255, 1); /* Fully opaque on hover */
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: var(--spacing-lg) 0;
-    margin-top: var(--spacing-xl);
-    border-top: 1px solid var(--color-blue);
-    background-color: var(--color-black);
-    color: var(--color-white);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    :root {
-        /* Adjust spacing for smaller screens */
-        --spacing-lg: 15px;
-        --spacing-xl: 25px;
-    }
-    
-    .container {
-        padding: var(--spacing-md);
-    }
-    
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-    
-    section {
-        padding: var(--spacing-md);
-    }
-    
-    .color-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .color-sample {
-        margin-bottom: var(--spacing-md);
-        margin-right: 0;
-    }
-    
-    /* Fixed-width container for wireframe thumbnail */
-    .wireframe-thumbnail-container {
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .wireframe-thumbnail {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3/2; /* Maintain aspect ratio */
-    }
-    
-    .view-button {
-        width: 100%;
-        padding: 12px 15px;
-    }
-    
-    .close-button {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
-    }
-    
-    /* Enhance tap targets on mobile */
-    .color-item,
-    .font-item {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Additional small screen improvements */
-    section {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.8em;
-    }
-    
-    h2 {
-        font-size: 1.4em;
-    }
-    
-    /* Better spacing for small screens */
-    .color-sample {
-        width: 60px;
-        height: 60px;
-    }
-    
-    /* Full width wireframe container on very small screens */
-    .wireframe-thumbnail-container {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-/* Optimize loading performance */
-.wireframe-image-full {
-    content-visibility: auto;
-    contain-intrinsic-size: 1200px 750px;
-}
-
-.wireframe-fullsize.active {
-    animation: fadeIn 0.2s ease-in;
-}
-
-/* Add these color classes to remove inline styles */
-.color-black { background-color: var(--color-black); }
-.color-white { background-color: var(--color-white); }
-.color-blue { background-color: var(--color-blue); }
-
-/* Add these to your existing CSS */
-.logo-image, .wireframe-thumbnail {
-    will-change: transform; /* Helps prevent layout shifts during rendering */
-    backface-visibility: hidden; /* Reduces paint complexity */
-}
-
-/* Add lazy loading effect for images that appear below the fold */
-.lazy-image {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.lazy-image.loaded {
-    opacity: 1;
 }
