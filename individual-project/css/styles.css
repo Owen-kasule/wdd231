@@ -44,6 +44,7 @@ body {
     font-family: var(--font-body);
     margin: 0;
     line-height: 1.6;
+    overflow-y: scroll; /* Prevent scrollbar width shifts */
 }
 
 /* Responsive images */
@@ -130,6 +131,7 @@ p {
 .wireframe-thumbnail {
     width: 100%;
     height: 200px;
+    background-color: var(--color-dark-gray); /* Reserve space color */
 }
 
 .view-button {
