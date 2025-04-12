@@ -115,11 +115,15 @@ function setupModalHandlers() {
 }
 
 function updateFooterInfo() {
+    console.log('updateFooterInfo is running'); // Debugging log
+
     const lastModifiedElement = document.getElementById('last-modified');
     const currentYearElement = document.getElementById('current-year');
 
     if (lastModifiedElement) {
         const lastModDate = new Date(document.lastModified);
+        console.log('Last modified date:', lastModDate); // Debugging log
+
         const options = {
             year: 'numeric',
             month: 'long',

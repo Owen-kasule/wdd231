@@ -128,7 +128,6 @@ section h2::after {
     height: 3px;
     background: var(--color-blue);
     margin: var(--spacing-sm) auto 0;
-    border-radius: 3px;
 }
 
 /* Center lists and other content */
@@ -234,21 +233,15 @@ p {
     display: block;
 }
 
-.high-contrast-link {
-  color: var(--color-blue-hover) !important; /* Brighter blue (#4DA3FF) */
-  text-decoration: underline;
-  text-underline-offset: 3px;
+/* Fix ONLY for the wireframe link contrast */
+.wireframe-text-alternative a.high-contrast-link {
+    color: #4DA3FF !important; /* Bright blue */
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.high-contrast-link:hover {
-  color: var(--color-white) !important; /* Pure white for hover state */
-}
-
-/* If the link appears on dark backgrounds, add: */
-.high-contrast-link {
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+.wireframe-text-alternative a.high-contrast-link:hover {
+    color: #80BFFF !important; /* Slightly lighter blue */
 }
 
 /* Add this at the end of your CSS file */
