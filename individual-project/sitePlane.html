@@ -5,36 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techrooot Site Plan</title>
     
-    <!-- Optimized font loading - no CSS in head -->
+    <!-- System font fallback to prevent layout shifts -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+    </style>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="images/logo.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="images/thumbnail-wireframe.webp" as="image" fetchpriority="high">
+    
+    <!-- Font preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
-    <!-- Font file preloads -->
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- CSS with optimized loading -->
-    <link rel="stylesheet" href="css/normalize.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font loading with optimized strategy -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <!-- Fallback for browsers that don't support JS -->
     <noscript>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="preload" href="images/logo.png" as="image" fetchpriority="high">
-    <link rel="preload" href="images/techrooot-wireframes.svg" as="image" fetchpriority="low">
 </head>
-<body>
+<body class="fonts-loading">
     <div class="container">
         <header>
             <h1>Techrooot Site Plan</h1>
-            <img src="images/logo.png" alt="Techrooot Logo" width="150" height="75" class="logo-image">
+            <div class="logo-container">
+                <img src="images/logo.webp" alt="Techrooot Logo" width="150" height="75" class="logo-image">
+            </div>
         </header>
         
         <section id="site-name">
@@ -76,9 +86,9 @@
                 </div>
                 
                 <div class="color-item">
-                    <div class="color-sample" style="background-color: #007BFF;"></div>
+                    <div class="color-sample" style="background-color: #0090FF;"></div>
                     <div class="color-info">
-                        <p class="color-name">Blue (#007BFF)</p>
+                        <p class="color-name">Blue (#0090FF)</p>
                         <p>Interactive elements, links, buttons, and highlighting key information about Techrooot's services</p>
                     </div>
                 </div>
@@ -107,9 +117,9 @@
             <p>Below are the wireframes for all pages in both mobile and desktop views:</p>
             
             <div class="wireframe-container">
-                <!-- Small placeholder preview with fixed dimensions -->
+                <!-- Fixed-size container with aspect ratio preservation -->
                 <div class="wireframe-thumbnail-container">
-                    <img src="images/thumbnail-wireframe.png" alt="Wireframe thumbnail" 
+                    <img src="images/thumbnail-wireframe.webp" alt="Wireframe thumbnail" 
                          width="300" height="200" class="wireframe-thumbnail">
                     <button id="viewWireframes" class="view-button">View Complete Wireframes</button>
                 </div>
@@ -129,7 +139,7 @@
             
             <!-- Simple text alternative -->
             <div class="wireframe-text-alternative">
-                <p><strong>View wireframes:</strong> <a href="images/techrooot-wireframes.svg" target="_blank">Click here</a> to see the complete set of wireframes for Techrooot's mobile and desktop layouts.</p>
+                <p><strong>View wireframes:</strong> <a href="images/techrooot-wireframes.svg" target="_blank" class="high-contrast-link">Click here</a> to see the complete set of wireframes for Techrooot's mobile and desktop layouts.</p>
             </div>
         </section>
 
@@ -139,6 +149,6 @@
         </footer>
     </div>
     
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

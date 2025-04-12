@@ -1,13 +1,13 @@
 /* Variables for consistent theming */
 :root {
-    /* Color palette */
+    /* Color palette - improved contrast */
     --color-black: #000000;
     --color-dark: #121212;
     --color-dark-gray: #1E1E1E;
     --color-medium-gray: #333333;
     --color-light-gray: #E0E0E0;
     --color-white: #FFFFFF;
-    --color-blue: #007BFF;
+    --color-blue: #0090FF; /* Improved contrast from #007BFF to #0090FF */
     --color-blue-hover: #4DA3FF;
     
     /* Transparencies */
@@ -30,13 +30,53 @@
     --radius-sm: 3px;
     --radius-md: 5px;
     --radius-lg: 8px;
+    
+    /* Font stacks with proper fallbacks */
+    --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, Arial, sans-serif;
 }
 
-/* Base styles */
+/* Base styles - using font display swap to prevent layout shifts */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), 
+         url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), 
+         url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Roboto'), local('Roboto-Regular'), 
+         url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Roboto Bold'), local('Roboto-Bold'), 
+         url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+}
+
 body {
     background-color: var(--color-dark);
     color: var(--color-white);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-body);
     margin: 0;
     line-height: 1.6;
     padding: 0;
@@ -58,9 +98,9 @@ header {
     box-shadow: var(--shadow-blue);
 }
 
-/* Typography */
+/* Typography - using CSS variables for consistent font stacks */
 h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-weight: bold;
     color: var(--color-white);
     text-transform: uppercase;
@@ -82,13 +122,13 @@ h2 {
 
 h3 {
     font-size: 1.3em;
-    color: var(--color-blue);
+    color: var(--color-white); /* Changed from blue to white for better contrast */
 }
 
 h4 {
     font-size: 1.1em;
     margin-top: var(--spacing-lg);
-    color: var(--color-blue);
+    color: var(--color-white); /* Changed from blue to white for better contrast */
 }
 
 /* Section styling */
@@ -176,6 +216,7 @@ li {
 /* Fix sample text height to prevent layout shifts */
 .sample-text {
     min-height: 100px;
+    height: 100px; /* Fixed height to prevent layout shifts */
     box-sizing: border-box;
     padding: var(--spacing-md);
     background-color: var(--trans-dark);
@@ -185,203 +226,92 @@ li {
     line-height: 1.5;
 }
 
-/* Wireframe styling */
-.wireframe {
-    border: 2px solid var(--trans-medium);
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    background-color: var(--color-black);
+/* Font display and sample classes */
+.montserrat-heading {
+    font-family: var(--font-heading);
 }
 
-.wireframe.desktop {
-    max-width: 700px;
-}
-
-.wireframe-header, .wireframe-footer, .wireframe-search, 
-.wireframe-filters, .wireframe-button, .wireframe-sidebar, 
-.wireframe-content, .wireframe-grid, .wireframe-viz, 
-.wireframe-controls, .wireframe-card, .wireframe-main,
-.wireframe-title, .wireframe-service, .wireframe-paragraph,
-.wireframe-form, .wireframe-contact-info {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 15px 10px;
-    margin-bottom: var(--spacing-sm);
-    text-align: center;
-    border-radius: var(--radius-sm);
-    color: var(--color-light-gray);
-}
-
-.wireframe-header, .wireframe-footer {
-    background-color: rgba(0, 123, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.wireframe-button {
-    background-color: rgba(0, 123, 255, 0.2);
-    display: inline-block;
-    padding: 8px 15px;
-    margin: var(--spacing-sm) auto;
-    color: var(--color-white);
-}
-
-.wireframe-main {
-    display: flex;
-    gap: 15px;
-}
-
-.wireframe-sidebar {
-    width: 25%;
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.wireframe-content {
-    flex: 1;
-}
-
-.wireframe-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md);
-}
-
-.wireframe-card {
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-/* Additional wireframe styles */
-.wireframe-title {
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: var(--spacing-md) 0;
-    font-size: 1.2em;
-}
-
-.wireframe-logo {
+.montserrat-sample {
+    font-family: var(--font-heading);
     font-weight: bold;
 }
 
-.wireframe-nav {
-    font-size: 0.9em;
+.roboto-heading, 
+.roboto-sample {
+    font-family: var(--font-body);
 }
 
-.wireframe-service {
-    margin-bottom: var(--spacing-lg);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
+/* Font loading states */
+.fonts-loading .sample-text {
+    visibility: hidden;
 }
 
-.wireframe-icon {
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--color-white);
-    margin: 0 auto var(--spacing-sm);
+.fonts-loaded .sample-text {
+    visibility: visible;
+    animation: fadeIn 0.3s ease-in;
 }
 
-.wireframe-service-title {
-    font-weight: bold;
-    margin-bottom: var(--spacing-xs);
+/* Logo container with fixed dimensions to prevent layout shifts */
+.logo-container {
+    width: 150px;
+    height: 75px;
+    margin: 0 auto;
 }
 
-.wireframe-paragraph {
-    padding: 15px;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    margin: var(--spacing-sm) 0;
-}
-
-.wireframe-form {
-    height: 200px;
-    border: 1px solid var(--color-white);
-    margin: var(--spacing-md) 0;
-}
-
-.wireframe-services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-sm);
-    margin: var(--spacing-lg) 0;
-}
-
-.wireframe-columns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
-}
-
-.wireframe-column {
-    padding: 15px;
-    border: 1px dashed rgba(255,255,255,0.2);
-}
-
-.wireframe-contact-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
-}
-
-.wireframe-contact-info {
-    padding: 15px;
-    border: 1px dashed rgba(255,255,255,0.2);
-}
-
-.wireframe-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    margin: var(--spacing-md) 0;
-}
-
-.wireframe-image {
-    border: 1px solid var(--color-white);
-    height: 150px;
-}
-
-.wireframe-text {
-    margin: var(--spacing-md) 0;
-    font-weight: bold;
-}
-
-/* Wireframe image styling */
-.wireframe-container {
-    position: relative;
-}
-
-.wireframe-preview {
-    background-color: var(--color-black);
-    border: 2px solid var(--trans-medium);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    text-align: center;
-}
-
-.wireframe-image-preview {
-    max-width: 100%;
-    max-height: 500px;
+.logo-image {
+    display: block;
+    width: 150px;
+    height: 75px;
     object-fit: contain;
-    margin-bottom: var(--spacing-md);
-    z-index: 1;
 }
 
-.expand-button {
-    background-color: rgba(0, 123, 255, 0.2);
+/* Wireframe thumbnail approach to prevent layout shifts */
+.wireframe-thumbnail-container {
+    text-align: center;
+    background-color: var(--color-dark-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-medium-gray);
+    margin-bottom: var(--spacing-lg);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wireframe-thumbnail {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--color-medium-gray);
+    display: block;
+    margin: 0 auto var(--spacing-md);
+}
+
+.view-button {
+    background-color: var(--color-blue);
     color: var(--color-white);
-    border: 1px solid var(--color-blue);
-    padding: 8px 15px;
-    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--font-heading);
     border-radius: var(--radius-sm);
-    font-family: 'Montserrat', sans-serif;
-    transition: all 0.2s ease;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.expand-button:hover {
-    background-color: rgba(0, 123, 255, 0.4);
+.view-button:hover {
+    background-color: var(--color-blue-hover);
 }
 
+.wireframe-text-alternative {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px dashed var(--color-medium-gray);
+    text-align: center;
+}
+
+/* Fixed positioning for the fullscreen wireframe view */
 .wireframe-fullsize {
     display: none;
     position: fixed;
@@ -421,6 +351,7 @@ li {
 
 .wireframe-image-full {
     max-width: 100%;
+    height: auto;
     margin: 0 auto;
     display: block;
 }
@@ -430,16 +361,23 @@ li {
     display: block;
 }
 
-/* Links */
+/* Links - improved contrast */
 a {
     color: var(--color-blue);
-    text-decoration: none;
+    text-decoration: underline; /* Added underline for better accessibility */
     transition: all 0.2s ease;
+    font-weight: bold; /* Added bold for better contrast */
 }
 
 a:hover {
     color: var(--color-blue-hover);
-    text-decoration: none;
+}
+
+.high-contrast-link {
+    color: var(--color-blue);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 /* Footer */
@@ -450,6 +388,12 @@ footer {
     border-top: 1px solid var(--color-blue);
     background-color: var(--color-black);
     color: var(--color-white);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive adjustments */
@@ -486,31 +430,21 @@ footer {
         margin-right: 0;
     }
     
-    .wireframe-grid,
-    .wireframe-services-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Fixed-width container for wireframe thumbnail */
+    .wireframe-thumbnail-container {
+        width: 100%;
+        max-width: 300px;
     }
     
-    .wireframe.desktop {
-        max-width: 100%;
+    .wireframe-thumbnail {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3/2; /* Maintain aspect ratio */
     }
     
-    .wireframe-contact-layout,
-    .wireframe-columns {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Additional mobile optimizations */
-    .wireframe-image-preview {
-        max-height: 300px;
-        width: auto;
-    }
-    
-    .expand-button {
+    .view-button {
         width: 100%;
         padding: 12px 15px;
-        margin-top: 15px;
-        font-size: 16px;
     }
     
     .close-button {
@@ -519,34 +453,14 @@ footer {
         font-size: 20px;
     }
     
-    .wireframe-fullsize {
-        padding: 10px;
-    }
-    
     /* Enhance tap targets on mobile */
     .color-item,
-    .font-item,
-    .wireframe-button {
+    .font-item {
         padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .wireframe-main {
-        grid-template-columns: 1fr;
-    }
-    
-    .wireframe-sidebar {
-        width: auto;
-        margin-right: 0;
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .wireframe-grid,
-    .wireframe-services-grid {
-        grid-template-columns: 1fr;
-    }
-    
     /* Additional small screen improvements */
     section {
         padding: 15px;
@@ -560,168 +474,25 @@ footer {
         font-size: 1.4em;
     }
     
-    .wireframe-image-preview {
-        max-height: 200px;
-    }
-    
     /* Better spacing for small screens */
     .color-sample {
         width: 60px;
         height: 60px;
     }
+    
+    /* Full width wireframe container on very small screens */
+    .wireframe-thumbnail-container {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
-/* Optimize image loading */
-.wireframe-image-preview,
+/* Optimize loading performance */
 .wireframe-image-full {
     content-visibility: auto;
-    contain-intrinsic-size: 800px;
-}
-
-/* Enhanced transitions for better perceived performance */
-.expand-button,
-.close-button {
-    will-change: background-color;
+    contain-intrinsic-size: 1200px 750px;
 }
 
 .wireframe-fullsize.active {
     animation: fadeIn 0.2s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Replace your current .logo-image CSS with this */
-.logo-image {
-    display: block;
-    width: 150px; /* Fixed width */
-    height: 75px; /* Fixed height */
-    object-fit: contain; /* This prevents distortion */
-    margin: var(--spacing-lg) auto;
-}
-
-/* Add these styles to your CSS file */
-.wireframe-image-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 62.5%; /* 500/800 = 0.625 = 62.5% - maintains aspect ratio */
-    background-color: var(--color-black);
-    overflow: hidden;
-    margin-bottom: var(--spacing-md);
-}
-
-.wireframe-image-container::before {
-    content: "Loading wireframes...";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--color-light-gray);
-    font-size: 14px;
-    z-index: 0;
-}
-
-.wireframe-image-preview {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: 1;
-}
-
-/* Update fullsize image styles */
-.wireframe-image-full {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-/* Use height auto for large screens only */
-@media (min-width: 769px) {
-    .wireframe-image-preview {
-        position: relative;
-        height: auto;
-        max-height: 500px;
-    }
-    
-    .wireframe-image-container {
-        height: auto;
-        padding-bottom: 0;
-    }
-}
-
-/* Wireframe thumbnail approach to prevent layout shifts */
-.wireframe-thumbnail-container {
-    text-align: center;
-    background-color: var(--color-dark-gray);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-medium-gray);
-    margin-bottom: var(--spacing-lg);
-}
-
-.wireframe-thumbnail {
-    max-width: 300px;
-    height: auto;
-    border: 2px solid var(--color-medium-gray);
-    display: block;
-    margin: 0 auto var(--spacing-md);
-}
-
-.view-button {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.view-button:hover {
-    background-color: var(--color-blue-hover);
-}
-
-.wireframe-text-alternative {
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-md);
-    border-top: 1px dashed var(--color-medium-gray);
-    text-align: center;
-}
-
-/* Font display and sample classes */
-.montserrat-heading {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-.montserrat-sample {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-weight: bold;
-}
-
-.roboto-heading, 
-.roboto-sample {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, Arial, sans-serif;
-}
-
-/* Font loading states */
-.fonts-loading .sample-text {
-    visibility: hidden;
-}
-
-.fonts-loaded .sample-text {
-    visibility: visible;
-    animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }

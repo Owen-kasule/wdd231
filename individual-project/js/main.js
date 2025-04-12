@@ -5,7 +5,31 @@ import { fetchData } from './modules/data.js';
 import { openModal, closeModal } from './modules/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch data from the JSON file and display it on the website
+    // Handle font loading to prevent layout shifts
+    if ('fonts' in document) {
+        Promise.all([
+            document.fonts.load('1em Montserrat'),
+            document.fonts.load('bold 1em Montserrat'),
+            document.fonts.load('1em Roboto'),
+            document.fonts.load('bold 1em Roboto')
+        ]).then(() => {
+            console.log('All fonts loaded');
+            document.body.classList.remove('fonts-loading');
+            document.body.classList.add('fonts-loaded');
+        }).catch(error => {
+            console.error('Font loading failed:', error);
+            // Still remove loading class to show content
+            document.body.classList.remove('fonts-loading');
+        });
+    } else {
+        // For browsers that don't support Font Loading API
+        setTimeout(() => {
+            document.body.classList.remove('fonts-loading');
+            document.body.classList.add('fonts-loaded');
+        }, 100); // Short timeout as font is set to swap
+    }
+
+    // Fetch data from the JSON file
     fetchData().then(data => {
         // Process and display the data as needed
         console.log(data);
@@ -59,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastModifiedElement = document.getElementById('last-modified');
     
     if (authorNameElement) {
-        authorNameElement.textContent = 'Kasule';  // Replace with your name
+        authorNameElement.textContent = 'Kasule';
     }
     
     if (lastModifiedElement) {
@@ -73,31 +97,5 @@ document.addEventListener('DOMContentLoaded', () => {
             minute: '2-digit'
         };
         lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
-    }
-});
-
-// Font loading detection
-document.addEventListener('DOMContentLoaded', () => {
-    // Add body class while fonts are loading
-    document.body.classList.add('fonts-loading');
-    
-    if ('fonts' in document) {
-        Promise.all([
-            document.fonts.load('1em Montserrat'),
-            document.fonts.load('bold 1em Montserrat'),
-            document.fonts.load('1em Roboto'),
-            document.fonts.load('bold 1em Roboto')
-        ]).then(() => {
-            console.log('Fonts loaded');
-            document.body.classList.remove('fonts-loading');
-            document.body.classList.add('fonts-loaded');
-        });
-    } else {
-        // For browsers that don't support Font Loading API
-        // Add a timeout to assume fonts have loaded
-        setTimeout(() => {
-            document.body.classList.remove('fonts-loading');
-            document.body.classList.add('fonts-loaded');
-        }, 2000);
     }
 });
