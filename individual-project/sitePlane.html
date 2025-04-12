@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techrooot Site Plan</title>
     
-    <!-- System font fallback to prevent layout shifts -->
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-    </style>
+    <!-- Cache busting version -->
+    <script>
+        const VERSION = '1.0.0';
+    </script>
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="images/logo.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="images/thumbnail-wireframe.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="images/logo.webp?v=1.0.0" as="image" fetchpriority="high">
+    <link rel="preload" href="images/thumbnail-wireframe.webp?v=1.0.0" as="image" fetchpriority="high">
     
     <!-- Font preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +22,14 @@
     <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- CSS with cache busting -->
+    <link rel="stylesheet" href="css/normalize.css?v=1.0.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.0.0">
     
     <!-- Font loading with optimized strategy -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico?v=1.0.0" type="image/x-icon">
     
     <!-- Fallback for browsers that don't support JS -->
     <noscript>
@@ -43,7 +41,7 @@
         <header>
             <h1>Techrooot Site Plan</h1>
             <div class="logo-container">
-                <img src="images/logo.webp" alt="Techrooot Logo" width="150" height="75" class="logo-image">
+                <img src="images/logo.webp?v=1.0.0" alt="Techrooot Logo" width="150" height="75" class="logo-image">
             </div>
         </header>
         
@@ -119,8 +117,7 @@
             <div class="wireframe-container">
                 <!-- Fixed-size container with aspect ratio preservation -->
                 <div class="wireframe-thumbnail-container">
-                    <img src="images/thumbnail-wireframe.webp" alt="Wireframe thumbnail" 
-                         width="300" height="200" class="wireframe-thumbnail">
+                    <img src="images/thumbnail-wireframe.webp?v=1.0.0" alt="Wireframe thumbnail" width="300" height="200" class="wireframe-thumbnail">
                     <button id="viewWireframes" class="view-button">View Complete Wireframes</button>
                 </div>
                 
@@ -130,9 +127,7 @@
                         <button id="closeWireframe" class="close-button">✕</button>
                     </div>
                     <div class="wireframe-fullsize-container">
-                        <img src="images/techrooot-wireframes.svg" 
-                             alt="Techrooot wireframes for all pages in mobile and desktop views" 
-                             class="wireframe-image-full" width="1200" height="750">
+                        <img src="images/techrooot-wireframes.svg?v=1.0.0" alt="Techrooot wireframes for all pages in mobile and desktop views" class="wireframe-image-full" width="1200" height="750">
                     </div>
                 </div>
             </div>
@@ -149,6 +144,6 @@
         </footer>
     </div>
     
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js?v=1.0.0"></script>
 </body>
 </html>

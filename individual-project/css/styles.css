@@ -374,10 +374,18 @@ a:hover {
 }
 
 .high-contrast-link {
-    color: var(--color-blue);
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 2px 5px;
-    border-radius: 3px;
+    color: #FFFFFF; /* Change to white text for maximum contrast */
+    background-color: rgba(0, 144, 255, 0.8); /* Brighter, more opaque blue background */
+    padding: 3px 8px; /* Slightly larger padding */
+    border-radius: 4px;
+    text-decoration: underline; /* Keep underline for additional clarity */
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.high-contrast-link:hover {
+    background-color: rgba(0, 144, 255, 1); /* Fully opaque on hover */
+    text-decoration: underline;
 }
 
 /* Footer */

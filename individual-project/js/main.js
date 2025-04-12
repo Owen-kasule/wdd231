@@ -1,8 +1,8 @@
 // This file serves as the entry point for the website's functionality.
 // It handles DOM manipulation, event listeners, and integrates the modules for data handling and modal dialogs.
 
-import { fetchData } from './modules/data.js';
-import { openModal, closeModal } from './modules/modal.js';
+import { fetchData } from './modules/data.js?v=1.0.0';
+import { openModal, closeModal } from './modules/modal.js?v=1.0.0';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Handle font loading to prevent layout shifts
