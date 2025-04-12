@@ -7,9 +7,11 @@
     <meta name="description" content="Techrooot is a tech startup transforming Africa's healthcare, education, and small businesses using AI-driven digital solutions.">
     <meta name="author" content="Owen Kasule Muhereza">
 
+    <!-- Add Cache-Control -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+
     <!-- Preload critical assets -->
-    <link rel="preload" href="images/logo.webp?v=1.0.0" as="image" fetchpriority="high">
-    <link rel="preload" href="images/thumbnailwireframe.webp?v=1.0.0" as="image" fetchpriority="high">
+    <link rel="preload" href="images/logo.webp?v=1.0.0" as="image" imagesrcset="images/logo.webp?v=1.0.0 1x, images/logo@2x.webp?v=1.0.0 2x" imagesizes="225px">
     <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Updated font preloading -->
@@ -22,19 +24,14 @@
 
     <link rel="icon" href="images/favicon.ico?v=1.0.0" type="image/x-icon">
 
-    <!-- Add font matching metrics -->
+    <!-- Add inline critical CSS -->
     <style>
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        line-height: 1.5;
-        letter-spacing: 0.01em;
-      }
-      
-      h1, h2, h3, h4 {
-        font-family: Montserrat, Verdana, sans-serif;
-        letter-spacing: -0.015em;
-        line-height: 1.3;
-      }
+        .logo-container {
+            position: relative;
+            aspect-ratio: 1/1;
+            width: 225px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
