@@ -103,12 +103,8 @@ function setupModalHandlers() {
 }
 
 function updateFooterInfo() {
-    const authorNameElement = document.getElementById('author-name');
     const lastModifiedElement = document.getElementById('last-modified');
-
-    if (authorNameElement) {
-        authorNameElement.textContent = 'Kasule';
-    }
+    const currentYearElement = document.getElementById('current-year');
 
     if (lastModifiedElement) {
         const lastModDate = new Date(document.lastModified);
@@ -121,4 +117,12 @@ function updateFooterInfo() {
         };
         lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
     }
+
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateFooterInfo();
+});
