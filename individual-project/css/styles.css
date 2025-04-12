@@ -63,7 +63,7 @@ img, svg, video, iframe {
 
 /* Specific fix for the logo */
 .logo-image {
-    width: 225px;
+    width:
     height: 225px;
     visibility: visible !important;
 }
@@ -148,21 +148,53 @@ p {
     color: var(--color-light-gray);
 }
 
-/* Color schema */
+/* Color Schema Specific Styles */
+.color-palette {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 .color-item {
     display: flex;
     align-items: center;
-    background-color: var(--trans-light);
+    gap: var(--spacing-md);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     border: 1px solid var(--color-medium-gray);
+    background-color: var(--trans-light);
 }
 
 .color-sample {
-    width: 80px;
-    height: 80px;
-    border-radius: var(--radius-md);
-    margin-right: var(--spacing-lg);
+    width: 50px; /* Square box size */
+    height: 50px;
+    border-radius: var(--radius-sm); /* Optional: Rounded corners */
+    border: 1px solid var(--color-medium-gray); /* Optional: Border for visibility */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.color-info {
+    flex: 1;
+}
+
+.color-name {
+    font-weight: bold;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .color-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .color-sample {
+        margin-right: 0;
+        margin-bottom: var(--spacing-md);
+    }
 }
 
 .font-samples {
