@@ -168,8 +168,10 @@ p {
 }
 
 .logo-image {
-    max-width: 100%;
-    height: auto;
+  aspect-ratio: 1/1; /* Enforce square ratio */
+  object-fit: contain; /* Prevent distortion */
+  display: block; /* Remove inline spacing */
+  margin: 0 auto; /* Center if needed */
 }
 
 /* Add/Update these rules */

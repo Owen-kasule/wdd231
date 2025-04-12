@@ -12,16 +12,30 @@
     <link rel="preload" href="images/thumbnailwireframe.webp?v=1.0.0" as="image" fetchpriority="high">
     <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Font preloading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Updated font preloading -->
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font" type="font/woff2" crossorigin>
-    
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Cache Busting for CSS -->
     <link rel="stylesheet" href="css/styles.css?v=1.0.0" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <link rel="icon" href="images/favicon.ico?v=1.0.0" type="image/x-icon">
+
+    <!-- Add font matching metrics -->
+    <style>
+      body {
+        font-family: Roboto, Arial, sans-serif;
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+      }
+      
+      h1, h2, h3, h4 {
+        font-family: Montserrat, Verdana, sans-serif;
+        letter-spacing: -0.015em;
+        line-height: 1.3;
+      }
+    </style>
 </head>
 <body>
     <div class="container">
