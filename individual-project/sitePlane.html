@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techrooot Site Plan</title>
     
-    <!-- Cache busting version -->
+    <!-- Cache management -->
     <script>
-        const VERSION = '1.0.0';
+        // Update this single variable when making changes to any assets
+        const CACHE_VERSION = '1.0.0';
+        // This makes the version available to JavaScript
+        document.documentElement.dataset.version = CACHE_VERSION;
     </script>
     
     <!-- Preload critical assets -->
@@ -18,13 +21,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Only preload the most critical font - other fonts will load when needed -->
     
     <!-- CSS with cache busting -->
     <link rel="stylesheet" href="css/normalize.css?v=1.0.0">
-    <link rel="stylesheet" href="css/styles.css?v=1.0.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.0.0" media="print" onload="this.media='all'">
     
     <!-- Font loading with optimized strategy -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -68,7 +69,7 @@
             <h2>Color Schema</h2>
             <div class="color-palette">
                 <div class="color-item">
-                    <div class="color-sample" style="background-color: #000000;"></div>
+                    <div class="color-sample color-black"></div>
                     <div class="color-info">
                         <p class="color-name">Black (#000000)</p>
                         <p>Background color, creating a sleek, modern base for content that reflects the tech-forward nature of the company</p>
@@ -117,7 +118,12 @@
             <div class="wireframe-container">
                 <!-- Fixed-size container with aspect ratio preservation -->
                 <div class="wireframe-thumbnail-container">
-                    <img src="images/thumbnail-wireframe.webp?v=1.0.0" alt="Wireframe thumbnail" width="300" height="200" class="wireframe-thumbnail">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E" 
+     data-src="images/thumbnail-wireframe.webp?v=1.0.0" 
+     alt="Wireframe thumbnail" 
+     width="300" 
+     height="200" 
+     class="wireframe-thumbnail lazy">
                     <button id="viewWireframes" class="view-button">View Complete Wireframes</button>
                 </div>
                 
