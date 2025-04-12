@@ -113,32 +113,53 @@ function setupModalHandlers() {
         });
     }
 }
-
+// Update footer information
 function updateFooterInfo() {
-    console.log('updateFooterInfo is running'); // Debugging log
-
-    const lastModifiedElement = document.getElementById('last-modified');
-    const currentYearElement = document.getElementById('current-year');
-
-    if (lastModifiedElement) {
-        const lastModDate = new Date(document.lastModified);
-        console.log('Last modified date:', lastModDate); // Debugging log
-
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        };
-        lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
+    // Debugging: Check if elements exist
+    console.log('Running updateFooterInfo');
+    
+    const currentYearEl = document.getElementById('current-year');
+    const lastModifiedEl = document.getElementById('last-modified');
+    
+    console.log('Elements found:', { currentYearEl, lastModifiedEl });
+    
+    // 1. Set current year (with fallback)
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    } else {
+        console.error('Current year element not found');
     }
-
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+    
+    // 2. Set last modified date (with multiple fallbacks)
+    if (lastModifiedEl) {
+        try {
+            // Try document.lastModified first
+            let lastModDate = new Date(document.lastModified);
+            
+            // Fallback 1: Use current date if invalid
+            if (isNaN(lastModDate.getTime())) {
+                console.warn('document.lastModified invalid, using current date');
+                lastModDate = new Date();
+            }
+            
+            // Format as MM/DD/YYYY HH:MM:SS
+            lastModifiedEl.textContent = 
+                `${(lastModDate.getMonth() + 1).toString().padStart(2, '0')}/` +
+                `${lastModDate.getDate().toString().padStart(2, '0')}/` +
+                `${lastModDate.getFullYear()} ` +
+                `${lastModDate.getHours().toString().padStart(2, '0')}:` +
+                `${lastModDate.getMinutes().toString().padStart(2, '0')}:` +
+                `${lastModDate.getSeconds().toString().padStart(2, '0')}`;
+                
+        } catch (e) {
+            console.error('Date formatting failed:', e);
+            lastModifiedEl.textContent = 'N/A';
+        }
+    } else {
+        console.error('Last modified element not found');
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateFooterInfo();
-});
+// Run on both DOMContentLoaded AND load as fallback
+document.addEventListener('DOMContentLoaded', updateFooterInfo);
+window.addEventListener('load', updateFooterInfo);
