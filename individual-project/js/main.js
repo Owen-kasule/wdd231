@@ -2,6 +2,10 @@ import { fetchData } from './modules/data.js?v=1.0.0';
 import { openModal, closeModal } from './modules/modal.js?v=1.0.0';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Set scrollbar width as a CSS variable to prevent layout shifts
+    document.documentElement.style.setProperty('--scrollbar-width', `${window.innerWidth - document.documentElement.clientWidth}px`);
+
+    // Initialize all functionality
     handleFontLoading();
     initLazyLoading();
     setupWireframeViewer();
@@ -38,25 +42,33 @@ function handleFontLoading() {
     }
 }
 
+// Updated lazy loading function
 function initLazyLoading() {
-    if ('IntersectionObserver' in window) {
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
+    const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.add('lazyloaded');
-                    observer.unobserve(img);
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+
+                    // Force layout to prevent CLS
+                    lazyImage.offsetHeight;
                 }
             });
         }, {
-            rootMargin: '50px',
+            rootMargin: "50px 0px",
             threshold: 0.01
         });
 
-        lazyImages.forEach(image => {
-            imageObserver.observe(image);
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+
+            // Set temporary background color for lazy images
+            lazyImage.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--color-dark-gray');
         });
     }
 }
