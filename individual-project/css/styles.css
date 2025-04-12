@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'TechroootFont';
+    src: url('path-to-your-font.woff2') format('woff2');
+    font-display: swap;
+}
+
 /* Variables for consistent theming */
 :root {
     --color-black: #000000;
@@ -120,13 +126,13 @@ p {
 }
 
 .view-button {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    padding: 10px 20px;
-    font-family: var(--font-heading);
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #0056b3; /* Darker shade of blue for better contrast */
+  color: #fff;
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .view-button:hover {
@@ -152,4 +158,9 @@ p {
     height: auto;
     margin: 0 auto;
     display: block;
+}
+
+.logo-image {
+  max-width: 100%;
+  height: auto;
 }
