@@ -10,11 +10,12 @@
     <!-- Preload critical assets -->
     <link rel="preload" href="images/logo.webp?v=1.0.0" as="image" fetchpriority="high">
     <link rel="preload" href="images/thumbnail-wireframe.webp?v=1.0.0" as="image" fetchpriority="high">
+    <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Font preloading -->
-    <link rel="preconnect" href="[invalid url, do not cite]
-    <link rel="preconnect" href="[invalid url, do not cite] crossorigin>
-    <link rel="preload" href="[invalid url, do not cite] as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Cache Busting for CSS -->
     <link rel="stylesheet" href="css/styles.css?v=1.0.0" media="print" onload="this.media='all'">
@@ -29,7 +30,7 @@
             <div class="logo-container">
                 <img
                   src="images/logo.webp?v=1.0.0"
-                  srcset="images/logo@1x.webp?v=1.0.0 1x, images/logo@2x.webp?v=1.0.0 2x"
+                  srcset="images/logo.webp?v=1.0.0 1x, images/logo@2x.webp?v=1.0.0 2x"
                   alt="Techrooot Logo"
                   width="225"
                   height="225"
@@ -37,77 +38,37 @@
                 >
             </div>
         </header>
+
         <!-- Site Name -->
         <section id="site-name">
             <h2>Site Name</h2>
             <p><strong>Name:</strong> Techrooot</p>
             <p><strong>Reason:</strong> "Techrooot" merges "tech" and "root," symbolizing a startup that embeds digital solutions in African communities. The name conveys how technology can take root and grow in these regions, providing sustainable solutions to everyday challenges.</p>
         </section>
+
         <!-- Site Purpose -->
         <section id="site-purpose">
             <h2>Site Purpose</h2>
-            <p>The Techrooot website will provide information about a small tech startup offering digital solutions to improve healthcare, education, and small businesses in Africa. It will showcase the company's mission, services, and how it uses AI to drive positive change.</p>
+            <p>The Techrooot website will provide information about a small tech startup offering digital solutions for healthcare, education, and small businesses in Africa through AI-driven platforms.</p>
         </section>
+
         <!-- Scenarios -->
         <section id="scenarios">
             <h2>Scenarios</h2>
             <ul>
                 <li><strong>How can Techrooot help my clinic run better?</strong> A healthcare worker in Ghana needs tools to streamline patient care and record-keeping in areas with limited infrastructure.</li>
-                <li><strong>What can Techrooot do for my small business?</strong> A shop owner in Nigeria wants digital solutions to manage inventory, sales, and customer interactions more efficiently.</li>
+                <li><strong>What can Techrooot do for my small business?</strong> A shop owner in Nigeria wants digital solutions for inventory management and customer engagement.</li>
             </ul>
         </section>
-        <!-- Color Schema -->
-        <section id="color-schema">
-            <h2>Color Schema</h2>
-            <div class="color-palette">
-                <div class="color-item">
-                    <div class="color-sample color-black"></div>
-                    <div class="color-info">
-                        <p class="color-name">Black (#000000)</p>
-                        <p>Background color, creating a sleek, modern base for content that reflects the tech-forward nature of the company</p>
-                    </div>
-                </div>
-                <div class="color-item">
-                    <div class="color-sample" style="background-color: #FFFFFF;"></div>
-                    <div class="color-info">
-                        <p>Text, borders, and contrast elements to ensure readability across all device types</p>
-                    </div>
-                </div>
-                <div class="color-item">
-                    <div class="color-sample" style="background-color: #0090FF;"></div>
-                    <div class="color-info">
-                        <p class="color-name">Blue (#0090FF)</p>
-                        <p>Interactive elements, links, buttons, and highlighting key information about Techrooot's services</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Typography -->
-        <section id="typography">
-            <h2>Typography</h2>
-            <div class="font-samples">
-                <div class="font-item">
-                    <h3 class="montserrat-heading">Montserrat</h3>
-                    <p>Used for all headings (h1, h2, h3) to create visual hierarchy and a tech-forward appearance</p>
-                    <div class="sample-text montserrat-sample">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</div>
-                </div>
-                <div class="font-item">
-                    <h3 class="roboto-heading">Roboto</h3>
-                    <p>Used for body text, paragraphs, and general content to ensure excellent readability</p>
-                    <div class="sample-text roboto-sample">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</div>
-                </div>
-            </div>
-        </section>
-        <!-- Wireframe -->
+
+        <!-- Wireframe Section -->
         <section id="wireframe">
             <h2>Wireframe</h2>
-            <p>Below are the wireframes for all pages in both mobile and desktop views:</p>
             <div class="wireframe-container">
                 <div class="wireframe-thumbnail-container">
                     <img
                       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
                       data-src="images/thumbnail-wireframe.webp?v=1.0.0"
-                      data-srcset="images/thumbnail-wireframe@1x.webp?v=1.0.0 1x, images/thumbnail-wireframe@2x.webp?v=1.0.0 2x"
                       alt="Wireframe thumbnail showing website layout design"
                       width="300"
                       height="200"
@@ -115,26 +76,32 @@
                     >
                     <button id="viewWireframes" class="view-button">View Complete Wireframes</button>
                 </div>
+                
                 <div id="fullWireframe" class="wireframe-fullsize">
                     <div class="fullsize-controls">
                         <button id="closeWireframe" class="close-button">✕</button>
                     </div>
                     <div class="wireframe-fullsize-container">
-                        <img src="images/techrooot-wireframes.svg?v=1.0.0" alt="Techrooot wireframes for all pages in mobile and desktop views" width="800" height="600" class="wireframe-image-full">
+                        <img 
+                          src="images/techrooot-wireframes.svg?v=1.0.0" 
+                          alt="Techrooot wireframes for all pages in mobile and desktop views"
+                          width="1200" 
+                          height="800"
+                          class="wireframe-image-full"
+                        >
                     </div>
                 </div>
-                <div class="wireframe-text-alternative">
-                    <p><strong>View wireframes:</strong> <a href="images/techrooot-wireframes.svg" target="_blank" class="high-contrast-link">View full wireframe designs</a> to see the complete set of wireframes for Techrooot's mobile and desktop layouts.</p>
-                </div>
+            </div>
+            
+            <div class="wireframe-text-alternative">
+                <p><strong>View wireframes:</strong> <a href="images/techrooot-wireframes.svg" target="_blank" class="high-contrast-link">View full wireframe designs</a></p>
             </div>
         </section>
+
         <footer>
             <p>&copy; 2025 Techrooot. All rights reserved.</p>
             <p>Created by <span id="author-name"></span> | Last modified: <span id="last-modified"></span></p>
         </footer>
     </div>
-    <script src="main.js?v=1.0.0" defer></script>
-    <!-- Cloudflare script remains the same -->
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f2b885ef626789',t:'MTc0NDQ2MDg3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
