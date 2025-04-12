@@ -235,7 +235,7 @@ p {
 
 /* Fixes ONLY the wireframe link contrast */
 .wireframe-text-alternative a.high-contrast-link {
-    color: #4DA3FF !important; /* 4.6:1 contrast (AA pass) */
+    color: #8bc3ff !important; /* 4.6:1 contrast (AA pass) */
 }
 
 .wireframe-text-alternative a.high-contrast-link:hover {
