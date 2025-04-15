@@ -1,0 +1,52 @@
+{
+  "attractions": [
+    {
+      "name": "Uganda Museum",
+      "description": "Explore Uganda's cultural heritage and history.",
+      "address": "Kira Road, Kampala",
+      "image": "images/uganda-museum.webp"
+    },
+    {
+      "name": "Ndere Cultural Centre",
+      "description": "Experience traditional Ugandan music and dance.",
+      "address": "Plot 4505, Ntinda, Kampala",
+      "image": "images/ndere-centre.webp"
+    },
+    {
+      "name": "Kabaka's Palace",
+      "description": "Visit the historic palace of the Buganda Kingdom.",
+      "address": "Mengo Hill, Kampala",
+      "image": "images/kabaka-palace.webp"
+    },
+    {
+      "name": "Lake Victoria",
+      "description": "Enjoy scenic views and boat rides on Africa's largest lake.",
+      "address": "Ggaba Beach, Kampala",
+      "image": "images/lake-victoria.webp"
+    },
+    {
+      "name": "Owino Market",
+      "description": "Shop for local crafts, food, and clothing.",
+      "address": "Nakivubo Place Road, Kampala",
+      "image": "images/owino-market.webp"
+    },
+    {
+      "name": "Bahá'í Temple",
+      "description": "Visit the serene Bahá'í House of Worship.",
+      "address": "Kikaya Hill, Kampala",
+      "image": "images/bahai-temple.webp"
+    },
+    {
+      "name": "Uganda Wildlife Education Centre",
+      "description": "Learn about Uganda's wildlife and conservation efforts.",
+      "address": "Entebbe Road, Kampala",
+      "image": "images/uwec.webp"
+    },
+    {
+      "name": "Namirembe Cathedral",
+      "description": "Admire the architecture of Uganda's oldest cathedral.",
+      "address": "Namirembe Hill, Kampala",
+      "image": "images/namirembe-cathedral.webp"
+    }
+  ]
+}

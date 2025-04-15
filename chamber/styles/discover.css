@@ -1,0 +1,76 @@
+/* Discover page styles */
+
+/* Grid container for attractions */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 20px;
+}
+
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.grid-item figure {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.grid-item img:hover {
+    transform: scale(1.1);
+}
+
+.grid-item h2 {
+    color: #004d99;
+    margin: 10px 0;
+}
+
+.grid-item address {
+    font-style: normal;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.grid-item button {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.grid-item button:hover {
+    background-color: #003366;
+}
+
+/* Responsive Design */
+@media (min-width: 641px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
