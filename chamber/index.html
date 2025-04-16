@@ -3,36 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the best attractions in Kampala with the Chamber of Commerce. Explore top businesses, landmarks, and opportunities in Uganda's capital city.">
+    <meta name="description" content="Chamber of Commerce home page for Kampala businesses">
     <meta name="author" content="Owen Kasule Muhereza">
-    <title>Discover Kampala - Kampala Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/discover.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Discover Kampala - Kampala Chamber of Commerce">
+    <meta property="og:title" content="Chamber of Commerce Home">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://owen-kasule.github.io/wdd231/images/kampala.jpg">
-    <meta property="og:url" content="https://owen-kasule.github.io/wdd231/chamber/discover.html">
+    <meta property="og:image" content="https://Owen-kasule.github.io/wdd231/chamber/images/chamber-logo.png">
+    <meta property="og:url" content="https://Owen-kasule.github.io/wdd231/chamber/index.html">
+    <title>Chamber of Commerce Home - Kampala</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preload" as="image" href="images/chamber-logo.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/chamber-logo.png" type="image/png">
+    <link rel="preload" as="image" href="images/kampala-1.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/kampala-1.jpg" type="image/jpeg">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
+        <!-- Mobile navigation toggle -->
+        <div class="nav-toggle" id="navToggle">
+            <span class="hamburger"></span>
+        </div>
     </header>
-
+    
     <main>
-        <section class="discover">
-            <h1>Discover Kampala</h1>
-            <p>Explore the top attractions and hidden gems of Kampala, Uganda.</p>
-            <div class="grid-container">
-                <!-- Cards will be dynamically added here -->
+        <div class="logo">
+            <picture>
+                <source srcset="images/chamber-logo.webp" type="image/webp">
+                <img src="images/chamber-logo.png" alt="Chamber Logo" width="80" height="80" loading="eager">
+            </picture>
+            <h1>Chamber of Commerce - Kampala</h1>
+        </div>
+        
+        <section class="hero">
+            <picture>
+                <!-- Mobile-optimized image (only loads on small screens) -->
+                <source srcset="images/kampala-1min.webp" type="image/webp" media="(max-width: 600px)">
+                <source srcset="images/kampala-1min.jpg" type="image/jpeg" media="(max-width: 600px)">
+                
+                <!-- Original larger images for desktop -->
+                <source srcset="images/kampala-1.webp" type="image/webp">
+                <img src="images/kampala-1.jpg" alt="Kampala City Skyline" loading="eager" width="1200" height="600">
+            </picture>
+            <div class="cta">
+                <a href="join.html" class="btn">Join the Chamber</a>
+            </div>
+        </section>
+        
+        <div class="home-content">
+            <section class="events">
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li><strong>April 15, 2025</strong>: Business Networking Breakfast</li>
+                    <li><strong>May 2, 2025</strong>: Annual Trade Exhibition</li>
+                    <li><strong>May 20, 2025</strong>: Digital Marketing Workshop</li>
+                </ul>
+            </section>
+            
+            <section id="weather">
+                <h2>Current Weather</h2>
+                <div class="weather-content">
+                    <p>Loading weather...</p>
+                </div>
+                <div class="forecast">
+                    <h3>3-Day Forecast</h3>
+                    <div class="forecast-container"></div>
+                </div>
+            </section>
+        </div>
+        
+        <section id="spotlights">
+            <h2>Member Spotlights</h2>
+            <div class="spotlights-container">
+                <!-- Spotlight ads will appear here -->
             </div>
         </section>
     </main>
@@ -41,8 +92,5 @@
         <p>&copy; <span id="year"></span> Owen Kasule Muhereza | Kampala, Uganda</p>
         <p id="lastModified"></p>
     </footer>
-
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/discover.js" defer></script>
 </body>
 </html>
