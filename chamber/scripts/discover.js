@@ -1,29 +1,27 @@
+import attractionsData from '../data/attractions.json' assert { type: 'json' };
+
 document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.querySelector('.grid-container');
 
-    // Fetch attractions data
-    fetch('data/attractions.json')
-        .then(response => response.json())
-        .then(data => {
-            data.attractions.forEach(attraction => {
-                const gridItem = document.createElement('div');
-                gridItem.classList.add('grid-item');
-                gridItem.innerHTML = `
-                    <figure>
-                        <img src="${attraction.image}" alt="${attraction.name}">
-                        <figcaption>
-                            <h2>${attraction.name}</h2>
-                            <address>${attraction.address}</address>
-                            <p>${attraction.description}</p>
-                            <button>Learn More</button>
-                        </figcaption>
-                    </figure>
-                `;
-                gridContainer.appendChild(gridItem);
-            });
-        });
+    // Use the imported JSON data instead of a fetch call
+    attractionsData.attractions.forEach(attraction => {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.innerHTML = `
+            <figure>
+                <img loading="lazy" src="${attraction.image}" alt="${attraction.name}">
+                <figcaption>
+                    <h2>${attraction.name}</h2>
+                    <address>${attraction.address}</address>
+                    <p>${attraction.description}</p>
+                    <button>Learn More</button>
+                </figcaption>
+            </figure>
+        `;
+        gridContainer.appendChild(gridItem);
+    });
 
-    // Handle last visit message
+    // Last visit tracking (unchanged)
     const lastVisit = localStorage.getItem('lastVisit');
     const currentTime = Date.now();
 

@@ -17,12 +17,13 @@
     text-align: center;
 }
 
-/* Default figure layout: stacked image and text */
+/* Default figure layout: stacked (mobile) */
 .grid-item figure {
     margin: 0;
     padding: 0;
 }
 
+/* All card images */
 .grid-item img {
     width: 100%;
     height: auto;
@@ -64,19 +65,21 @@
     background-color: #003366;
 }
 
-/* Medium screens (768px - 1023px): Single column grid with side-by-side card layout */
+/* Medium screens (768px - 1023px): Single column grid with side-by-side layout using named grid areas */
 @media (min-width: 768px) and (max-width: 1023px) {
     .grid-item figure {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: "img text";
         align-items: center;
+        column-gap: 15px;
     }
     .grid-item img {
-        width: 40%;
-        margin-right: 15px;
+        grid-area: img;
+        width: 100%;
     }
     .grid-item figcaption {
-        width: 60%;
+        grid-area: text;
         text-align: left;
         padding: 0;
     }
@@ -85,22 +88,24 @@
     }
 }
 
-/* Large screens (1024px - 1199px): Two-column grid with side-by-side card layout */
-@media (min-width: 1024px) and (max-width: 1199px) {
+/* Large screens (1024px and up): Two-column grid with the same side-by-side card layout */
+@media (min-width: 1024px) {
     .grid-container {
          grid-template-columns: repeat(2, 1fr);
     }
     .grid-item figure {
-         display: flex;
-         flex-direction: row;
+         display: grid;
+         grid-template-columns: 40% 60%;
+         grid-template-areas: "img text";
          align-items: center;
+         column-gap: 15px;
     }
     .grid-item img {
-         width: 40%;
-         margin-right: 15px;
+         grid-area: img;
+         width: 100%;
     }
     .grid-item figcaption {
-         width: 60%;
+         grid-area: text;
          text-align: left;
          padding: 0;
     }
@@ -109,7 +114,7 @@
     }
 }
 
-/* Extra large screens (1200px and up): Two-column grid with increased spacing & side-by-side card layout */
+/* Extra large screens (1200px and up): Two-column grid with increased spacing using the same grid areas */
 @media (min-width: 1200px) {
     .grid-container {
          grid-template-columns: repeat(2, 1fr);
@@ -117,17 +122,19 @@
          margin: 30px;
     }
     .grid-item figure {
-         display: flex;
-         flex-direction: row;
+         display: grid;
+         grid-template-columns: 40% 60%;
+         grid-template-areas: "img text";
          align-items: center;
+         column-gap: 15px;
     }
     .grid-item img {
-         width: 40%;
-         margin-right: 15px;
+         grid-area: img;
+         width: 100%;
          max-height: 350px;
     }
     .grid-item figcaption {
-         width: 60%;
+         grid-area: text;
          text-align: left;
          padding: 0;
     }
