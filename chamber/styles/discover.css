@@ -1,6 +1,6 @@
 /* Discover page styles */
 
-/* Grid container for attractions */
+/* Grid container for attractions (mobile default) */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -8,6 +8,7 @@
     margin: 20px;
 }
 
+/* Base card styles */
 .grid-item {
     background-color: #f9f9f9;
     padding: 15px;
@@ -16,6 +17,7 @@
     text-align: center;
 }
 
+/* Default figure layout: stacked image and text */
 .grid-item figure {
     margin: 0;
     padding: 0;
@@ -62,15 +64,74 @@
     background-color: #003366;
 }
 
-/* Responsive Design */
-@media (min-width: 641px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
+/* Medium screens (768px - 1023px): Single column grid with side-by-side card layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid-item figure {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .grid-item img {
+        width: 40%;
+        margin-right: 15px;
+    }
+    .grid-item figcaption {
+        width: 60%;
+        text-align: left;
+        padding: 0;
+    }
+    .grid-item h2 {
+        margin-top: 0;
     }
 }
 
-@media (min-width: 1025px) {
+/* Large screens (1024px - 1199px): Two-column grid with side-by-side card layout */
+@media (min-width: 1024px) and (max-width: 1199px) {
     .grid-container {
-        grid-template-columns: repeat(4, 1fr);
+         grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-item figure {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+    }
+    .grid-item img {
+         width: 40%;
+         margin-right: 15px;
+    }
+    .grid-item figcaption {
+         width: 60%;
+         text-align: left;
+         padding: 0;
+    }
+    .grid-item h2 {
+         margin-top: 0;
+    }
+}
+
+/* Extra large screens (1200px and up): Two-column grid with increased spacing & side-by-side card layout */
+@media (min-width: 1200px) {
+    .grid-container {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 30px;
+         margin: 30px;
+    }
+    .grid-item figure {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+    }
+    .grid-item img {
+         width: 40%;
+         margin-right: 15px;
+         max-height: 350px;
+    }
+    .grid-item figcaption {
+         width: 60%;
+         text-align: left;
+         padding: 0;
+    }
+    .grid-item h2 {
+         margin-top: 0;
     }
 }
