@@ -203,9 +203,9 @@ section h2::after{
   .hero{height:auto;padding:var(--spacing-lg) 0;}
 }
 
-/* ========== Mobile Navigation (≤ 768 px) ========== */
+/* ========== Mobile Navigation (≤ 768 px) ========== */
 .nav-toggle{
-  display:none;                 /* hidden on desktop */
+  display:none;                         /* hidden on desktop */
   background:none;
   border:none;
   padding:var(--spacing-xs);
@@ -213,15 +213,16 @@ section h2::after{
 }
 .nav-toggle:focus{outline:2px solid var(--color-light);outline-offset:2px;}
 .nav-toggle .bar{
+  display:block;                       /* <— key fix */
   width:24px;
   height:3px;
-  background:var(--color-light);
   margin:4px 0;
   border-radius:2px;
-  transition:.3s;
+  background:#FFFFFF;                  /* pure white */
+  transition:transform .3s, opacity .3s;
 }
 
-/* transform the three bars into an “X” when open */
+/* turn the three bars into an ✕ when menu is open */
 header.open .nav-toggle .bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
 header.open .nav-toggle .bar:nth-child(2){opacity:0;}
 header.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -230,23 +231,22 @@ header.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45d
   /* show the button */
   .nav-toggle{display:block;}
 
-  /* hide menus until header has .open */
+  /* keep logo visible, hide nav groups until opened */
+  .nav-center{display:flex;}
   .nav-left,
   .nav-right{display:none;}
 
-  /* stack the menus vertically when open */
+  /* stack the menus vertically when header has .open */
   header.open .nav-left,
   header.open .nav-right{
     display:flex;
     flex-direction:column;
     gap:var(--spacing-sm);
-    background:var(--color-accent);      /* drop‑down panel colour */
     width:100%;
     padding:var(--spacing-sm) 0;
+    background:var(--color-accent);     /* dropdown panel colour */
   }
 
-  /* tweak grid so logo + toggle stay on one row */
-  .nav{
-    grid-template-columns: auto 1fr auto;
-  }
+  /* grid: toggle | logo | filler  */
+  .nav{grid-template-columns:auto 1fr auto;}
 }

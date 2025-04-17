@@ -29,18 +29,27 @@
 <body>
   <header>
     <nav class="nav container" aria-label="Primary">
+      <!-- Hamburger button for mobile navigation -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      
       <div class="nav-left">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link active" aria-current="page">Services</a>
+        <a href="about.html" class="nav-link active" aria-current="page">About</a>
+        <a href="services.html" class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
       <div class="nav-center">
-        <a href="index.html" class="nav-brand"><img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo"></a>
+        <a href="index.html" class="nav-brand" aria-label="Techrooot Home">
+          <img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo">
+        </a>
       </div>
       <div class="nav-right">
-        <a href="#projects" class="btn-outline">Our Work</a>
-        <a href="contact.html" class="btn">Get a Quote</a>
+        <a href="#overview" class="btn-outline">Learn More</a>
+        <a href="contact.html" class="btn">Get in Touch</a>
       </div>
     </nav>
   </header>

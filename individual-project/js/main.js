@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFooterDates();
   initProjects();
   document.getElementById('modalClose')?.addEventListener('click', closeModal);
+
+    /* === mobile hamburger === */
+    const navToggle = document.querySelector('.nav-toggle');
+    const header    = document.querySelector('header');
+  
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        header.classList.toggle('open');        // CSS handles the show / hide
+      });
+    }
+  
+
 });
 
 function updateFooterDates() {

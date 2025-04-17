@@ -29,6 +29,13 @@
 <body>
   <header>
     <nav class="nav container" aria-label="Primary">
+      <!-- Hamburger button for mobile navigation -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      
       <div class="nav-left">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
@@ -36,7 +43,9 @@
         <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
       </div>
       <div class="nav-center">
-        <a href="index.html" class="nav-brand"><img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo"></a>
+        <a href="index.html" class="nav-brand" aria-label="Techrooot Home">
+          <img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo">
+        </a>
       </div>
       <div class="nav-right">
         <a href="#form" class="btn-outline">Send a Message</a>
