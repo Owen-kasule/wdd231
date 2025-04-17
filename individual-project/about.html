@@ -1,83 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="About Techrooot – Who we are &amp; our mission">
-  <meta name="author" content="Techrooot Team">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script defer src="scripts/scripts.js"></script>
-  <title>Techrooot – About Us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Techrooot • About Us</title>
+  <meta name="description" content="Learn about Techrooot’s mission, our founder, and core values.">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="fonts-loading">
   <header>
-    <div class="navbar">
-      <div class="logo">
-        <img src="images/logo.webp" alt="Techrooot Logo">
-      </div>
-      <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-    </div>
+    <nav class="nav container">
+      <a href="index.html" class="nav-brand" aria-label="Techrooot Home">
+        <img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo">
+      </a>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+            <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="about-hero">
-      <div class="about-hero-text">
-        <h1>Our Story</h1>
-        <p>Founded by tech enthusiasts in 2024, Techrooot brings AI and digital tools to African communities, making technology accessible and sustainable.</p>
-      </div>
-      <div class="about-hero-image">
-        <img src="images/about.jpg" alt="Techrooot team discussing">
-      </div>
+    <!-- Founder & Mission Section -->
+    <section class="about-hero" style="text-align:center; padding:var(--spacing-md);">
+      <img src="images/logo.webp" alt="Techrooot Logo" class="logo" style="width:150px;"/>
+      <h1>About Techrooot</h1>
+      <p>At Techrooot, we’re rooting sustainable technology in African communities—one digital solution at a time.</p>
     </section>
 
-    <section class="about-history">
-      <h2>Mission &amp; Vision</h2>
-      <p><strong>Mission:</strong> To root digital solutions in every sector of African life.<br>
-         <strong>Vision:</strong> An empowered continent, thriving on smart technology.</p>
+    <!-- Our Story -->
+    <section class="story" style="max-width:800px; margin:0 auto; padding:var(--spacing-md);">
+      <h2>Our Story</h2>
+      <p>Founded in 2024 by Owen Kasule Muhereza, Techrooot was born from a desire to bridge the digital divide in Africa. Inspired by the resilience and ingenuity of local entrepreneurs, we set out to create AI‑driven platforms that streamline healthcare, enrich education, optimize agriculture, and drive business growth.</p>
     </section>
 
-    <section class="about-team">
-      <h2>Meet the Founders</h2>
-      <div class="about-team-container">
-        <div class="about-team-card">
-          <img src="images/founder1.jpg" alt="Founder 1">
-          <h3>Owen Kasule</h3>
-          <p>CEO &amp; Lead Developer</p>
-        </div>
-        <div class="about-team-card">
-          <img src="images/founder2.jpg" alt="Founder 2">
-          <h3>Amina Njeri</h3>
-          <p>COO &amp; Project Manager</p>
-        </div>
-      </div>
+    <!-- Core Values -->
+    <section class="values" style="max-width:600px; margin:0 auto; padding:var(--spacing-md);">
+      <h2>Our Core Values</h2>
+      <ul style="list-style: disc inside; color:var(--color-light);">
+        <li><strong>Empowerment through Technology</strong> – We believe tech should uplift individuals and communities.</li>
+        <li><strong>Sustainable Growth</strong> – Solutions designed for long‑term impact, not quick fixes.</li>
+        <li><strong>Community First</strong> – Local needs guide our design; we listen before we build.</li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-cta">
-      <p>Want to partner with us?</p>
-      <a href="contact.html" class="footer-btn btn-dark">Get in Touch</a>
-    </div>
-    <div class="footer-links">
-      <div class="footer-column">
-        <h4>Quick Links</h4>
+  <footer class="footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <h3>Our Mission</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li>Empower Families</li>
+          <li>Lifelong Learning</li>
+          <li>Resilient Communities</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Our Focus</a></li>
+          <li><a href="#">Support Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; <span id="current-year"></span> Techrooot. All rights reserved.</p>
-      <p id="last-modified" class="last-modified"></p>
+  
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter/ X"><!-- insert icon SVG or <i> --></a>
+      <a href="#" aria-label="Facebook"></a>
+      <a href="#" aria-label="LinkedIn"></a>
+    </div>
+  
+    <div class="footer-divider"></div>
+  
+    <div class="footer-bottom container">
+      <p>© <span id="current-year"></span> Techrooot. All rights reserved. | Developed by Owen</p>
+      <p>Last Modified: <span id="last-modified-date"></span></p>
     </div>
   </footer>
+  <footer class="footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Empower Families</li>
+          <li>Lifelong Learning</li>
+          <li>Resilient Communities</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Our Focus</a></li>
+          <li><a href="#">Support Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter/ X"><!-- insert icon SVG or <i> --></a>
+      <a href="#" aria-label="Facebook"></a>
+      <a href="#" aria-label="LinkedIn"></a>
+    </div>
+  
+    <div class="footer-divider"></div>
+  
+    <div class="footer-bottom container">
+      <p>© <span id="current-year"></span> Techrooot. All rights reserved. | Developed by Owen</p>
+      <p>Last Modified: <span id="last-modified-date"></span></p>
+    </div>
+  </footer>
+     
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

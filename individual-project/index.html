@@ -15,31 +15,116 @@
 </head>
 <body class="fonts-loading">
   <header>
-    <nav class="nav">
-      <a href="index.html">Home</a>
+    <nav class="nav container">
+      <a href="index.html" class="nav-brand" aria-label="Techrooot Home">
+        <img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo">
+      </a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="services.html">Services</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="hero">
-      <img src="images/logo.webp" alt="Techrooot Logo" class="logo">
-      <h1>Rooting Innovation in African Communities</h1>
-      <p>AI-driven Solutions for Healthcare, Education, Agriculture & Business</p>
-      <a href="services.html" class="btn">Explore Services</a>
+
+    <div class="hero" style="background-image: url('images/hero-bg.webp'); background-size: cover; background-position: center;">
+      <div class="hero-content container">
+        <h1>Rooting Innovation in African Communities</h1>
+        <p>AI-driven Solutions for Healthcare, Education, Agriculture & Business</p>
+        <a href="services.html" class="btn">Explore Services</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="overview">
+    <!-- Mission Overview -->
+    <section class="overview container">
       <h2>Our Mission</h2>
       <p>At Techrooot, we embed technology in African communities to foster sustainable growth and empowerment through AI-driven platforms.</p>
     </section>
+
+    <!-- Features Teaser -->
+    <section class="features container">
+      <h2>What We Offer</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="images/icon-health.svg" alt="Healthcare icon" loading="lazy">
+          <h3>Healthcare</h3>
+          <p>Streamlining patient workflows and securing records in clinics.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/icon-education.svg" alt="Education icon" loading="lazy">
+          <h3>Education</h3>
+          <p>Personalized learning dashboards for teachers and students.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/icon-agri.svg" alt="Agriculture icon" loading="lazy">
+          <h3>Agriculture</h3>
+          <p>Predictive analytics tools for crop and resource management.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/icon-business.svg" alt="Business icon" loading="lazy">
+          <h3>Business</h3>
+          <p>End-to-end digital growth solutions for small enterprises.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials container">
+      <h2>Success Stories</h2>
+      <div class="testimonial">
+        <p>“Techrooot’s platform transformed our clinic operations—patient wait times dropped by 50%.”</p>
+        <p class="author">— Dr. Amina, Ghana</p>
+      </div>
+      <div class="testimonial">
+        <p>“EduTrack boosted our student engagement and cut grading time in half!”</p>
+        <p class="author">— Mr. Otieno, Kenya</p>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="current-year"></span> Techrooot. All rights reserved.</p>
-    <p><a href="attributions.html">Attributions</a></p>
+  <footer class="footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Empower Families</li>
+          <li>Lifelong Learning</li>
+          <li>Resilient Communities</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Our Focus</a></li>
+          <li><a href="#">Support Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter/ X"></a>
+      <a href="#" aria-label="Facebook"></a>
+      <a href="#" aria-label="LinkedIn"></a>
+    </div>
+  
+    <div class="footer-divider"></div>
+  
+    <div class="footer-bottom container">
+      <p>© <span id="current-year"></span> Techrooot. All rights reserved. | Developed by Owen</p>
+      <p>Last Modified: <span id="last-modified-date"></span></p>
+    </div>
   </footer>
 
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
+
