@@ -413,26 +413,31 @@ section h2::after {
 .footer-col li a:hover {
   color: var(--color-accent);
 }
+
+/* Footer Social Icons */
 .footer-social {
   text-align: center;
-  padding-bottom: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
 }
+
 .footer-social a {
-  margin: 0 var(--spacing-xs);
-  font-size: 1.5rem;
-  color: var(--color-light);
-  transition: color 0.2s;
+  display: inline-block;
+  margin: 0 var(--spacing-sm);
+  transition: filter 0.2s ease;
 }
-.footer-social a:hover {
-  color: var(--color-accent);
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  /* make white on dark bg */
+  filter: brightness(0) invert(1);
 }
-.footer-divider {
-  border-top: 1px solid var(--color-muted);
-}
-.footer-bottom {
-  text-align: center;
-  padding-top: var(--spacing-sm);
-  font-size: 0.9rem;
+
+.footer-social a:hover img {
+  /* tint with your accent color on hover */
+  filter:
+    brightness(0) invert(1)
+    sepia(1) saturate(10000%) hue-rotate(190deg);
 }
 
 /* Responsive */
