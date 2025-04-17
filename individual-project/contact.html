@@ -2,25 +2,39 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Techrooot • Contact Us</title>
-  <meta name="description" content="Get in touch with Techrooot. Send us a message or reach us directly.">
+  <meta name="description" content="Get in touch with Techrooot for AI solutions, demos, and support.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="fonts-loading">
-<header>
-  <nav class="nav container">
-    <a href="index.html" class="nav-brand" aria-label="Techrooot Home">
-      <img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo">
-    </a>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-  </nav>
-</header>
+<body>
+  <header>
+    <nav class="nav container" aria-label="Primary">
+      <div class="nav-left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+      </div>
+      <div class="nav-center">
+        <a href="index.html" class="nav-brand"><img src="images/logo.webp" alt="Techrooot Logo" class="nav-logo"></a>
+      </div>
+      <div class="nav-right">
+        <a href="#form" class="btn-outline">Send a Message</a>
+        <a href="index.html" class="btn">Back Home</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <section class="contact-form">
+    <!-- Page Intro -->
+    <section class="page-intro container">
+      <h1>Get in Touch</h1>
+      <p class="subheading">We’d love to hear how we can support your project.</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="form" class="contact-form container">
       <h2>Contact Us</h2>
       <form action="form-action.html" method="get" novalidate>
         <label for="name">Name</label>
@@ -32,7 +46,7 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
   </main>
@@ -42,17 +56,17 @@
       <div class="footer-col">
         <h3>Our Mission</h3>
         <ul>
-          <li>Empower Families</li>
-          <li>Lifelong Learning</li>
-          <li>Resilient Communities</li>
+          <li>Community Empowerment</li>
+          <li>Sustainable Growth</li>
+          <li>Technology Access</li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Resources</h3>
         <ul>
-          <li><a href="#">Programs</a></li>
-          <li><a href="#">Our Focus</a></li>
-          <li><a href="#">Support Us</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">White Papers</a></li>
+          <li><a href="#">Support</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -64,22 +78,17 @@
         </ul>
       </div>
     </div>
-  
     <div class="footer-social">
-      <a href="#" aria-label="Twitter/ X"><!-- insert icon SVG or <i> --></a>
-      <a href="#" aria-label="Facebook"></a>
-      <a href="#" aria-label="LinkedIn"></a>
+      <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
     </div>
-  
     <div class="footer-divider"></div>
-  
     <div class="footer-bottom container">
-      <p>© <span id="current-year"></span> Techrooot. All rights reserved. | Developed by Owen</p>
+      <p>© <span id="current-year"></span> Techrooot. All rights reserved.</p>
       <p>Last Modified: <span id="last-modified-date"></span></p>
     </div>
   </footer>
-  
-
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
