@@ -77,7 +77,7 @@ header {
 .nav-center{ display: flex; justify-content: center; }
 .nav-right { justify-content: flex-end; }
 
-/* Navigation Link Styles (updated) */
+/* Navigation Link Styles */
 .nav-link {
   color: var(--color-light);
   font-weight: 500;
@@ -101,7 +101,7 @@ header {
 .btn,
 .btn-large,
 .btn-outline {
-  border: 2px solid var(--color-light) !important; /* high‑contrast border */
+  border: 2px solid var(--color-light) !important;
   background: transparent;
   color: #000000 !important;
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -125,7 +125,7 @@ header {
   font-size: 1rem;
 }
 
-/* Outline Button Styles (updated) */
+/* Outline Button Styles */
 .btn-outline {
   border: 2px solid var(--color-light);
   background: transparent;
@@ -234,7 +234,7 @@ section h2::after {
 #overview .feature-card h3 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: var(--color-accent);
+  color: var(--color-light); /* changed from blue to white */
   margin-bottom: var(--spacing-sm);
 }
 #overview .feature-card p,
@@ -295,7 +295,7 @@ section h2::after {
 }
 .project-card h3 {
   font-family: var(--font-heading);
-  color: var(--color-accent);
+  color: var(--color-light);     /* changed from blue to white */
   margin-bottom: var(--spacing-xs);
 }
 .project-card p {
