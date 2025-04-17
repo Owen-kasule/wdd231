@@ -202,3 +202,51 @@ section h2::after{
   #overview .features-grid,.features-grid,.services-grid,.project-list{grid-template-columns:1fr;}
   .hero{height:auto;padding:var(--spacing-lg) 0;}
 }
+
+/* ========== Mobile Navigation (≤ 768 px) ========== */
+.nav-toggle{
+  display:none;                 /* hidden on desktop */
+  background:none;
+  border:none;
+  padding:var(--spacing-xs);
+  cursor:pointer;
+}
+.nav-toggle:focus{outline:2px solid var(--color-light);outline-offset:2px;}
+.nav-toggle .bar{
+  width:24px;
+  height:3px;
+  background:var(--color-light);
+  margin:4px 0;
+  border-radius:2px;
+  transition:.3s;
+}
+
+/* transform the three bars into an “X” when open */
+header.open .nav-toggle .bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+header.open .nav-toggle .bar:nth-child(2){opacity:0;}
+header.open .nav-toggle .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:768px){
+  /* show the button */
+  .nav-toggle{display:block;}
+
+  /* hide menus until header has .open */
+  .nav-left,
+  .nav-right{display:none;}
+
+  /* stack the menus vertically when open */
+  header.open .nav-left,
+  header.open .nav-right{
+    display:flex;
+    flex-direction:column;
+    gap:var(--spacing-sm);
+    background:var(--color-accent);      /* drop‑down panel colour */
+    width:100%;
+    padding:var(--spacing-sm) 0;
+  }
+
+  /* tweak grid so logo + toggle stay on one row */
+  .nav{
+    grid-template-columns: auto 1fr auto;
+  }
+}
