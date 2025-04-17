@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Techrooot • Services</title>
+  <meta name="description" content="Explore our four core services and 15 real‑world projects powered by Techrooot.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="fonts-loading">
+  <header>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services-grid">
+      <article>
+        <h2>Healthcare Solutions</h2>
+        <p>Streamline patient workflows and secure records.</p>
+      </article>
+      <article>
+        <h2>Education Platforms</h2>
+        <p>Personalized learning dashboards for teachers.</p>
+      </article>
+      <article>
+        <h2>Agriculture Analytics</h2>
+        <p>Predictive tools for crop and resource management.</p>
+      </article>
+      <article>
+        <h2>Business Transformation</h2>
+        <p>End‑to‑end digital growth solutions.</p>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div id="project-list" class="project-list">
+        <!-- 15 items inserted here via JS -->
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Techrooot.</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

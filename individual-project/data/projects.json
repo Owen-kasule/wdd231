@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "title": "ClinicStream",
+      "domain": "Healthcare",
+      "description": "Mobile patient intake & record system.",
+      "image": "images/project1.webp",
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "title": "EduTrack",
+      "domain": "Education",
+      "description": "AI lesson planning and student analytics.",
+      "image": "images/project2.webp",
+      "year": 2024
+    },
+    // … add 13 more items …
+    {
+      "id": 15,
+      "title": "MarketConnect",
+      "domain": "Business",
+      "description": "E‑commerce integration for small traders.",
+      "image": "images/project15.webp",
+      "year": 2025
+    }
+  ]
+  

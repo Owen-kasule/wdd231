@@ -1,20 +1,12 @@
-export function fetchData() {
-    // For now, return a simple promise with data
-    return Promise.resolve({
-        name: "Techrooot",
-        services: ["Healthcare", "Education", "Agriculture", "Business"]
-    });
-}
-
-export const filterData = (data, criteria) => {
-    return data.filter(item => item.category === criteria);
-};
-
-export const formatData = (data) => {
-    return data.map(item => ({
-        id: item.id,
-        title: item.title,
-        description: item.description,
-        image: item.image
-    }));
-};
+// js/modules/data.js
+export async function fetchProjects() {
+    try {
+      const resp = await fetch('../data/projects.json');
+      if (!resp.ok) throw new Error('Network response was not ok');
+      return await resp.json();
+    } catch (err) {
+      console.error('Failed to fetch projects:', err);
+      return [];
+    }
+  }
+  

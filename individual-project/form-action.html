@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Message Received • Techrooot</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="form-response">
+    <h2>Thank you for your message!</h2>
+    <div id="response"></div>
+  </main>
+  <script>
+    // Parse URL params and display
+    const params = new URLSearchParams(window.location.search);
+    const respEl = document.getElementById('response');
+    respEl.innerHTML = `
+      <p><strong>Name:</strong> ${params.get('name')}</p>
+      <p><strong>Email:</strong> ${params.get('email')}</p>
+      <p><strong>Message:</strong> ${params.get('message')}</p>
+    `;
+  </script>
+</body>
+</html>
