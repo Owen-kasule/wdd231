@@ -5,14 +5,27 @@ import { openModal, closeModal } from './modules/modal.js';
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('fonts-loading');
   document.body.classList.add('fonts-loaded');
-  updateFooterYear();
+  updateFooterDates();
   initProjects();
   document.getElementById('modalClose')?.addEventListener('click', closeModal);
 });
 
-function updateFooterYear() {
+function updateFooterDates() {
+  // Current Year
   document.querySelectorAll('#current-year')
     .forEach(el => el.textContent = new Date().getFullYear());
+
+  // Last Modified Date
+  const lastModEls = document.querySelectorAll('#last-modified-date');
+  lastModEls.forEach(el => {
+    // Use document.lastModified, formatted nicely:
+    const d = new Date(document.lastModified);
+    el.textContent = d.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  });
 }
 
 async function initProjects() {
